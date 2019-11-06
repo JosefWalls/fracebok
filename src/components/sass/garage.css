@@ -1,0 +1,13 @@
+.garage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid red
+}
+
+.mapped {
+    border: 1px solid orange
+}
+
+.carImage {
+    width: 25vw;
+}

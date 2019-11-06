@@ -1,0 +1,12 @@
+$background: rgb(1, 9, 27);
+$backgroundWidth: 100vw;
+$backgroundHeight: 100vh;
+
+.main {
+    background: $background;
+    height: $backgroundHeight;
+    width: $backgroundWidth;
+    h1 {
+        color: white
+    }
+}

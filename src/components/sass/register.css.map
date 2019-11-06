@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACIA,AAAA,KAAK,CAAC;EACF,UAAU,EALD,OAAa;EAMtB,MAAM,EAJS,KAAK;EAKpB,KAAK,EANS,KAAK;CAUtB;;AAPD,AAII,KAJC,CAID,EAAE,CAAC;EACC,KAAK,EAAE,KACX;CAAC;;ADRL,AAAA,KAAK,CAAC;EACF,UAAU,ECHD,OAAa;CDIzB",
+    "sources": [
+        "register.scss",
+        "login.scss"
+    ],
+    "names": [],
+    "file": "register.css"
+}

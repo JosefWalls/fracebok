@@ -1,0 +1,26 @@
+.profile {
+    width: 20vw;
+    height: 40vh;
+    padding-top: 5vh;
+}
+
+.main {
+    border: 1px solid red;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    width: 50vw;
+    height: 30vh;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+}
+
+.something {
+    display: flex;
+    align-items: center;
+}
