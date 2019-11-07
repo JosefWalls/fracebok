@@ -25,11 +25,33 @@ const getUserCars = async (req, res) => {
     })
 }
 
-// const viewCar = async (req, res) => {
-//     const {car_id} = req.[a]
-// }
+const viewCar = async (req, res) => {
+    const car_id = +req.params.car_id;
+    const db = req.app.get("db");
+    console.log(req.params)
+    const car = await db.view_car(car_id);
+    res.status(200).json(car[0])
+}
+
+const deleteCar = async (req, res) => {
+    const car_id = +req.params.car_id;
+    const db = req.app.get("db")
+    const car = await db.delete_car(car_id);
+    res.status(200).json("Deleted")
+}
+
+const editCar = async (req, res) => {
+    const {make, model, year, image} = req.body;
+    const car_id = +req.params.car_id;
+    const db = req.app.get("db")
+    const car = await db.edit_car(make, model, year, image, car_id);
+    res.status(200).json("success")
+}
 
 module.exports = {
     addCar,
-    getUserCars
+    getUserCars,
+    viewCar,
+    deleteCar,
+    editCar
 }

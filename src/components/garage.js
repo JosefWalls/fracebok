@@ -1,34 +1,37 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import {getGarage} from "./../daffy_duck//garageReducer"
+import {getGarage, updateState} from "./../daffy_duck//garageReducer"
 import {connect} from 'react-redux'
 import "./sass/garage.css"
 
 class Garage extends React.Component {
     constructor(){
         super()
+
+        this.state = {
+            car_id: 0
+        }
     }
 
     componentDidMount(){
         this.props.getGarage();
     }
 
-    handleView = (i) => {
-        console.log(i)
-    }
+
 
     render() {
         const mappedGarage = this.props.garage && this.props.garage.map((val, i) => {
             return (
-               <div className="mapped">
+               <div className="mapped" >
                    <h1>{val.year} {val.make} {val.model}</h1>
                    <img src={val.image} className="carImage"></img>
-                   <Link to="/Viewcar">
-                       <button onClick={() => console.log(this.props.match.params)}>View car</button>
+                   <Link to={`/Viewcar/${val.car_id}`} key={i}>
+                    <button>View</button>
                    </Link>
                </div>
             )
         })
+        // console.log(this.state)
         return (
             <div className="cards">
                 <h1>Garage</h1>
@@ -48,9 +51,10 @@ class Garage extends React.Component {
 
 const mapStateToProps = reduxState => {
     return {
-        garage: reduxState.GarageReducer.garage
+        garage: reduxState.GarageReducer.garage,
+        car_id: reduxState.GarageReducer.car_id
     }
 }
 
 
-export default connect(mapStateToProps, {getGarage})(Garage);
+export default connect(mapStateToProps, {getGarage, updateState})(Garage);

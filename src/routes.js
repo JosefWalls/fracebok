@@ -9,6 +9,7 @@ import AddCar from "./components/addcar"
 import {Switch, Route} from "react-router-dom";
 import EditCar from "./components/editcar";
 import ViewCar from "./components/viewcar";
+import AddTrack from "./components/addTrack"
 
 export default (
     <Switch>
@@ -20,6 +21,7 @@ export default (
         <Route path="/Events" component={Events} />
         <Route path="/Addcar" component={AddCar} />
         <Route path="/Editcar" component={EditCar} />
-        <Route path="/Viewcar" component={ViewCar} />
+        <Route path="/Viewcar/:car_id" component={ViewCar} />
+        <Route path="/Addtrack" component={AddTrack} />
     </Switch>
 )

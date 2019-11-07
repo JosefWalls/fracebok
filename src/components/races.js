@@ -15,6 +15,12 @@ class Races extends React.Component {
                 <Link to="/Profile">
                     <button>Back to Profile</button>
                 </Link>
+                <div>
+                    <h1>By Tracks:</h1>
+                    <Link to="/Addtrack">
+                        <button>Add Track</button>
+                    </Link>
+                </div>
             </div>
         )
     }
@@ -22,3 +28,4 @@ class Races extends React.Component {
 
 
 export default Races;
+
