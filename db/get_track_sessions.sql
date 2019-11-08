@@ -1,4 +1,5 @@
-SELECT l.track_id, l.car_id, l.user_id, t.track_name, l.session_id
-FROM laps AS l
-INNER JOIN tracks AS t ON l.track_id = t.track_id
-WHERE l.track_id = $1;
+SELECT DISTINCT l.session_id, l.header, l.car_id, c.make, c.year ,l.user_id
+FROM laps l
+INNER JOIN cars AS c ON c.car_id = l.car_id
+WHERE track_id = $1
+AND l.user_id = $2

@@ -4,7 +4,7 @@ import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux';
 import {getGarage} from "./../daffy_duck/garageReducer"
 import Axios from 'axios';
-
+import {storage} from "./../firebase-config"
 class Addrace extends React.Component {
     constructor(){
         super()
@@ -14,7 +14,9 @@ class Addrace extends React.Component {
             car_id: "",
             laps: [],
             lap: "",
-            sessionId: ""
+            sessionId: "",
+            header: "",
+            firstTime: true
         }
     }
     
@@ -31,19 +33,33 @@ class Addrace extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        // console.log(this.props.sessionId)
-        // console.log(randomNum)
         this.setState({laps: [...this.state.laps, this.state.lap]})
         this.setState({lap: ""})
         Axios.post("/races/Addlap", {
             time: this.state.lap,
             track_id: this.props.track_id,
             car_id: this.props.car_id,
-            session_id: this.props.sessionId
+            session_id: this.props.sessionId,
+            header: this.state.header,
+            firstTime: this.state.firstTime
         })
         .then(() => {
-            this.setState({lap: ""})
+            this.setState({lap: "", firstTime: false})
         })
+    }
+
+    handleHeader = (e) => {
+        if(e.target.files[0]){
+            const image = e.target.files[0]
+            const uploadTask = storage.ref(`/sessionHeaders/${image.name}`).put(image)
+            uploadTask.on("state_changed", 
+                () => {
+                    storage.ref('sessionHeaders').child(image.name).getDownloadURL()
+                    .then(url => {
+                        this.setState({header: url})
+                    })
+                }
+            )}
     }
 
     render(){
@@ -70,17 +86,19 @@ class Addrace extends React.Component {
                     <button>Back to races</button>
                 </Link>
                 <div className="mapped">
-                    <h1>Select Track :</h1>
+                    <h1>Select Track</h1>
                     <div className="garage">
                         {dropdownTracks}
                     </div>
-                    <h1>Select Car:</h1>
+                    <h1>Select Car</h1>
                     <div className="garage">
                         {mappedCars}
                     </div>
-                    <h1>Add lap times:</h1>
-                    {mappedLaps}
+                        <h1>Upload header:</h1>
+                        <input type="file" placeholder="Upload header" onChange={this.handleHeader}></input>
                     <form onSubmit={this.handleSubmit}>
+                        {mappedLaps}
+                        <h1>Add lap times:</h1>
                         <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap}></input>
                     </form>
                         <Link to="/Races">

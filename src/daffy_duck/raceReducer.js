@@ -16,7 +16,7 @@ const initialState = {
 
 const UPDATE_STATE = "UPDATE_STATE"
 const RETRIEVE_USER_TRACKS = "RETRIEVE_USER_TRACKS"
-const TRACK_ID = "TRACK_ID"
+const TRACK_SESSIONS = "TRACK_SESSIONS"
 
 export const updateState = (e) => {
     return {
@@ -32,6 +32,13 @@ export const retrieveUserTracks = () => {
     }
 }
 
+export const getTrackSessions = (track_id) => {
+    return {
+        type: TRACK_SESSIONS,
+        payload: axios.get(`/races/${track_id}`)
+    }
+}
+
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
@@ -41,6 +48,10 @@ export default function reducer(state = initialState, action){
             return {...state, loading: true}
         case `${RETRIEVE_USER_TRACKS}_FULFILLED`:
             return {...state, loading: false, userTracks: payload.data}
+        case `${TRACK_SESSIONS}_PENDING`:
+            return {...state, loading: true}
+        case `${TRACK_SESSIONS}_FULFILLED`:
+            return {...state, loading: false, trackSessions: payload.data}
         default:
             return state
     }
