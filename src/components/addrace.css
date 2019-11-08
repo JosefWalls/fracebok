@@ -1,0 +1,7 @@
+.clicked {
+    background: red
+}
+
+.unclicked {
+    border: 1px solid red
+}

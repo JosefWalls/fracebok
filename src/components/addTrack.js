@@ -23,6 +23,7 @@ class AddTrack extends React.Component {
             turns: this.props.turns,
             length: this.props.length
         })
+        this.props.history.push("/Races")
     }
 
     render(){
@@ -35,9 +36,7 @@ class AddTrack extends React.Component {
                 <input placeholder="Track Name" name="track_name" onChange={this.handleChange}></input>
                 <input placeholder="Track Turns" name="turns" onChange={this.handleChange}></input>
                 <input placeholder="Track length" name="length" onChange={this.handleChange}></input>
-                <Link to="/Races">
                     <button onClick={this.handleAdd}>Add Track</button>
-                </Link>
             </div>
         )
     }
