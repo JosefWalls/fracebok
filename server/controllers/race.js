@@ -21,8 +21,16 @@ const addLap = async(req, res) => {
     res.status(200).json(lap)
 }
 
+const getTrackSessions = async (req, res) => {
+    const id = +req.params.track_id;
+    const db = req.app.get("db");
+    const trackSessions = await db.get_track_sessions(id)
+    res.status(200).json(trackSessions)
+}
+
 module.exports = {
     addTrack,
     getUserTracks,
-    addLap
+    addLap,
+    getTrackSessions
 }

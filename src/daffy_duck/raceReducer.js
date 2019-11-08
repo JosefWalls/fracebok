@@ -13,6 +13,7 @@ const initialState = {
     trackSessions: []
 }
 
+
 const UPDATE_STATE = "UPDATE_STATE"
 const RETRIEVE_USER_TRACKS = "RETRIEVE_USER_TRACKS"
 const TRACK_ID = "TRACK_ID"
@@ -30,13 +31,6 @@ export const retrieveUserTracks = () => {
         payload: axios.get("/races/tracks")
     }
 }
-
-// export const trackId = (track_id) => {
-//     return {
-//         type: TRACK_ID,
-//         payload: 
-//     }
-// }
 
 export default function reducer(state = initialState, action){
     const {type, payload} = action;

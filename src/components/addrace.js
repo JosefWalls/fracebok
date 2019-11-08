@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux';
 import {getGarage} from "./../daffy_duck/garageReducer"
+import Axios from 'axios';
 
 class Addrace extends React.Component {
     constructor(){
@@ -19,9 +20,8 @@ class Addrace extends React.Component {
     
 
     componentDidMount(){
-        const randomNum = (Math.random()*258549293279499349464)
-        this.setState({sessionId: randomNum})
-        console.log(this.props.userTracks)
+        const randomNum = (Math.random()*254999999)
+        this.props.updateState({sessionId: randomNum})
         this.props.getGarage()
     }
 
@@ -31,8 +31,19 @@ class Addrace extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        // console.log(this.props.sessionId)
+        // console.log(randomNum)
         this.setState({laps: [...this.state.laps, this.state.lap]})
         this.setState({lap: ""})
+        Axios.post("/races/Addlap", {
+            time: this.state.lap,
+            track_id: this.props.track_id,
+            car_id: this.props.car_id,
+            session_id: this.props.sessionId
+        })
+        .then(() => {
+            this.setState({lap: ""})
+        })
     }
 
     render(){
@@ -43,7 +54,7 @@ class Addrace extends React.Component {
         })
         const mappedCars = this.props.userCars.map((val, i) => {
             return (
-                <button onClick={() => this.props.updateState({car_id: val.car_id})}>{val.make}</button>
+                <button onClick={() => this.props.updateState({car_id: val.car_id})}>{val.year} {val.make} {val.model}</button>
             )
         })
         const mappedLaps = this.state.laps.map((val, i) => {
@@ -71,8 +82,10 @@ class Addrace extends React.Component {
                     {mappedLaps}
                     <form onSubmit={this.handleSubmit}>
                         <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap}></input>
-                        <button >Add race</button>
                     </form>
+                        <Link to="/Races">
+                            <button >Add race</button>
+                        </Link>
                 </div>
             </div>
         )
