@@ -37,8 +37,7 @@ class ViewSession extends React.Component {
         .then(() => {
             let labels = []
             let chartData = []
-            let backgroundColor = [`rgba (255, 255, 19, 0.8)`]
-            let borderColor = [`rgba (155, 215, 19)`]
+            
 
             for(let i = 0; i < this.props.sessionDetials.length; i++){
                 const inc = i + 1;
@@ -53,8 +52,24 @@ class ViewSession extends React.Component {
                     dataSets: {
                         title: "Lap Improvements",
                         data: [1, 2, 1],
-                        backgroundColor:  backgroundColor,
-                        borderColor: borderColor
+                        //data: chartData,
+                        backgroundColor:  'rgba(75, 192, 192, 0.4)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        lineTension: 0.1,
+                        fill: false,
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffSet: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: 'rgba(75, 192, 192, 1)',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackground: 'rgba(75, 192, 192, 1)',
+                        pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10
                     }
                 }
             })
