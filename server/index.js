@@ -9,6 +9,7 @@ const lR = require("./controllers/loginRegister")
 const pR = require("./controllers/profile")
 const gR = require("./controllers/garage")
 const rR = require("./controllers/race")
+const photoR = require("./controllers/photo")
 
 massive(process.env.CONNECTION_STRING)
 .then(dbInstance => {
@@ -53,5 +54,8 @@ app.get("/races/:track_id", rR.getTrackSessions)
 app.get("/session/:session_id", rR.getSessionDetails)
 app.get("/session/bestlap/:session_id", rR.getBestLap),
 app.get("/session/length/:session_id", rR.getSessionLength)
+
+//photos
+app.post("/photos/addImage", photoR.addImage)
 
 app.listen(4201, () => console.log("Port 4201"))

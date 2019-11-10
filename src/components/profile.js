@@ -42,8 +42,8 @@ class Profile extends React.Component {
                     <Link to="/Races">
                         <button>Races</button>
                     </Link>
-                    <Link to="/Events">
-                        <button>Upcoming events</button>
+                    <Link to="/Photos">
+                        <button>Photo Gallery</button>
                     </Link>
                 </div>
             </div>
