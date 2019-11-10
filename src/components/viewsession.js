@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 
 import {Line} from 'react-chartjs-2'
 
+
 class ViewSession extends React.Component {
     constructor(){
         super()
@@ -14,41 +15,53 @@ class ViewSession extends React.Component {
         this.state = {
             bestLap: "",
             lapCounter: [],
-            chartData: {}
+            chartData: {
+                labels: "",
+                dataSets: {
+                    title: "",
+                    data: [],
+                    backgroundColor: "",
+                    borderColor: ""
+                }
+            }
     }
     }
     componentDidMount= async () => {
-         this.props.getSessionDetails(this.props.match.params.session_id)
-         await this.props.getBestLap(this.props.match.params.session_id)
-         .then(() => {
-             let labels = []
-             let chartData = []
-             let backgroundColor = [`rgba (255, 255, 19, 0.8)`]
-             let borderColor = [`rgba (155, 215, 19)`]
-
-             for(let i = 0; i < this.props.sessionDetials.length; i++){
-                 const inc = i + 1;
-                 labels.push("Lap " + inc)
-                 chartData.push(this.props.sessionDetials[i].time)
-                 console.log(chartData)
-             }
-
-             this.setState({
-                 chartData: {
-                     labels: labels,
-                     dataSets: {
-                         title: "Lap Improvements",
-                         data: [1, 2, 1],
-                         backgroundColor:  backgroundColor,
-                         borderColor: borderColor
-                     }
-                 }
-             })
-         })
+         this.props.getBestLap(this.props.match.params.session_id)
+         await this.renderGraph()
     }
 
+
+    renderGraph = () => {
+        this.props.getSessionDetails(this.props.match.params.session_id)
+        .then(() => {
+            let labels = []
+            let chartData = []
+            let backgroundColor = [`rgba (255, 255, 19, 0.8)`]
+            let borderColor = [`rgba (155, 215, 19)`]
+
+            for(let i = 0; i < this.props.sessionDetials.length; i++){
+                const inc = i + 1;
+                labels.push("Lap " + inc)
+                chartData.push(this.props.sessionDetials[i].time)
+                console.log(chartData)
+            }
+
+            this.setState({
+                chartData: {
+                    labels: labels,
+                    dataSets: {
+                        title: "Lap Improvements",
+                        data: [1, 2, 1],
+                        backgroundColor:  backgroundColor,
+                        borderColor: borderColor
+                    }
+                }
+            })
+        })
+    }
     render(){
-        console.log()
+        // console.log(this.state.chartData.dataSets)
         const mappedLaps = this.props.sessionDetials.map((val, i) => {
             return (
                 <div className="mapped">
@@ -69,12 +82,8 @@ class ViewSession extends React.Component {
                 <p>Laps: {this.props.sessionDetials.length}</p>
                 <p>Best Lap: {this.props.bestLap}</p>
                 {mappedLaps}
-                <Line 
-                        data={this.state.chartData.dataSets}
-                        height={25}
-                        options={{
-                            maintainAspectRatio: false
-                        }}
+                <Line
+                        data={this.state.chartData}
                     />
             </div>
         )

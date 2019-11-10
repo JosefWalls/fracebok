@@ -51,3 +51,4 @@ const mapStateToProps = reduxState => {
 }
 
 export default connect(mapStateToProps, {getTrackSessions})(Viewtrack)
+
