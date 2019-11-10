@@ -1,3 +1,6 @@
+let counter = []
+let track = 0
+
 const addTrack = async(req, res) => {
     const {track_name, turns, length} = req.body;
     const {id} = req.session.user;
@@ -33,9 +36,41 @@ const getTrackSessions = async (req, res) => {
     res.status(200).json(trackSessions)
 }
 
+
+const getSessionDetails = async (req, res) => {
+    const session_id = +req.params.session_id
+    const db = req.app.get("db")
+    const details = await db.get_session_details(session_id)
+    res.status(200).json(details)
+    counter = []
+    track = 0
+}
+
+const getSessionLength = async (req, res) => {
+    const session_id = +req.params.session_id
+    const db = req.app.get("db")
+    const details = await db.get_session_details(session_id)
+    for( i = 0; i < details.length; i++){
+        track++
+        counter.push("Lap " + track)
+    }
+    res.status(200).json(counter)
+}
+
+const getBestLap = async (req, res) => {
+    const session_id = +req.params.session_id;
+    const db = req.app.get("db")
+    const results = await db.best_lap(session_id)
+    res.status(200).json(results)
+    
+}
+
 module.exports = {
     addTrack,
     getUserTracks,
     addLap,
-    getTrackSessions
+    getTrackSessions,
+    getSessionDetails,
+    getBestLap,
+    getSessionLength
 }

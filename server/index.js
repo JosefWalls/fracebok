@@ -49,4 +49,9 @@ app.get("/races/tracks", rR.getUserTracks)
 app.post("/races/Addlap", rR.addLap)
 app.get("/races/:track_id", rR.getTrackSessions)
 
+//session
+app.get("/session/:session_id", rR.getSessionDetails)
+app.get("/session/bestlap/:session_id", rR.getBestLap),
+app.get("/session/length/:session_id", rR.getSessionLength)
+
 app.listen(4201, () => console.log("Port 4201"))

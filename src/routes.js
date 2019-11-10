@@ -11,7 +11,8 @@ import EditCar from "./components/editcar";
 import ViewCar from "./components/viewcar";
 import AddTrack from "./components/addTrack";
 import Viewtrack from "./components/viewtrack";
-import Addrace from "./components/addrace"
+import Addrace from "./components/addrace";
+import Viewsession from "./components/viewsession"
 
 export default (
     <Switch>
@@ -27,5 +28,6 @@ export default (
         <Route path="/Viewcar/:car_id" component={ViewCar} />
         <Route path="/Addtrack" component={AddTrack} />
         <Route path="/Addrace" component={Addrace} />
+        <Route path="/Viewsession/:session_id" component={Viewsession} />
     </Switch>
 )

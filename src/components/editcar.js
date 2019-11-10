@@ -62,7 +62,7 @@ class EditCar extends React.Component {
         return(
             <div>
                 <p>Edit car</p>
-                <Link to="/Viewcar">
+                <Link to={"/Viewcar"}>
                     <button>Back to Vehicle</button>
                 </Link>
                 <input placeholder={this.props.car.make} name="make" onChange={this.handleEdit}></input>

@@ -1,26 +1,34 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import {getTrackSessions} from "./../daffy_duck/raceReducer"
+import {getTrackSessions, updateState} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux'
 
 class Viewtrack extends React.Component {
     constructor(){
         super()
+
+
+
+        this.state = {
+            
+        }
     }
 
     componentDidMount(){
         this.props.getTrackSessions(this.props.match.params.track_id)
-        console.log(this.props.trackSessions)
     }
 
     render(){
         let mappedSessions = this.props.trackSessions.map((val, i)=> {
             return (
                 <div className="mapped">
-                    <p>{val.session_id}</p>
-                    <p>{val.car_id}</p>
+                    <p>{val.make}</p>
                     <img src={val.header} className="carImage"></img>
+                    <Link to={`/Viewsession/${val.session_id}`}>
+                        <button>View session</button>
+                    </Link>
+                    
                 </div>
             )
         })

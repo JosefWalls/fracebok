@@ -96,6 +96,13 @@ class Addrace extends React.Component {
                     </div>
                         <h1>Upload header:</h1>
                         <input type="file" placeholder="Upload header" onChange={this.handleHeader}></input>
+                    {/* <div className="garage">
+                        <h1>Select weather conditions</h1>
+                            <button placeholder="Dry"></button>
+                            <button placeholder="Damp"></button>
+                            <button placeholder="Wet"></button>
+                            
+                    </div> */}
                     <form onSubmit={this.handleSubmit}>
                         {mappedLaps}
                         <h1>Add lap times:</h1>

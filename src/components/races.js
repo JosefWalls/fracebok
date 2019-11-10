@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {retrieveUserTracks} from "./../daffy_duck/raceReducer"
+import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux'
 
 class Races extends React.Component {
