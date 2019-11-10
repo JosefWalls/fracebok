@@ -44,7 +44,7 @@ class ViewSession extends React.Component {
                 const inc = i + 1;
                 labels.push("Lap " + inc)
                 chartData.push(this.props.sessionDetials[i].time)
-                console.log(chartData)
+                // console.log(chartData)
             }
 
             this.setState({
@@ -61,7 +61,8 @@ class ViewSession extends React.Component {
         })
     }
     render(){
-        // console.log(this.state.chartData.dataSets)
+        console.log(this.state.chartData.dataSets)
+        // console.log(this.state.chartData.dataSets.title)
         const mappedLaps = this.props.sessionDetials.map((val, i) => {
             return (
                 <div className="mapped">
