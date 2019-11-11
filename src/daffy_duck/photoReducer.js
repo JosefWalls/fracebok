@@ -2,34 +2,30 @@ import axios from 'axios'
 
 
 const initalState = {
-    picture: "",
+    title: "",
     description: "",
-    title: ""
+    track: "",
+    session_id: "",
+    photo: ""
 }
 
 
-
-const UPDATE_PICTURE = "UPDATE_PICTURE"
 const UPDATE_STATE = "UPDATE_STATE"
-
-export const updatePicture = () => {
-    return{
-        type: UPDATE_PICTURE
-    }
-}
 
 
 export const updateState = (e) => {
     return {
-        type: UPDATE_STATE
+        type: UPDATE_STATE,
+        payload: e
     }
 }
 
 
+
 export default function reducer(state = initalState, action){
-    const {type, payload} = action;
+    const {type, payload} = action
     switch(type){
-        case `${UPDATE_STATE}_PENDING`:
+        case UPDATE_STATE:
             return {...state, ...payload}
         default:
             return state

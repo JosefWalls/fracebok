@@ -16,13 +16,26 @@ class ViewSession extends React.Component {
             bestLap: "",
             lapCounter: [],
             chartData: {
-                labels: "",
-                dataSets: {
+                labels: "Lap Improvements",
+                datasets: [{
                     title: "",
                     data: [],
-                    backgroundColor: "",
-                    borderColor: ""
-                }
+                    backgroundColor: "rgba(75, 192, 192, 0.4)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10
+                }]
             }
     }
     }
@@ -36,38 +49,30 @@ class ViewSession extends React.Component {
         this.props.getSessionDetails(this.props.match.params.session_id)
         .then(() => {
             let labels = []
-            let chartData = []
-            
-
+            let lapData = []
             for(let i = 0; i < this.props.sessionDetials.length; i++){
                 const inc = i + 1;
                 labels.push("Lap " + inc)
-                chartData.push(this.props.sessionDetials[i].time)
-                // console.log(chartData)
+                let convert1 = (this.props.sessionDetials[i].time.split(":"))
+                let convert2 = (convert1.join(""))
+                lapData.push(convert2)
             }
-
             this.setState({
                 chartData: {
                     labels: labels,
-                    dataSets: {
-                        title: "Lap Improvements",
-                        data: [1, 2, 1],
-                        //data: chartData,
-                        backgroundColor:  'rgba(75, 192, 192, 0.4)',
-                        borderColor: 'rgba(75, 192, 192, 1)'
-                    }
-                }
+                    datasets: [{
+                        data: lapData,
+                    }]
+                } 
             })
         })
     }
     render(){
-        console.log(this.state.chartData.dataSets)
-        // console.log(this.state.chartData.dataSets.title)
         const mappedLaps = this.props.sessionDetials.map((val, i) => {
             return (
                 <div className="mapped">
                     <p>{val.time}</p>
-                <p>Delta:</p>
+                    <p>Delta: </p>
                 </div>
                 
             )
@@ -85,16 +90,14 @@ class ViewSession extends React.Component {
                 {mappedLaps}
                 <Line
                         data={this.state.chartData}
+                        height={25}
+                        width={50}
                         options={{
-                            title:{
-                                display:true,
-                                text: 'Lap Improvements'
-                            },
-                            legend: {
-                                display: true
+                            title: {
+                                display: true,
+                                content: "Lap Improvements"
                             }
                         }}
-                        
                     />
             </div>
         )

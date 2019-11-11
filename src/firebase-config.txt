@@ -1,0 +1,23 @@
+import firebase from "firebase/app"
+import 'firebase/storage'
+
+
+const config = {
+        apiKey: "AIzaSyAetOMYzjmYjChTBoUzbDbMb3aNu7hDq-0",
+        authDomain: "personalproject-ea272.firebaseapp.com",
+        databaseURL: "https://personalproject-ea272.firebaseio.com",
+        projectId: "personalproject-ea272",
+        storageBucket: "personalproject-ea272.appspot.com",
+        messagingSenderId: "995465672130",
+        appId: "1:995465672130:web:b5e20bb5938bd37420125b",
+        measurementId: "G-QDB62DWLD6"
+}
+
+
+firebase.initializeApp(config)
+
+const storage = firebase.storage();
+
+export {
+        storage, firebase as default
+}
