@@ -38,6 +38,9 @@ class Viewtrack extends React.Component {
                 <Link to="/Races">
                     <button>Back to all tracks</button>
                 </Link>
+                <Link to={`/Edittrack/${this.props.match.params.track_id}`}>
+                    <button>Edit Track</button>
+                </Link>
                 {mappedSessions}
             </div>
         )

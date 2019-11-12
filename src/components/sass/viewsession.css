@@ -1,0 +1,34 @@
+.lapTimes {
+    grid-template-columns: 1fr;
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 20vw;
+    box-shadow: 8px 11px 5px 0px rgba(0,0,0,0.75);
+    color: white
+}
+
+
+.lapTimeCards {
+    display: flex;
+    justify-content: center;
+}
+
+.splitTime {
+    padding-right: 2vw;
+}
+
+.deltaTimeSlower {
+    color: darkred;
+    font-weight: bold;
+    padding-left: 1vw;
+}
+
+
+.deltaTimeEqual {
+    color: green;
+    font-weight: bold;
+    padding-left: 1vw;
+}

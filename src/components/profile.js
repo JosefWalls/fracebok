@@ -22,7 +22,9 @@ class Profile extends React.Component {
         })
     }
 
-
+    handleEditClick = () => {
+        console.log(this.props.user)
+    }
 
     render(){
         return (
@@ -36,6 +38,9 @@ class Profile extends React.Component {
                     <img src={this.props.user[0] && this.props.user[0].header} className="header"></img>
                 </header>
                 <div className="profileCards">
+                    <Link to={`/Editprofile/${this.props.user_id}`}>
+                        <button onClick={this.handleEditClick}>Edit Profile</button>
+                    </Link>
                     <Link to="/Garage">
                         <button>Garage</button>
                     </Link>

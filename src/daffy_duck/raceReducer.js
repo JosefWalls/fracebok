@@ -11,7 +11,7 @@ const initialState = {
     laps: [],
     sessionId: "",
     trackSessions: [],
-    sessionDetials: []
+    sessionDetails: []
 }
 
 
@@ -19,6 +19,8 @@ const UPDATE_STATE = "UPDATE_STATE"
 const RETRIEVE_USER_TRACKS = "RETRIEVE_USER_TRACKS"
 const TRACK_SESSIONS = "TRACK_SESSIONS"
 const SESSION_DETAILS = "SESSION_DETAILS"
+const DELETE_SESSION = "DELETE_SESSION"
+const EDIT_TRACK = "EDIT_TRACK"
 
 export const updateState = (e) => {
     return {
@@ -48,6 +50,20 @@ export const getSessionDetails = (session_id) => {
     }
 }
 
+export const deleteSession = (session_id) => {
+    return {
+        type: DELETE_SESSION,
+        payload: axios.delete(`/races/delete/${session_id}`)
+    }
+}
+
+export const editTrack = (track_id) => {
+    return {
+        type: EDIT_TRACK,
+        payload: axios.put(`/races/EditTrack/${track_id}`)
+    }
+}
+
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
@@ -64,7 +80,15 @@ export default function reducer(state = initialState, action){
         case `${SESSION_DETAILS}_PENDING`:
             return {...state, loading: true}
         case `${SESSION_DETAILS}_FULFILLED`:
-            return {...state, loading: false, sessionDetials: payload.data}
+            return {...state, loading: false, sessionDetails: payload.data}
+        case `${DELETE_SESSION}_PENDING`:
+            return {...state, loading: true}
+        case `${DELETE_SESSION}_FULFILLED`:
+            return {...state, loading: false}
+        case `${EDIT_TRACK}_PENDING`:
+            return {...state, loading: true}
+        case `${EDIT_TRACK}_FULFILLED`:
+            return {...state, loading: false}
         default:
             return state
     }

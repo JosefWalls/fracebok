@@ -65,6 +65,21 @@ const getBestLap = async (req, res) => {
     
 }
 
+const deleteRace = async (req, res) => {
+    const session_id = +req.params.session_id;
+    const db = req.app.get("db")
+    const results = await db.delete_race(session_id)
+    res.status(200).json("Race deleted")
+}
+
+const editTrack = async (req, res) => {
+    const track_id = +req.params.track_id;
+    const {track_name, turns, length} = req.body;
+    const db = req.app.get("db")
+    const results = await db.edit_track(track_name, turns, length, track_id)
+    res.status(200).json("Good jobz")
+}
+
 module.exports = {
     addTrack,
     getUserTracks,
@@ -72,7 +87,9 @@ module.exports = {
     getTrackSessions,
     getSessionDetails,
     getBestLap,
-    getSessionLength
+    getSessionLength,
+    deleteRace,
+    editTrack
 }
 
 

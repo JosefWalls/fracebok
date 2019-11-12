@@ -49,6 +49,8 @@ app.post("/races/addRace", rR.addTrack)
 app.get("/races/tracks", rR.getUserTracks)
 app.post("/races/Addlap", rR.addLap)
 app.get("/races/:track_id", rR.getTrackSessions)
+app.delete("/races/delete/:session_id", rR.deleteRace)
+app.put("/races/EditTrack/:track_id", rR.editTrack)
 
 //session
 app.get("/session/:session_id", rR.getSessionDetails)
