@@ -3,30 +3,64 @@ import {Link} from 'react-router-dom';
 import {storage} from "./../firebase-config";
 import {connect} from 'react-redux'
 import {updateState} from "./../daffy_duck/photoReducer"
+import axios from "axios"
 
 class Photos extends React.Component {
     constructor(){
         super()
-
+        this.setState({
+            link: "",
+            description: "",
+            title: ""
+        })
        
     }
 
+
     componentDidMount(){
-        const random = (Math.random() *  254999999)
-        this.props.updateState({session_id: random})
     }
 
-    handleChange = (e) => {
-        this.props.updateState({[e.target.name]: e.target.value})
+    handleTitle = (e) => {
+        this.setState({title: e.target.value})
+    }
+
+    handleDescription = (e) => {
+        this.setState({description: e.target.value})
+    }
+
+    handlePhoto = (e) => {
+        if(e.target.files[0]){
+            const image = (e.target.files[0])
+            const uploadTask = storage.ref(`/photo_gallery/${image.name}`).put(image)
+            uploadTask.on("state_changed", 
+            () => {
+                storage.ref('photo_gallery').child(image.name).getDownloadURL()
+                .then(url => {
+                    this.setState({link: url})
+                })
+            }
+            )
+        }
+     }
+
+    handleSubmit = (e) => {
+        console.log(this.state)
+        e.preventDefault()
+
+        axios.post("/photos/addImage", {
+            link: this.state.link,
+            description: this.state.description,
+            title: this.state.title
+        })
     }
 
    render(){
        return (
-           <div>
-               <input placeholder="Enter Title" name="title" onChange={this.handleChange}></input>
-               <input placeholder="Enter Description" name="description" onChange={this.handleChange}></input>
-               <input placeholder="Enter Track" name="track" onChange={this.handleChange}></input>
-               <input type="file"></input>
+           <div className="main">
+               <input placeholder="Enter Title" name="title" onChange={this.handleTitle}></input>
+               <input placeholder="Enter Description" name="description" onChange={this.handleDescription}></input>
+               <input type="file" onChange={this.handlePhoto}></input>
+               <button onClick={this.handleSubmit}>Submit Photo</button>
            </div>
        )
    }

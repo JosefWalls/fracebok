@@ -31,11 +31,11 @@ class Addrace extends React.Component {
         this.setState({lap: e.target.value})
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault()
         this.setState({laps: [...this.state.laps, this.state.lap]})
         this.setState({lap: ""})
-        Axios.post("/races/Addlap", {
+        await Axios.post("/races/Addlap", {
             time: this.state.lap,
             track_id: this.props.track_id,
             car_id: this.props.car_id,

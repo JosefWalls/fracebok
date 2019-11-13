@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer"
+import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer";
+import {getGarage} from "./../daffy_duck/garageReducer"
 import {connect} from 'react-redux'
 
 class Races extends React.Component {
@@ -8,8 +9,9 @@ class Races extends React.Component {
         super()
     }
 
-    componentDidMount(){
-        this.props.retrieveUserTracks()
+    componentDidMount = async () => {
+        await this.props.retrieveUserTracks()
+        await this.props.getGarage()
     }
 
     render(){
@@ -22,6 +24,18 @@ class Races extends React.Component {
                     <Link to={`/Races/${val.track_id}`} key={i}>
                     <button>View</button>
                    </Link>
+                </div>
+            )
+        })
+
+        const mappedGarage = this.props.garage.map((val, i) => {
+            return (
+                <div className="mapped">
+                    <h1>{val.year} {val.make} {val.model}</h1>
+                    <img className="carImage" src={val.image}></img>
+                    <Link to={`/Viewcarsessions/${val.car_id}`}>
+                        <button>View</button>
+                    </Link>
                 </div>
             )
         })
@@ -44,6 +58,9 @@ class Races extends React.Component {
                 <div className="garage">
                 {mappedTracks}
                 </div>
+                <div className="garage">
+                    {mappedGarage}
+                </div>
             </div>
         )
     }
@@ -51,8 +68,9 @@ class Races extends React.Component {
 
 const mapStateToProps = reduxState => {
     return {
-        userTracks: reduxState.RaceReducer.userTracks
+        userTracks: reduxState.RaceReducer.userTracks,
+        garage: reduxState.GarageReducer.garage
     }
 }
 
-export default connect(mapStateToProps, {retrieveUserTracks})(Races);
+export default connect(mapStateToProps, {retrieveUserTracks, getGarage})(Races);

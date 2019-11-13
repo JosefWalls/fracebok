@@ -18,6 +18,7 @@ class EditCar extends React.Component {
     }
 
     componentDidMount(){
+        console.log(this.props.car)
         this.setState({make: this.props.car.make})
         this.setState({model: this.props.car.model})
         this.setState({year: this.props.car.year})

@@ -6,12 +6,15 @@ const initialState = {
     length: "",
     loading: "",
     userTracks: [],
+    userCars: [],
     track_id: "",
     car_id: "",
     laps: [],
     sessionId: "",
     trackSessions: [],
-    sessionDetails: []
+    sessionDetails: [],
+    trackDetails: {},
+    carSessions: []
 }
 
 
@@ -21,6 +24,9 @@ const TRACK_SESSIONS = "TRACK_SESSIONS"
 const SESSION_DETAILS = "SESSION_DETAILS"
 const DELETE_SESSION = "DELETE_SESSION"
 const EDIT_TRACK = "EDIT_TRACK"
+const DELETE_TRACK = "DELETE_TRACK"
+const CAR_SESSIONS = "CAR_SESSIONS"
+const TRACK_DETAILS = "TRACK_DETAILS"
 
 export const updateState = (e) => {
     return {
@@ -36,10 +42,18 @@ export const retrieveUserTracks = () => {
     }
 }
 
+
 export const getTrackSessions = (track_id) => {
     return {
         type: TRACK_SESSIONS,
         payload: axios.get(`/races/${track_id}`)
+    }
+}
+
+export const getCarSessions = (car_id) => {
+    return {
+        type: CAR_SESSIONS,
+        payload: axios.get(`/races/cars/${car_id}`)
     }
 }
 
@@ -61,6 +75,20 @@ export const editTrack = (track_id) => {
     return {
         type: EDIT_TRACK,
         payload: axios.put(`/races/EditTrack/${track_id}`)
+    }
+}
+
+export const deleteTrack = (track_id) => {
+    return {
+        type: DELETE_TRACK,
+        payload: axios.delete(`/races/DeleteTrack/${track_id}`)
+    }
+}
+
+export const getTrackDetails = (session_id) => {
+    return {
+        type: TRACK_DETAILS,
+        payload: axios.get(`/races/trackInfo/${session_id}`)
     }
 }
 
@@ -89,6 +117,18 @@ export default function reducer(state = initialState, action){
             return {...state, loading: true}
         case `${EDIT_TRACK}_FULFILLED`:
             return {...state, loading: false}
+        case `${DELETE_TRACK}_PENDING`:
+            return {...state, loading: true}
+        case `${DELETE_TRACK}_FULFILLED`:
+            return {...state, loading: false}
+        case `${CAR_SESSIONS}_PENDING`:
+            return {...state, loading: true}
+        case `${CAR_SESSIONS}_FULFILLED`:
+            return {...state, loading: false, carSessions: payload.data} 
+        case `${TRACK_DETAILS}_PENDING`:
+            return {...state, loading: true}
+        case `${TRACK_DETAILS}_FULFILLED`:
+            return {...state, loading: false, trackDetails: payload.data}
         default:
             return state
     }

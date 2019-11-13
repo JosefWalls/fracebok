@@ -8,7 +8,8 @@ const initialState = {
     year: "",
     garage: [],
     loading: false,
-    car: []
+    car: [],
+    visitedTracksList: []
 }
 
 
@@ -16,7 +17,8 @@ const UPDATE_STATE = "UPDATE_STATE";
 const GET_GARAGE = "GET_GARAGE";
 const GET_CAR = "GET_CAR";
 const DELETE_CAR = "DELETE_CAR";
-const EDIT_CAR = "EDIT_CAR"
+const EDIT_CAR = "EDIT_CAR";
+const VISITED_TRACKS = "VISITED_TRACKS"
 
 export const updateState = e => {
     return {
@@ -54,6 +56,14 @@ export const editCar = (car_id) => {
         payload: axios.put(`/garage/cars/${car_id}`)
     }
 }
+
+export const visitedTracks = (car_id) => {
+    return {
+        type: VISITED_TRACKS,
+        payload: axios.get(`/races/cars/sessions/${car_id}`)
+    }
+}
+
 export default function reudcer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
@@ -76,6 +86,11 @@ export default function reudcer(state = initialState, action){
             return {...state, loading: true}
         case `${EDIT_CAR}_FULFILLED`:
             return {...state, loading: false}
+        case `${VISITED_TRACKS}_PENDING`:
+            return {...state, loading: true}
+        case `${VISITED_TRACKS}_FULFILLED`:
+            console.log(payload.data)
+            return {...state, loaidng: true, visitedTracksList: payload.data}
         default:
             return state
     }

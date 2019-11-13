@@ -1,12 +1,18 @@
 import axios from 'axios'
 
 const initalState = {
-    user: {},
-    loading: false
+    user: [],
+    loading: false,
+    firstname: "",
+    username: "",
+    profile: "",
+    header: ""
 }
 
 
 const RETRIEVE_INFO = "RETRIEVE_INFO"
+const UPDATE_STATE = "UPDATE_STATE"
+const DELETE_PROFILE = "DELETE_PROFILE"
 
 export const retrieveInfo = () => {
     return {
@@ -15,6 +21,19 @@ export const retrieveInfo = () => {
     }
 }
 
+export const updateState = (e) => {
+    return {
+        type: UPDATE_STATE,
+        payload: e
+    }
+}
+
+export const deleteProfile = () => {
+    return {
+        type: DELETE_PROFILE,
+        payload: axios.delete("/api/DeleteProfile")
+    }
+}
 
 export default function reducer(state = initalState, action){
     const {type, payload} = action;
@@ -22,9 +41,13 @@ export default function reducer(state = initalState, action){
         case `${RETRIEVE_INFO}_PENDING`:
             return {...state, loading: true}
         case `${RETRIEVE_INFO}_FULFILLED`:
-            // console.log(payload.data)
             return {...state, loading: false, user: payload.data}
-            // console.log(state)
+        case UPDATE_STATE:
+            return {...state, ...payload}
+        case `${DELETE_PROFILE}_PENDING`:
+            return {...state, loading: true}
+        case `${DELETE_PROFILE}_FULFILLED`:
+            return {...state, loading: false}
         default:
             return state
     }

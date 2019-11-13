@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {getCar, updateState, deleteCar} from "./../daffy_duck/garageReducer"
+import {getCar, updateState, deleteCar, visitedTracks} from "./../daffy_duck/garageReducer"
 import {connect} from 'react-redux'
 import "./sass/viewcar.css";
 
@@ -18,15 +18,10 @@ class Viewcar extends React.Component {
     }
 
 
-    componentDidMount(){
-        this.props.getCar(this.props.match.params.car_id)
-        .then(response => {
-            this.setState({make: response.action.payload.data.make})
-            this.setState({model: response.action.payload.data.model})
-            this.setState({year: response.action.payload.data.year})
-            this.setState({header: response.action.payload.data.image})
-            this.setState({car_id: response.action.payload.data.car_id})
-        })
+    componentDidMount = async () => {
+        console.log(this.props.car)
+       await this.props.getCar(this.props.match.params.car_id)
+       await this.props.visitedTracks(this.props.match.params.car_id)
     }
 
     handleDelete = () => {
@@ -35,12 +30,19 @@ class Viewcar extends React.Component {
     }
 
     render() {
-        // console.log(this.state.car_id)
+        // console.log(this.props.visitedTracksList)
+        const mappedVisits = this.props.visitedTracksList.map((val, i) => {
+            return (
+                <div>
+                    <h1>{val.track_name}</h1>
+                </div>
+            )
+        })
         return (
             <div>
-                <p>View</p>
-                <h1>{this.state.year} {this.state.make} {this.state.model}</h1>
-                <img className="carImage" src={this.state.header} ></img>
+                
+                    <h1>{this.props.car.year} {this.props.car.make} {this.props.car.model}</h1>
+                <img className="carImage" src={this.props.car.image} ></img>
                 <Link to="/Editcar">
                     <button>Edit Car</button>
                 </Link>
@@ -48,6 +50,8 @@ class Viewcar extends React.Component {
                 <Link to="/Garage">
                     <button>Back to garage</button>
                 </Link>
+                <h1>Tracks Visited:</h1>
+                {mappedVisits}
             </div>
         )
     }
@@ -56,8 +60,10 @@ class Viewcar extends React.Component {
 
 const mapStateToProps = reduxState => {
     return {
-        car_id: reduxState.GarageReducer.car_id
+        car_id: reduxState.GarageReducer.car_id,
+        visitedTracksList: reduxState.GarageReducer.visitedTracksList,
+        car: reduxState.GarageReducer.car
     }
 }
 
-export default connect(mapStateToProps, {updateState, getCar, deleteCar})(Viewcar);
+export default connect(mapStateToProps, {updateState, getCar, deleteCar, visitedTracks})(Viewcar);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getSessionDetails, deleteSession } from "./../daffy_duck/raceReducer";
+import { getSessionDetails, deleteSession, getTrackDetails} from "./../daffy_duck/raceReducer";
 import {
   getBestLap,
   createLabels
@@ -49,6 +49,7 @@ class ViewSession extends React.Component {
     this.props.getBestLap(this.props.match.params.session_id);
     this.renderGraph();
     this.setState({session_id: this.props.match.params.session_id})
+    this.props.getTrackDetails(this.props.match.params.session_id)
   };
 
   renderGraph = () => {
@@ -79,25 +80,27 @@ class ViewSession extends React.Component {
 
   handleDelete = () => {
     this.props.history.push("/Races")
-    console.log(this.state.session_id)
     this.props.deleteSession(this.state.session_id)
   }
 
   render() {
-      // console.log(this.props.sessionDetails)
+      
     const mappedLaps = this.props.sessionDetails.map((val, i) => {
-      // console.log(i)
-      return <ViewsessionElement val={val} bestLap={this.props.bestLap} key={i} />
-    });
+      return (
+      <div>
+        <ViewsessionElement val={val} bestLap={this.props.bestLap} key={i} lapInc={i+ 1} length={this.props.trackDetails[0] && this.props.trackDetails[0].length}/>
+      </div>
+    )});
 
     return (
       <div>
         <h1>View session</h1>
-        <Link to={`/Races/${this.props.track_id}`}>
+        <Link to="/Races">
           <button>Back</button>
         </Link>
         <button onClick={this.handleDelete}>Delete Session</button>
         <p>Laps: {this.props.sessionDetails.length}</p>
+          <p>Total Estimated Session Length: {Math.floor((this.props.trackDetails[0] && this.props.trackDetails[0].length * (this.props.sessionDetails.length - 1)) * 100) / 100 }miles</p>
         <p>Best Lap: {this.props.bestLap}</p>
         <div className="lapTimeCards">
           <div className="lapTimes">{mappedLaps}</div>
@@ -123,11 +126,12 @@ const mapStateToProps = reduxState => {
     sessionDetails: reduxState.RaceReducer.sessionDetails,
     bestLap: reduxState.SessionReducer.bestLap,
     labels: reduxState.SessionReducer.labels,
-    session_id: reduxState.RaceReducer.session_id
+    session_id: reduxState.RaceReducer.session_id,
+    trackDetails: reduxState.RaceReducer.trackDetails
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getSessionDetails, getBestLap, createLabels, deleteSession }
+  { getSessionDetails, getBestLap, createLabels, deleteSession, getTrackDetails}
 )(ViewSession);

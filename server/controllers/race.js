@@ -36,6 +36,20 @@ const getTrackSessions = async (req, res) => {
     res.status(200).json(trackSessions)
 }
 
+const getVisitedTracks = async (req, res) => {
+    const car_id = +req.params.car_id
+    const db = req.app.get("db")
+    const visitedTracks = await db.get_tracks_visited(car_id)
+    res.status(200).json(visitedTracks)
+}
+
+const getCarSessions = async (req, res) => {
+    const car_id = +req.params.car_id
+    const {id} = req.session.user
+    const db = req.app.get("db")
+    const results = await db.get_car_sessions(car_id, id)
+    res.status(200).json(results)
+}
 
 const getSessionDetails = async (req, res) => {
     const session_id = +req.params.session_id
@@ -80,6 +94,20 @@ const editTrack = async (req, res) => {
     res.status(200).json("Good jobz")
 }
 
+const deleteTrack = async (req, res) => {
+    const track_id = +req.params.track_id;
+    const db = req.app.get("db")
+    const results = db.delete_track(track_id)
+    res.status(200).json("Track Deleted")
+}
+
+const trackDetails = async (req, res) => {
+    const session_id = +req.params.session_id;
+    const db = req.app.get("db")
+    const fullDetails = await db.get_track_info(session_id)
+    res.status(200).json(fullDetails)
+}
+
 module.exports = {
     addTrack,
     getUserTracks,
@@ -89,7 +117,11 @@ module.exports = {
     getBestLap,
     getSessionLength,
     deleteRace,
-    editTrack
+    editTrack,
+    deleteTrack,
+    getCarSessions,
+    getVisitedTracks,
+    trackDetails
 }
 
 

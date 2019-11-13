@@ -13,7 +13,23 @@ const getUser = async (req, res) => {
     // console.log(userProfile)
 }
 
+const editProfile = async(req, res) => {
+    const {username, firstname, profile, header} = req.body;
+    const {id} = req.session.user
+    const db = req.app.get("db")
+    const results = await db.edit_profile(username, firstname, profile, header, id)
+    res.status(200).json("Profile Edited")
+}
+
+const deleteProfile = async (req, res) => {
+    const {id} = req.session.user
+    const db = req.app.get("db")
+    const results = await db.delete_profile(id)
+    res.status(200).json("Profile Deleted")
+}
 
 module.exports = {
-    getUser
+    getUser,
+    editProfile,
+    deleteProfile
 }

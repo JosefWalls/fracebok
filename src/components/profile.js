@@ -23,7 +23,7 @@ class Profile extends React.Component {
     }
 
     handleEditClick = () => {
-        console.log(this.props.user)
+        // console.log(this.props.user)
     }
 
     render(){

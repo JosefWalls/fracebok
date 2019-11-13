@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import {getTrackSessions, updateState} from "./../daffy_duck/raceReducer"
+import {getTrackSessions, updateState, deleteTrack} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux'
 
 class Viewtrack extends React.Component {
@@ -17,6 +17,11 @@ class Viewtrack extends React.Component {
 
     componentDidMount(){
         this.props.getTrackSessions(this.props.match.params.track_id)
+    }
+
+    handleDelete = async() => {
+        await this.props.deleteTrack(this.props.match.params.track_id)
+        this.props.history.push("/Races")
     }
 
     render(){
@@ -41,6 +46,7 @@ class Viewtrack extends React.Component {
                 <Link to={`/Edittrack/${this.props.match.params.track_id}`}>
                     <button>Edit Track</button>
                 </Link>
+                <button onClick={this.handleDelete}>Delete Track</button>
                 {mappedSessions}
             </div>
         )
@@ -53,5 +59,5 @@ const mapStateToProps = reduxState => {
     }
 }
 
-export default connect(mapStateToProps, {getTrackSessions})(Viewtrack)
+export default connect(mapStateToProps, {getTrackSessions, deleteTrack})(Viewtrack)
 

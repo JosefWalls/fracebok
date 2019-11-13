@@ -35,6 +35,8 @@ app.post("/auth/logout", lR.logoutUser)
 
 //profile
 app.get("/api/profile", pR.getUser)
+app.put("/api/Editprofile", pR.editProfile)
+app.delete("/api/DeleteProfile", pR.deleteProfile)
 
 
 //garage
@@ -47,10 +49,15 @@ app.put("/garage/cars/:car_id", gR.editCar)
 //race
 app.post("/races/addRace", rR.addTrack)
 app.get("/races/tracks", rR.getUserTracks)
+app.get("/races/trackInfo/:session_id", rR.trackDetails)
 app.post("/races/Addlap", rR.addLap)
 app.get("/races/:track_id", rR.getTrackSessions)
+app.get("/races/cars/:car_id", rR.getCarSessions)
 app.delete("/races/delete/:session_id", rR.deleteRace)
 app.put("/races/EditTrack/:track_id", rR.editTrack)
+app.delete("/races/DeleteTrack/:track_id", rR.deleteTrack)
+app.get("/races/cars/sessions/:car_id", rR.getVisitedTracks)
+
 
 //session
 app.get("/session/:session_id", rR.getSessionDetails)
