@@ -1,0 +1,55 @@
+@import "login";
+
+#garageTitle {
+    color: whitesmoke;
+    font-family: $logoFont;
+    font-size: $logoFont-size;
+    text-shadow: 2px 2px $alternativeTextShadow;
+    position: absolute;
+    left: 1100px;
+    bottom: 525px;
+    display: flex;
+    justify-content: center;
+}
+
+.garage {
+    height: 750px;
+    width: 1050px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.carCards {
+    display: flex;
+    justify-content: center;
+}
+
+.carImage {
+    margin-top: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius: 15%;
+}
+
+.carCards button {
+    // display: none;
+}
+
+.mappedCars {
+    height: 350px;
+    font-family: $logoFont;
+    background: $background;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+.mappedCars button {
+    margin-top: 20px;;
+}
+
+.mappedCars h1 {
+    margin-top: 20px;;
+}

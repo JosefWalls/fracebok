@@ -153,177 +153,67 @@ table {
   }
 }
 
-.userInfoCard {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-header.profilePictures {
-  background: rgba(12, 18, 12, 0.9);
-  height: 750px;
-  width: 1050px;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
-div.profileCards {
-  position: absolute;
-  top: 671px;
-  height: 100px;
-  width: 1050px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body {
+  line-height: 1;
 }
 
-.profileheader {
-  margin-top: 15px;
-  border: 3px solid whitesmoke;
-  width: 850px;
-  height: 300px;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+ol, ul {
+  list-style: none;
 }
 
-.profile {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 450px;
-  left: 950px;
-  border-radius: 50%;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+blockquote, q {
+  quotes: none;
 }
 
-#userUsername {
-  font-family: "ZCOOL KuaiLe", cursive;
-  font-size: 3em;
-  margin-right: 75px;
-  margin-top: 25px;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
 
-.buttonCard {
-  margin-top: 100px;
-  width: 250px;
-  height: 175px;
-  margin-right: 2px;
-  margin-left: 2px;
-  background: silver;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.profileCardHeaders {
-  color: white;
-  font-size: 2em;
-  font-family: "ZCOOL KuaiLe", cursive;
-  text-shadow: 2px 2px #f25c00;
-}
-
-.profileCardImages {
-  margin-top: 5px;
-  height: 125px;
-  width: 200px;
-}
-
-.logooutButton {
-  border: none;
-  margin-bottom: 5px;
-  font-family: "ZCOOL KuaiLe", cursive;
-  background: none;
+#editCarTitle {
   color: whitesmoke;
+  font-family: "ZCOOL KuaiLe", cursive;
   font-size: 3em;
   text-shadow: 2px 2px #5dbcd2;
   position: absolute;
   left: 1100px;
   bottom: 525px;
 }
-
-.logooutButton:hover {
-  color: #5dbcd2;
-  text-shadow: 2px 2px whitesmoke;
-}
-
-@media (max-width: 1000px) {
-  header.profilePictures {
-    width: 750px;
-    margin-right: 250px;
-  }
-  img.profileheader {
-    width: 600px;
-  }
-  img.profile {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    left: 710px;
-  }
-  .profileCards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding-right: 250px;
-    height: 175px;
-  }
-}
-
-@media (max-width: 320px) {
-  img.profileheader {
-    display: none;
-  }
-  img.profile {
-    position: absolute;
-    left: 90px;
-    top: 200px;
-  }
-  header.profilePictures {
-    margin-right: 1020px;
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
-    height: 1500px;
-  }
-  h1#userUsername {
-    position: absolute;
-    top: 350px;
-    left: 40px;
-    text-shadow: 2px 2px #f25c00;
-  }
-  .profileCards {
-    padding-right: 1025px;
-    padding-top: 175px;
-  }
-  .logooutButton {
-    margin-right: 1015px;
-  }
-  p.logooutButton {
-    position: absolute;
-    left: 10px;
-    top: 115px;
-    font-size: 2em;
-    width: 300px;
-  }
-}
-/*# sourceMappingURL=profile.css.map */
+/*# sourceMappingURL=editcar.css.map */

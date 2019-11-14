@@ -4,6 +4,7 @@ import {getCar, editCar} from "./../daffy_duck/garageReducer";
 import {connect} from 'react-redux'
 import Axios from 'axios';
 import {storage} from "./../firebase-config";
+import "./sass/editcar.css"
 
 class EditCar extends React.Component {
     constructor(){
@@ -61,16 +62,21 @@ class EditCar extends React.Component {
 
     render(){
         return(
-            <div>
-                <p>Edit car</p>
+            <div className="main">
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <p id="editCarTitle">Edit car</p>
                 <Link to={"/Viewcar"}>
                     <button>Back to Vehicle</button>
                 </Link>
+                <div className="addCarCard">
                 <input placeholder={this.props.car.make} name="make" onChange={this.handleEdit}></input>
                 <input placeholder={this.props.car.model} name="model" onChange={this.handleEdit}></input>
                 <input placeholder={this.props.car.year} name="year" onChange={this.handleEdit}></input>
                 <input type="file" placeholder="Update image" onChange={this.handleNewImage} name="image"></input>
                 <button onClick={this.handleSubmit}>Submit updates</button>
+                </div>
             </div>
         )
     }

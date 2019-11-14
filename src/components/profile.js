@@ -31,7 +31,7 @@ class Profile extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <button onClick={this.handleLogout}>Log Out</button>
+                <p onClick={this.handleLogout} className="logooutButton">Log Out</p>
              <div className="userInfoCard">
                 <header className="profilePictures">
                     <img src={this.props.user[0] && this.props.user[0].header} className="profileheader"></img>

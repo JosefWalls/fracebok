@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {storage} from "./../firebase-config"
 import {connect} from 'react-redux'
 import Axios from 'axios'
+import "./sass/editprofile.css"
 
 class EditProfile extends React.Component{
     constructor(){
@@ -74,17 +75,26 @@ class EditProfile extends React.Component{
 
     render(){
         return (
-            <div>
-                <p>Edit Profile</p>
-                <input placeholder="Update Name" onChange={this.handleChange} name="username"></input>
-                <input placeholder="Update First Name" onChange={this.handleChange} name="firstname"></input>
-                <input type="file" placeholder="Update Profile" onChange={this.handleProfile}></input>
-                <input type="file" placeholder="Update Header" onChange={this.handleHeader}></input>
-                <button onClick={this.handleDelete}>DELETE PROFILE</button>
-                <button onClick={this.handleSubmit}>Submit Updates</button>
+            <div className="main">
+              <div>
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <div className="editProfileCard">
+                    <p className="editTitle">Edit Profile</p>
+                    <input placeholder="Update Name" onChange={this.handleChange} name="username"></input>
+                    <input placeholder="Update First Name" onChange={this.handleChange} name="firstname"></input>
+                    <h1>Edit Profile</h1>
+                    <input type="file" placeholder="Update Profile" onChange={this.handleProfile}></input>
+                    <h1>Edit Header</h1>
+                    <input type="file" placeholder="Update Header" onChange={this.handleHeader}></input>
+                    <button onClick={this.handleDelete} id="deleteProfile">DELETE PROFILE</button>
+                    <button onClick={this.handleSubmit}>Submit Updates</button>
                 <Link to="/Profile">
                 <button>Cancel</button>
                 </Link>
+                </div>
+              </div>
             </div>
         )
     }

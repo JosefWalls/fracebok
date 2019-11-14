@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import {updateState} from "./../daffy_duck/garageReducer";
 import Axios from 'axios';
 import {connect} from 'react-redux'
+import "./sass/addcar.css"
 
 class AddCar extends React.Component {
     constructor(){
@@ -49,19 +50,20 @@ class AddCar extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Add Car</h1>
-                <Link to="/Garage">
-                    <button>Back to Garage</button>
-                </Link>
-                <form>
+            <div className="main">
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <h1 className="addCarTitle">Add Car</h1>
+                <form className="addCarCard">
                     <input placeholder="Enter Make" name="make" onChange={this.handleChange}></input>
                     <input placeholder="Enter Model" name="model" onChange={this.handleChange}></input>
                     <input placeholder="Enter Year" name="year" onChange={this.handleChange}></input>
                     <input type="file" placeholder="Add image" onChange={this.handleCar} name="image"></input>
-                    {/* <Link to="/Garage"> */}
                         <button onClick={this.submitCar}>Add Car</button>
-                    {/* </Link> */}
+                    <Link to="/Garage">
+                        <button>Back to Garage</button>
+                    </Link>
                 </form>
             </div>
         )
