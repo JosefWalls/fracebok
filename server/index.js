@@ -66,5 +66,7 @@ app.get("/session/length/:session_id", rR.getSessionLength)
 
 //photos
 app.post("/photos/addImage", photoR.addImage)
+app.get("/photos/UserImages", photoR.getUserImages)
+app.get("/photos/getImage/:photo_id", photoR.getPhoto)
 
 app.listen(4201, () => console.log("Port 4201"))

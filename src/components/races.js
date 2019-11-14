@@ -15,6 +15,7 @@ class Races extends React.Component {
     }
 
     render(){
+        console.log(this.props.userTracks)
         const mappedTracks = this.props.userTracks.map((val, i) => {
             return (
                 <div className="mapped">

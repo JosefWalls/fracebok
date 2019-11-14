@@ -6,7 +6,6 @@ import {
   createLabels
 } from "./../daffy_duck/session_detailsReducer";
 import { connect } from "react-redux";
-import "./sass/viewsession.css";
 import ViewsessionElement from './ViewsessionElement';
 import { Line } from "react-chartjs-2";
 

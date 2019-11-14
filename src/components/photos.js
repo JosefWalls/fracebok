@@ -1,79 +1,48 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {storage} from "./../firebase-config";
+import {Link} from 'react-router-dom'
+import {getUserPhotos} from "./../daffy_duck/photoReducer"
 import {connect} from 'react-redux'
-import {updateState} from "./../daffy_duck/photoReducer"
-import axios from "axios"
 
 class Photos extends React.Component {
     constructor(){
         super()
-        this.setState({
-            link: "",
-            description: "",
-            title: ""
-        })
-       
     }
 
-
-    componentDidMount(){
+    componentDidMount = async() => {
+        await this.props.getUserPhotos()
     }
 
-    handleTitle = (e) => {
-        this.setState({title: e.target.value})
-    }
-
-    handleDescription = (e) => {
-        this.setState({description: e.target.value})
-    }
-
-    handlePhoto = (e) => {
-        if(e.target.files[0]){
-            const image = (e.target.files[0])
-            const uploadTask = storage.ref(`/photo_gallery/${image.name}`).put(image)
-            uploadTask.on("state_changed", 
-            () => {
-                storage.ref('photo_gallery').child(image.name).getDownloadURL()
-                .then(url => {
-                    this.setState({link: url})
-                })
-            }
+    render(){
+        const mappedImages = this.props.userImages && this.props.userImages.map((val, i) => {
+            return (
+                <div className="mapped">
+                    <Link to={`/Viewphoto/${val.photo_id}`}>
+                    <img className="carImage" src={val.link}></img>
+                    </Link>
+                    <h4>{val.title}</h4>
+                </div>
             )
-        }
-     }
-
-    handleSubmit = (e) => {
-        console.log(this.state)
-        e.preventDefault()
-
-        axios.post("/photos/addImage", {
-            link: this.state.link,
-            description: this.state.description,
-            title: this.state.title
         })
+        return (
+            <div className="main">
+                <Link to="/Addphoto">
+                    <button>Add a Photo </button>
+                </Link>
+                <Link to="/Profile">
+                    <button>Back to Profile</button>
+                </Link>
+                <div className="garage">
+                {mappedImages}
+                </div>
+            </div>
+        )
     }
-
-   render(){
-       return (
-           <div className="main">
-               <input placeholder="Enter Title" name="title" onChange={this.handleTitle}></input>
-               <input placeholder="Enter Description" name="description" onChange={this.handleDescription}></input>
-               <input type="file" onChange={this.handlePhoto}></input>
-               <button onClick={this.handleSubmit}>Submit Photo</button>
-           </div>
-       )
-   }
 }
 
 const mapStateToProps = reduxState => {
     return {
-        title: reduxState.PhotoReducer.title,
-        description: reduxState.PhotoReducer.description,
-        track: reduxState.PhotoReducer.track,
-        session_id: reduxState.PhotoReducer.session_id
+        userImages: reduxState.PhotoReducer.userImages
     }
 }
 
-
-export default connect(mapStateToProps, {updateState})(Photos)
+export default connect(mapStateToProps, {getUserPhotos})(Photos)

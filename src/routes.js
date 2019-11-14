@@ -4,7 +4,8 @@ import Register from "./components/register";
 import Profile from "./components/profile";
 import Garage from "./components/garage";
 import Races from "./components/races";
-import Photos from "./components/photos";
+import AddPhoto from "./components/addphotos";
+import Photos from "./components/photos"
 import AddCar from "./components/addcar"
 import {Switch, Route} from "react-router-dom";
 import EditCar from "./components/editcar";
@@ -16,6 +17,7 @@ import Viewsession from "./components/viewsession";
 import EditProfile from "./components/editprofile";
 import EditTrack from "./components/edittrack";
 import ViewCarSession from "./components/viewcarSessions"
+import ViewPhoto from "./components/viewphoto"
 
 export default (
     <Switch>
@@ -25,6 +27,7 @@ export default (
         <Route path="/Garage" component={Garage}/>
         <Route exact path="/Races/:track_id" component={Viewtrack} />
         <Route path="/Races" component={Races}/>
+        <Route path="/Addphoto" component={AddPhoto} />
         <Route path="/Photos" component={Photos} />
         <Route path="/Addcar" component={AddCar} />
         <Route path="/Editcar" component={EditCar} />
@@ -35,5 +38,6 @@ export default (
         <Route path="/Editprofile/:user_id" component={EditProfile} />
         <Route path="/Edittrack/:track_id" component={EditTrack} />
         <Route path="/Viewcarsessions/:car_id" component={ViewCarSession} />
+        <Route path="/Viewphoto/:photo_id" component={ViewPhoto} />
     </Switch>
 )

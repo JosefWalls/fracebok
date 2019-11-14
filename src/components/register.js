@@ -2,12 +2,11 @@ import React from 'react';
 import {updateState} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from 'react-redux'
 import axios from 'axios'
-import "./sass/register.css"
 import {storage} from "./../firebase-config";
 import fileUploader from "react-firebase-file-uploader"
 import firebase from "firebase";
-import "./sass/register.css"
 import {Link} from 'react-router-dom'
+import "./sass/register.css"
 
 class Register extends React.Component {
 
@@ -77,16 +76,20 @@ class Register extends React.Component {
         return(
             <div className="main">
                 <h1>Register</h1>
-                <input placeholder="Enter Username" name="username" onChange={this.handleChange}></input>
-                <input placeholder="Enter Password" name="password" onChange={this.handleChange}></input>
-                <input placeholder="Enter First Name" name="firstname" onChange={this.handleChange}></input>
-                <input type="file" onChange={this.handleProfileUpload} placeholder="Enter Profile"></input>
-                <input type="file" onChange={this.handleHeaderUpload} placeholder="Enter Header"></input>
-                <button onClick={this.handleClick}>Register</button>
-                <Link to="/">
-                <button>Cancel</button>
-                </Link>
-                {this.state.error === true ? <h1>The username you entered is not available</h1> : null}
+            <div className="registerBox">
+                <div className="registerInputs">
+                    <input placeholder="Enter Username" name="username" onChange={this.handleChange}></input>
+                    <input placeholder="Enter Password" name="password" onChange={this.handleChange}></input>
+                    <input placeholder="Enter First Name" name="firstname" onChange={this.handleChange}></input>
+                    <input type="file" onChange={this.handleProfileUpload} placeholder="Enter Profile"></input>
+                    <input type="file" onChange={this.handleHeaderUpload} placeholder="Enter Header"></input>
+                    <button onClick={this.handleClick}>Register</button>
+                    <Link to="/">
+                        <button>Cancel</button>
+                    </Link>
+                    {this.state.error === true ? <h1>The username you entered is not available</h1> : null}
+                </div>
+            </div>
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./sass/viewsession.css"
 
 const laps= []
 

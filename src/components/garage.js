@@ -2,7 +2,6 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {getGarage, updateState} from "./../daffy_duck//garageReducer"
 import {connect} from 'react-redux'
-import "./sass/garage.css"
 
 class Garage extends React.Component {
     constructor(){

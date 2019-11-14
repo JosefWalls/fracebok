@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {logoutUser} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from "react-redux"
 import {retrieveInfo} from "./../daffy_duck/profileReducer"
-import "./sass/profile.css";
 
 class Profile extends React.Component {
     constructor(){

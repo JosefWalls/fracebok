@@ -33,15 +33,22 @@ class Login extends React.Component {
         return (
     
             <div className="main">
-            <h1>Login</h1>
-            <input placeholder="Enter username" name="username" onChange={this.handleChange}></input>
-            <input placeholder="Enter password" name="password" onChange={this.handleChange} type="password"></input>
-            <Link to="/Profile">
-            <button onClick={this.handleClick}>Login</button>
-            </Link>
-            <Link to="/Register">
-            <button>Register</button>
-            </Link>
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+            <section className="loginbox">
+                <div className="loginInputs">
+                    <input placeholder="Enter username" name="username" onChange={this.handleChange}></input>
+                    <input placeholder="Enter password" name="password" onChange={this.handleChange} type="password"></input>
+                    <Link to="/Profile">
+                        <button onClick={this.handleClick}>Login</button>
+                    </Link>
+                    <Link to="/Register">
+                        <button>Register</button>
+                    </Link>
+                </div>
+            </section>
+            
             {this.state.error === true ? <h1>Incorrect login</h1>: null}
             </div>
         )
