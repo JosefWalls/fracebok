@@ -1,0 +1,97 @@
+@import "login";
+
+.userInfoCard {
+    display: flex;
+    justify-content: center;
+}
+
+header.profilePictures {
+    background: $background;
+    height: 750px;
+    width: 1050px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    transition-duration: 1s;
+}
+
+div.profileCards {
+    // display: none;
+    position: absolute;
+    top: 671px;
+    height: 100px;
+    width: 1050px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileheader {
+    margin-top: 15px;;
+    border: 3px solid whitesmoke;
+    width: 850px;
+    height: 300px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    transition-duration: 1s;
+}
+
+.profile {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 450px;
+    left: 950px;
+    border-radius: 50%;
+    transition-duration: 1s;
+}
+
+#userUsername {
+    font-family: $logoFont;
+    font-size: 3em;
+    margin-right: 75px;
+    margin-top: 25px;
+}
+
+
+.buttonCard {
+    margin-top: 100px;
+    width: 250px;
+    height: 175px;
+    margin-right: 2px;
+    margin-left: 2px;
+    background: silver;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+
+.profileCardHeaders {
+    color: white;
+    font-size: 2em;
+    font-family: $logoFont;
+    text-shadow: 2px 2px rgb(242, 92, 0);
+}
+
+.profileCardImages {
+    margin-top: 5px;
+    height: 125px;
+    width: 200px;
+}
+
+@media (max-width: 1000px){
+    header.profilePictures {
+        width: 750px;
+        margin-right: 250px;
+    }
+    img.profileheader {
+        width: 600px;
+    }
+    img.profile {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: 710px
+    }
+}

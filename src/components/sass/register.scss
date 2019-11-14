@@ -51,6 +51,15 @@ table {
 	border-spacing: 0;
 }
 
+#registerTitle {
+    font-family: $logoFont;
+    font-size: 3em;
+    position: absolute;
+    left: 1100px;
+    bottom: 525px;
+    text-shadow: 2px 2px $alternativeTextShadow;
+}
+
 .registerBox {
     height: 500px;
     display: flex;
@@ -59,19 +68,20 @@ table {
 
 .registerInputs {
     background: $background;
-    height: 250px;
+    height: 300px;
     width: 250px;
-    margin-top: 175px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     box-shadow: $backgroundShadow;
     margin-left: 550px;;
+    transition-duration: 1s;
 }
 
 .registerInputs input {
-    margin-top: 15px;
+    margin-top: 5px;
     width: 200px;
 }
 
@@ -80,4 +90,25 @@ table {
     width: 70px;
     border-radius: 10%;
     border: none;
+}
+
+button:hover {
+    background: red;
+}
+
+.uploadTitles {
+    color: white;
+    margin-top: 10px;
+    margin-right: 60px;
+    font-weight: bold
+}
+
+@media (max-width: 320px){
+    div.registerInputs {
+        margin-left: 35px;
+    }
+    div.header {
+        background: none;
+        width: 320px;
+    }
 }

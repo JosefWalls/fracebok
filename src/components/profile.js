@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {logoutUser} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from "react-redux"
 import {retrieveInfo} from "./../daffy_duck/profileReducer"
-
+import "./sass/profile.css"
 class Profile extends React.Component {
     constructor(){
         super()
@@ -28,28 +28,45 @@ class Profile extends React.Component {
     render(){
         return (
             <div className="main">
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
                 <button onClick={this.handleLogout}>Log Out</button>
-                <header className="something">
+             <div className="userInfoCard">
+                <header className="profilePictures">
+                    <img src={this.props.user[0] && this.props.user[0].header} className="profileheader"></img>
                     <div className="username">
                         <img src={this.props.user[0] && this.props.user[0].profile} className="profile"></img> 
-                        <h1>{this.props.user[0] && this.props.user[0].username}</h1>
+                        <h1 id="userUsername">{this.props.user[0] && this.props.user[0].username}</h1>
                     </div>
-                    <img src={this.props.user[0] && this.props.user[0].header} className="header"></img>
                 </header>
                 <div className="profileCards">
                     <Link to={`/Editprofile/${this.props.user_id}`}>
-                        <button onClick={this.handleEditClick}>Edit Profile</button>
+                        <div className="buttonCard">
+                            <p className="profileCardHeaders">Edit Profile</p>
+                            <img className="profileCardImages" src="./assets/fire_extinguisher.png"></img>
+                        </div>
                     </Link>
                     <Link to="/Garage">
-                        <button>Garage</button>
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Garage</p>
+                            <img className="profileCardImages" ></img>
+                        </div>
                     </Link>
                     <Link to="/Races">
-                        <button>Races</button>
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Races</p>
+                            <img className="profileCardImages" ></img>
+                        </div>
                     </Link>
                     <Link to="/Photos">
-                        <button>Photo Gallery</button>
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Photo Gallery</p>
+                            <img className="profileCardImages" ></img>
+                        </div>
                     </Link>
                 </div>
+              </div>
             </div>
         )
     }

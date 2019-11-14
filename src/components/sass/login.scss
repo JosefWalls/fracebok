@@ -9,7 +9,7 @@ $logoLeft: 0;
 $logoPadding-left: 50px;
 $logoPadding-top: 50px;
 $backgroundShadow: 10px 10px rgba(29, 26, 26, 0.562);
-
+$alternativeTextShadow: rgb(93, 188, 210);
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -61,6 +61,7 @@ table {
 }
 
 
+
 .main {
     background-image: url("./../assets/Headertemplate.png");
     background-repeat: no-repeat;
@@ -110,9 +111,45 @@ table {
     align-items: center;
     flex-direction: column;
     box-shadow: $backgroundShadow;
+    transition-duration: 1s;
 }
 
 .loginInputs input {
     margin-top: 45px;
     height: 25px;
+}
+
+.loginPageButtons {
+    margin-top: 15px;
+    width: 70px;
+    border: none;
+    cursor: url("./../assets/Header.png"), auto;
+}
+
+
+
+@media (max-width: 1000px){
+    div.loginInputs {
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 320px) {
+    div.loginInputs {
+        margin-left: 40px;
+    }
+    input {
+        margin-top: 10px;
+        // width: 250px;
+        // height: 400px;
+    }
+    button.loginPageButtons {
+        // height: 50px;
+        // width: 140px;
+        margin-top: 15px;
+        border-radius: 10%;
+    }
+    p#logo {
+        margin-left: 5px;
+    }
 }

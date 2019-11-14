@@ -75,13 +75,18 @@ class Register extends React.Component {
         // console.log(this.state)
         return(
             <div className="main">
-                <h1>Register</h1>
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <h1 id="registerTitle">Register</h1>
             <div className="registerBox">
                 <div className="registerInputs">
                     <input placeholder="Enter Username" name="username" onChange={this.handleChange}></input>
                     <input placeholder="Enter Password" name="password" onChange={this.handleChange}></input>
                     <input placeholder="Enter First Name" name="firstname" onChange={this.handleChange}></input>
+                    <p className="uploadTitles">Upload Profile Image</p>
                     <input type="file" onChange={this.handleProfileUpload} placeholder="Enter Profile"></input>
+                    <p className="uploadTitles">Upload Header Image</p>
                     <input type="file" onChange={this.handleHeaderUpload} placeholder="Enter Header"></input>
                     <button onClick={this.handleClick}>Register</button>
                     <Link to="/">
