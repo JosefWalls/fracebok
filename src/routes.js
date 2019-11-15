@@ -17,7 +17,8 @@ import Viewsession from "./components/viewsession";
 import EditProfile from "./components/editprofile";
 import EditTrack from "./components/edittrack";
 import ViewCarSession from "./components/viewcarSessions"
-import ViewPhoto from "./components/viewphoto"
+import ViewPhoto from "./components/viewphoto";
+import StopWatch from "./components/stopwatch"
 
 export default (
     <Switch>

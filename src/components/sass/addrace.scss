@@ -1,0 +1,61 @@
+@import "login";
+
+
+.mainRaceCard {
+    display: flex;
+    justify-content: center;
+}
+
+.addRaceCard {
+    height: 500px;
+    width: 500px;
+    background: $background;
+}
+
+
+.dropdownTracks button {
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.dropdownTracks h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: $logoFont;
+}
+
+.dropdownCars h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: $logoFont;
+}
+
+
+.dropdownCars button {
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+#uploadTitle, #addLapTitle {
+    font-family: $logoFont;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#addRaceButton {
+    margin-top: 10px;
+}
+
+#mappedLap {
+    color: whitesmoke;
+    font-family: $logoFont;
+    margin-top: 10px;;
+}

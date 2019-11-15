@@ -36,11 +36,20 @@ class Edittrack extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="main">
+                <div className="header">
+                     <p id="logo">Fracebok</p>
+                </div>
+                <div className="addCarCard">
+                <h1 id="registerTitle">Edit Track</h1>
                 <input placeholder="Enter Track Name" name="track_name" onChange={this.handleChange}></input>
                 <input placeholder="Enter Track Turns" name="turns" onChange={this.handleChange}></input>
                 <input placeholder="Enter Track Length" name="length" onChange={this.handleChange}></input>
                 <button onClick={this.handleSubmit}>Submit Updates</button>
+                <Link to="/Races">
+                    <button>Cancel</button>
+                </Link>
+                </div>
             </div>
         )
     }

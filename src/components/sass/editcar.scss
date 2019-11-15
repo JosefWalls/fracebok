@@ -59,3 +59,9 @@ table {
 	left: 1100px;
 	bottom: 525px;
 }
+
+@media (max-width: 320px){
+	.addCarCard {
+		margin-left: 35px;
+	}
+}

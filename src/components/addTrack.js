@@ -28,15 +28,20 @@ class AddTrack extends React.Component {
 
     render(){
         return (
-            <div>
-                <p>AddTrack</p>
-                <Link to="/Races">
-                    <button>Back to Races</button>
-                </Link>
+            <div className="main">
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <p id="racesTitle">AddTrack</p>
+                <div className="addCarCard">
                 <input placeholder="Track Name" name="track_name" onChange={this.handleChange}></input>
                 <input placeholder="Track Turns" name="turns" onChange={this.handleChange}></input>
                 <input placeholder="Track length" name="length" onChange={this.handleChange}></input>
                     <button onClick={this.handleAdd}>Add Track</button>
+                <Link to="/Races">
+                    <button>Back to Races</button>
+                </Link>
+                </div>
             </div>
         )
     }

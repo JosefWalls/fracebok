@@ -153,111 +153,26 @@ table {
   }
 }
 
-#garageTitle {
-  color: whitesmoke;
+#racesTitle {
   font-family: "ZCOOL KuaiLe", cursive;
   font-size: 3em;
-  text-shadow: 2px 2px #5dbcd2;
   position: absolute;
   left: 1100px;
   bottom: 525px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-shadow: 2px 2px #5dbcd2;
 }
 
-.garage {
-  height: 750px;
-  width: 1050px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
-}
-
-.carCards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.carImage {
-  margin-top: 10px;
-  height: 250px;
-  width: 250px;
-  border-radius: 15%;
-}
-
-.mappedCars {
-  height: 350px;
+#addTrackButton {
+  position: fixed;
+  top: 175px;
+  width: 200px;
+  right: 125px;
+  height: 50px;
+  border: none;
   font-family: "ZCOOL KuaiLe", cursive;
-  background: rgba(12, 18, 12, 0.9);
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
 }
 
-.mappedCars button {
-  margin-top: 20px;
-}
-
-.mappedCars h1 {
-  margin-top: 20px;
-}
-
-.garageButtons {
-  position: absolute;
-  margin-left: 15px;
-}
-
-.menuOpen {
-  height: 300px;
-  width: 400px;
-  position: fixed;
-  left: 945px;
-  background: rgba(12, 18, 12, 0.9);
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-}
-
-#toggleMenuOn {
-  position: fixed;
-  left: 1219px;
-  height: 125px;
-  background: rgba(12, 18, 12, 0.9);
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-}
-
-#toggleMenuOff {
-  background: none;
-  position: fixed;
-  left: 1219px;
-  height: 125px;
-}
-
-.menuClosed {
-  height: 125px;
-}
-
-.menuClosed button {
-  display: none;
-}
-
-#button1 {
+#profileBackButon {
   position: fixed;
   top: 375px;
   width: 200px;
@@ -267,7 +182,7 @@ table {
   border: none;
 }
 
-#button2 {
+#addCarButton {
   position: fixed;
   top: 275px;
   width: 200px;
@@ -277,18 +192,90 @@ table {
   border: none;
 }
 
-#button3 {
-  position: fixed;
-  top: 175px;
+.userRaces {
+  width: 750px;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+.mappedTracks, .mappedGarage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+#racesSectionTitle {
+  color: red;
+  position: absolute;
+}
+
+img.carImage {
+  height: 200px;
   width: 200px;
-  right: 125px;
-  height: 50px;
+}
+
+.mappedUserTracks {
+  background: rgba(12, 18, 12, 0.9);
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  height: 150px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.mappedUserTracks p {
+  color: whitesmoke;
   font-family: "ZCOOL KuaiLe", cursive;
+  margin-bottom: 5px;
+}
+
+.mappedUserTracks h1 {
+  font-family: "ZCOOL KuaiLe", cursive;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.mappedUserTracks button, .mappedCar button {
   border: none;
+  width: 50px;
+  margin-top: 25px;
+  height: 25px;
+  margin-bottom: 15px;
+}
+
+.mappedCar {
+  margin-top: 5px;
+  background: rgba(12, 18, 12, 0.9);
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+.mappedCar h1 {
+  margin-top: 5px;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+.mappedCar img {
+  margin-left: 8px;
 }
 
 @media (max-width: 320px) {
-  .garage {
+  div.mappedTracks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0px;
+    width: 250px;
+  }
+  div.mappedGarage {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -297,47 +284,13 @@ table {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 250px;
-    margin-right: 1020px;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
   }
   img.carImage {
-    width: 200px;
+    margin-left: 5px;
   }
-  #toggleMenuOn {
+  div.carCards {
     position: fixed;
-    left: 150px;
-    top: 100px;
-    height: 40px;
-  }
-  #toggleMenuOff {
-    position: fixed;
-    left: 150px;
-    top: 100px;
-    height: 40px;
-  }
-  .menuOpen {
-    height: 200px;
-    width: 150px;
-    position: fixed;
-    left: 95px;
-    top: 100px;
-    background: rgba(12, 18, 12, 0.9);
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-  }
-  #button1 {
-    position: absolute;
-    left: 95px;
-    width: 20px;
-    top: 40px;
-  }
-  #button2 {
-    position: fixed;
-    left: 95px;
-    width: 50px;
+    left: 40px;
   }
 }
-/*# sourceMappingURL=garage.css.map */
+/*# sourceMappingURL=races.css.map */

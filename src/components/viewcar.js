@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {getCar, updateState, deleteCar, visitedTracks} from "./../daffy_duck/garageReducer"
 import {connect} from 'react-redux'
+import "./sass/viewcar.css"
 
 class Viewcar extends React.Component {
     constructor(){
@@ -38,10 +39,15 @@ class Viewcar extends React.Component {
             )
         })
         return (
-            <div>
-                
-                    <h1>{this.props.car.year} {this.props.car.make} {this.props.car.model}</h1>
+            <div className="main">
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <div className="carCard">
                 <img className="carImage" src={this.props.car.image} ></img>
+                <h1>{this.props.car.year} {this.props.car.make} {this.props.car.model}</h1>
+                <h1>Tracks Visited:</h1>
+                {mappedVisits}
                 <Link to="/Editcar">
                     <button>Edit Car</button>
                 </Link>
@@ -49,8 +55,7 @@ class Viewcar extends React.Component {
                 <Link to="/Garage">
                     <button>Back to garage</button>
                 </Link>
-                <h1>Tracks Visited:</h1>
-                {mappedVisits}
+                </div>
             </div>
         )
     }

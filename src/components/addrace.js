@@ -4,7 +4,11 @@ import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer"
 import {connect} from 'react-redux';
 import {getGarage} from "./../daffy_duck/garageReducer"
 import Axios from 'axios';
-import {storage} from "./../firebase-config"
+import {storage} from "./../firebase-config";
+import "./sass/addrace.css"
+import StopWatch from "./stopwatch"
+
+
 class Addrace extends React.Component {
     constructor(){
         super()
@@ -16,7 +20,9 @@ class Addrace extends React.Component {
             lap: "",
             sessionId: "",
             header: "",
-            firstTime: true
+            firstTime: true,
+            toggleMenu: "menuClosed",
+            toggleIcon: "toggleMenuOn"
         }
     }
     
@@ -62,6 +68,16 @@ class Addrace extends React.Component {
             )}
     }
 
+    handleClick = () => {
+        if(this.state.toggleMenu === "menuClosed"){
+            this.setState({toggleMenu: "menuOpen"})
+            this.setState({toggleIcon: "toggleMenuOff"})
+        } else {
+            this.setState({toggleMenu: "menuClosed"})
+            this.setState({toggleIcon: "toggleMenuOn"})
+        }
+      }
+
     render(){
         const dropdownTracks = this.props.userTracks.map((val, i) => {
             return (
@@ -75,42 +91,50 @@ class Addrace extends React.Component {
         })
         const mappedLaps = this.state.laps.map((val, i) => {
             return (
-                <p>{val}</p>
+                <p id="mappedLap">{val}</p>
             )
         })
         
         return (
-            <div>
-                <p>Add race</p>
+            <div className="main">
+            <div className="header">
+                <p id="logo">Fracebok</p>
+            </div>
+                <p id="editCarTitle">Add race</p>
+                <div className="garageFlyout">
+                        <div className={this.state.toggleMenu}>
+                        <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
                 <Link to="/Races">
-                    <button>Back to races</button>
+                    <button id="button2">Back to races</button>
                 </Link>
-                <div className="mapped">
+                 </div>
+                </div>
+                <div className="mainRaceCard">
+                <div className="addRaceCard">
+                    <div className="dropdownTracks">
                     <h1>Select Track</h1>
-                    <div className="garage">
                         {dropdownTracks}
                     </div>
+                    <div className="dropdownCars">
                     <h1>Select Car</h1>
-                    <div className="garage">
                         {mappedCars}
                     </div>
-                        <h1>Upload header:</h1>
-                        <input type="file" placeholder="Upload header" onChange={this.handleHeader}></input>
-                    {/* <div className="garage">
-                        <h1>Select weather conditions</h1>
-                            <button placeholder="Dry"></button>
-                            <button placeholder="Damp"></button>
-                            <button placeholder="Wet"></button>
-                            
-                    </div> */}
+                        <h1 id="uploadTitle">Upload header:</h1>
+                        <input type="file" placeholder="Upload header" onChange={this.handleHeader} id="fileUpload"></input>
                     <form onSubmit={this.handleSubmit}>
                         {mappedLaps}
-                        <h1>Add lap times:</h1>
-                        <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap}></input>
+                        <h1 id="addLapTitle">Add lap times:</h1>
+                        <div className="liveLapClosed">
+                            <button onClick={this.toggleLiveTimer}>Live Lap Times</button>
+                            <StopWatch />
+                        </div>
+                        <h1>Lap by Lap:</h1>
+                        <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap} id="addLapInput"></input>
                     </form>
                         <Link to="/Races">
-                            <button >Add race</button>
+                            <button id="addRaceButton">Add race</button>
                         </Link>
+                   </div> 
                 </div>
             </div>
         )
