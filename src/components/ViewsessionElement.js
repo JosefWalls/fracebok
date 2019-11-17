@@ -40,6 +40,7 @@ export default class ViewsessionElement extends Component {
 
   handlePrevDelta = (lapInc) => {
     const differnece = Math.floor((laps[lapInc - 1] - laps[lapInc]) * 100) / 100
+
     if(differnece > 0){
       return <span className="deltaTimeEqual">+{differnece}</span>
     } else {
@@ -51,7 +52,7 @@ export default class ViewsessionElement extends Component {
     const {val, key, lapInc, length} = this.props;
     const splitTime = val.time.split("00:")
     const sub = lapInc - 1;
-    const totalLengthDriven  = Math.floor((length * sub) * 100) / 100
+    const totalLengthDriven  = Math.floor((length * lapInc) * 100) / 100
     return (
       <div key={key} className="lapTimeCards">
         <div>

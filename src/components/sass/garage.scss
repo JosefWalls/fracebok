@@ -92,36 +92,32 @@
     display: none;
 }
 
+@mixin buttonTemplate {
+        width: 200px;
+        right: 125px;
+        height: 50px;
+        font-family: $logoFont;
+        border: none
+    }
 
 #button1 {
+    @include buttonTemplate();
     position: fixed;
-    top: 375px;
-    width: 200px;
-    right: 125px;
-    height: 50px;
-    font-family: $logoFont;
-    border: none
+    top: 390px;
 }
 
 #button2 {
+    @include buttonTemplate();
     position: fixed;
     top: 275px;
-    width: 200px;
-    right: 125px;
-    height: 50px;
-    font-family: $logoFont;
-    border: none;
 }
 
 #button3 {
+    @include buttonTemplate();
     position: fixed;
-    top: 175px;
-    width: 200px;
-    right: 125px;
-    height: 50px;
-    font-family: $logoFont;
-    border: none;
+    top: 160px;
 }
+
 
 @media (max-width: 320px){
     .garage {

@@ -18,7 +18,8 @@ import EditProfile from "./components/editprofile";
 import EditTrack from "./components/edittrack";
 import ViewCarSession from "./components/viewcarSessions"
 import ViewPhoto from "./components/viewphoto";
-import StopWatch from "./components/stopwatch"
+import StopWatch from "./components/stopwatch";
+import EditPhoto from "./components/editPhoto"
 
 export default (
     <Switch>
@@ -40,5 +41,6 @@ export default (
         <Route path="/Edittrack/:track_id" component={EditTrack} />
         <Route path="/Viewcarsessions/:car_id" component={ViewCarSession} />
         <Route path="/Viewphoto/:photo_id" component={ViewPhoto} />
+        <Route path="/EditPhoto/:photo_id" component={EditPhoto} />
     </Switch>
 )

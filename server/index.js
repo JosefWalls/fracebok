@@ -65,8 +65,10 @@ app.get("/session/bestlap/:session_id", rR.getBestLap),
 app.get("/session/length/:session_id", rR.getSessionLength)
 
 //photos
+app.put("/photos/EditPhoto/:photo_id", photoR.editPhoto)
 app.post("/photos/addImage", photoR.addImage)
 app.get("/photos/UserImages", photoR.getUserImages)
 app.get("/photos/getImage/:photo_id", photoR.getPhoto)
+app.delete("/photos/DeleteImage/:photo_id", photoR.deletePhoto)
 
 app.listen(4201, () => console.log("Port 4201"))

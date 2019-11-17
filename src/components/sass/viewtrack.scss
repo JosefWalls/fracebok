@@ -13,6 +13,12 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.mappedTrackSessions button {
+    border: none;
+    height: 20px;
+    margin-top: 20px;;
+}
+
 .mapped {
     background: $background;
     border-top-left-radius: 5%;

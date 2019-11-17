@@ -21,8 +21,26 @@ const getPhoto = async (req, res) => {
     res.status(200).json(image)
 }
 
+const deletePhoto = async (req, res) => {
+    const photo_id = +req.params.photo_id;
+    const db = req.app.get("db")
+    const results = db.delete_photo(photo_id)
+    res.status(200).json("Deleted Image")
+}
+
+const editPhoto = async (req, res) => {
+    const {link, description, title} = req.body;
+    const photoId = +req.params.photo_id
+    const db = req.app.get("db")
+    console.log(photoId)
+    const results = db.edit_photo(link, description, title, photoId)
+    res.status(200).json("Photo Edited")
+}
+
 module.exports = {
     addImage,
     getUserImages,
-    getPhoto
+    getPhoto,
+    deletePhoto,
+    editPhoto
 }

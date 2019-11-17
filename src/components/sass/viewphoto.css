@@ -153,29 +153,37 @@ table {
   }
 }
 
-.lapTimes {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  background: rgba(12, 18, 12, 0.9);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 50vw;
-  -webkit-box-shadow: 8px 11px 5px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 8px 11px 5px 0px rgba(0, 0, 0, 0.75);
-  color: white;
+.header {
+  background-image: none;
 }
 
-.lapTimeCards {
+.userPhoto {
+  background: rgba(12, 18, 12, 0.9);
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  height: 500px;
+  width: 750px;
+}
+
+.userPhoto img {
+  height: 300px;
+  width: 400px;
+}
+
+.userPhoto h2 {
+  color: whitesmoke;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+.userPhoto p {
+  color: whitesmoke;
+  margin-top: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.userPhotoCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,66 +191,4 @@ table {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
-.splitTime {
-  padding-right: 2vw;
-  background: rgba(20, 21, 9, 0.75);
-}
-
-.deltaTimeSlower {
-  color: red;
-  font-weight: bold;
-  padding-left: 1vw;
-}
-
-.deltaTimeEqual {
-  color: lime;
-  font-weight: bold;
-  padding-left: 1vw;
-}
-
-.lapCount {
-  margin-right: 5vw;
-}
-
-.totalLengthDriven {
-  color: #5dbcd2;
-  margin-left: 2vw;
-}
-
-#lapTitle {
-  color: whitesmoke;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: "ZCOOL KuaiLe", cursive;
-}
-
-#lengthTitle {
-  color: whitesmoke;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: "ZCOOL KuaiLe", cursive;
-}
-
-#bestLap {
-  color: whitesmoke;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: "ZCOOL KuaiLe", cursive;
-}
-
-.lapTimeSpecs {
-  margin-bottom: 10px;
-  position: absolute;
-  top: 150px;
-  background: rgba(12, 18, 12, 0.9);
-  -webkit-box-shadow: 8px 11px 5px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 8px 11px 5px 0px rgba(0, 0, 0, 0.75);
-  width: 500px;
-  margin-left: 425px;
-}
-
-.chart {
-  border: 1px solid red;
-}
-/*# sourceMappingURL=viewsession.css.map */
+/*# sourceMappingURL=viewphoto.css.map */

@@ -16,7 +16,8 @@ const initalState = {
 const UPDATE_STATE = "UPDATE_STATE"
 const GET_USER_PHOTOS = "GET_USER_PHOTOS"
 const VIEW_PHOTO = "VIEW_PHOTO"
-
+const DELETE_PHOTO = "DELETE_PHOTO"
+const EDIT_PHOTO = "EDIT_PHOTO";
 
 export const updateState = (e) => {
     return {
@@ -36,6 +37,20 @@ export const viewImage = (photo_id) => {
     return {
         type: VIEW_PHOTO,
         payload: axios.get(`/photos/getImage/${photo_id}`)
+    }
+}
+
+export const deletePhoto = (photo_id) => {
+    return {
+        type: DELETE_PHOTO,
+        payload: axios.delete(`/photos/DeleteImage/${photo_id}`)
+    }
+}
+
+export const editPhoto = (photo_id) => {
+    return {
+        type: EDIT_PHOTO,
+        payload: axios.put(`/photos/EditPhoto/${photo_id}`)
     }
 }
 

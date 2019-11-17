@@ -45,28 +45,32 @@ class AddPhotos extends React.Component {
 
     handleSubmit = async (e) => {
         e.preventDefault()
-
         await axios.post("/photos/addImage", {
             link: this.state.link,
             description: this.state.description,
             title: this.state.title
         })
-        .then(() => {
+        .then(res => {
             this.props.history.push("/Photos")
+            console.log(res)
         })
     }
 
    render(){
        return (
            <div className="main">
+               <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <form className="addCarCard">
                <input placeholder="Enter Title" name="title" onChange={this.handleTitle}></input>
                <input placeholder="Enter Description" name="description" onChange={this.handleDescription}></input>
                <input type="file" onChange={this.handlePhoto}></input>
                <button onClick={this.handleSubmit}>Submit Photo</button>
-               
                <Link to="/Photos">
                     <button>Cancel</button>
                 </Link>
+                </form>
            </div>
        )
    }

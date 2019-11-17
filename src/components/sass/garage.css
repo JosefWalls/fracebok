@@ -258,33 +258,33 @@ table {
 }
 
 #button1 {
-  position: fixed;
-  top: 375px;
   width: 200px;
   right: 125px;
   height: 50px;
   font-family: "ZCOOL KuaiLe", cursive;
   border: none;
+  position: fixed;
+  top: 390px;
 }
 
 #button2 {
-  position: fixed;
-  top: 275px;
   width: 200px;
   right: 125px;
   height: 50px;
   font-family: "ZCOOL KuaiLe", cursive;
   border: none;
+  position: fixed;
+  top: 275px;
 }
 
 #button3 {
-  position: fixed;
-  top: 175px;
   width: 200px;
   right: 125px;
   height: 50px;
   font-family: "ZCOOL KuaiLe", cursive;
   border: none;
+  position: fixed;
+  top: 160px;
 }
 
 @media (max-width: 320px) {

@@ -1,0 +1,82 @@
+@import "login";
+
+.lapTimes {
+    grid-template-columns: 1fr;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 50vw;
+    box-shadow: 8px 11px 5px 0px rgba(0,0,0,0.75);
+    color: white
+}
+
+
+.lapTimeCards {
+    display: flex;
+    justify-content: center;
+}
+
+.splitTime {
+    padding-right: 2vw;
+    background: rgba(20, 21, 9, 0.75)
+}
+
+.deltaTimeSlower {
+    color: red;
+    font-weight: bold;
+    padding-left: 1vw;
+}
+
+
+.deltaTimeEqual {
+    color: lime;
+    font-weight: bold;
+    padding-left: 1vw;
+}
+
+.lapCount {
+    margin-right: 5vw;
+}
+
+.totalLengthDriven {
+    color: rgb(93, 188, 210);
+    margin-left: 2vw;
+}
+
+
+#lapTitle {
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $logoFont;
+}
+
+#lengthTitle {
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $logoFont;
+}
+
+#bestLap {
+    color: whitesmoke;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $logoFont;
+}
+
+.lapTimeSpecs {
+    margin-bottom: 10px;
+    position: absolute;
+    top: 150px;
+    background: $background;
+    box-shadow: 8px 11px 5px 0px rgba(0,0,0,0.75);
+    width: 500px;
+    margin-left: 425px;
+}
+
+.chart {
+    border: 1px solid red;
+}

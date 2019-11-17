@@ -1,0 +1,37 @@
+@import "login";
+
+.header {
+    background-image: none;
+}
+
+@mixin userPhoto {
+    background: $background;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    height: 500px;
+    width: 750px;
+    img {
+        height: 300px;
+        width: 400px;
+    }
+    h2 {
+        color: whitesmoke;
+        font-family:  $logoFont;
+    }
+    p {
+        color: whitesmoke;
+        margin-top: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+.userPhoto {
+    @include userPhoto()
+}
+
+.userPhotoCard {
+    display: flex;
+    justify-content: center;
+}
