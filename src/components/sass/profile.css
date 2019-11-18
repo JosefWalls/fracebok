@@ -66,7 +66,6 @@ table {
 }
 
 .header {
-  background: url("./../assets//Header.png");
   height: 150px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -128,7 +127,6 @@ table {
   margin-top: 15px;
   width: 70px;
   border: none;
-  cursor: url("./../assets/Header.png"), auto;
 }
 
 @media (max-width: 1000px) {
@@ -221,7 +219,7 @@ div.profileCards {
 
 .buttonCard {
   margin-top: 100px;
-  width: 250px;
+  width: 160px;
   height: 175px;
   margin-right: 2px;
   margin-left: 2px;
@@ -229,6 +227,10 @@ div.profileCards {
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
   border-bottom-left-radius: 5%;
+}
+
+.buttonCard p {
+  text-decoration: none;
 }
 
 .profileCardHeaders {

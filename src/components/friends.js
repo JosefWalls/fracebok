@@ -2,6 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import {getFriends} from "./../daffy_duck/profileReducer";
 import {Link} from "react-router-dom"
+import "./sass/friend.css"
 
 class Friends extends React.Component {
     constructor(){
@@ -16,7 +17,7 @@ class Friends extends React.Component {
         console.log(this.props.friends)
         const mappedFriends = this.props.friends.map((val, i) => {
             return (
-                <div>
+                <div className="mappedFriend">
                     <h1>{val.username}</h1>
                     <img src={val.profile} className="carImage"></img>
                     <Link to={`/Explore/User/${val.user_id}`}>
@@ -30,8 +31,12 @@ class Friends extends React.Component {
             <div className="header">
                  <p id="logo">Fracebok</p>
             </div>
-                <h1>Friends</h1>
+                <h1 id="garageTitle">Friends</h1>
+                <div className="mainFriend">
+                <div className="friends">
                 {mappedFriends}
+                </div>
+                </div>
             </div>
         )
     }

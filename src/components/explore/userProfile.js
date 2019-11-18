@@ -28,26 +28,30 @@ class UserProfile extends React.Component {
     const mappedUserProfile = this.props.userProfile.map((val, i) => {
         return (
             <div className="userInfoCard">
-                <img src={val.profile} className="profile"></img>
-                <img src={val.header} className="profileheader"></img>
-                <h1 id="userUsername">{val.username}</h1>
+                <header className="profilePictures">
+                    <img src={val.profile} className="profile"></img>
+                    <img src={val.header} className="profileheader"></img>
+                    <div className="username">
+                        <h1 id="userUsername">{val.username}</h1>
+                    </div>
+                </header>
                 <div className="profileCards">
                 <div className="buttonCard">
-                    <button onClick={this.addFriend}>Add As Friend</button>
+                    <p onClick={this.addFriend} className="profileCardHeaders">Add As Friend</p>
                 </div>
                 <div className="buttonCard">
                     <Link to={`/Explore/UserGarage/${val.user_id}`}>
-                        <button>Garage</button>
+                        <p className="profileCardHeaders">Garage</p>
                     </Link>
                 </div>
                 <div className="buttonCard">
                     <Link to={`/Explore/UserTracks/${val.user_id}`}>
-                        <button>Races</button>
+                        <p className="profileCardHeaders">Races</p>
                     </Link>
                 </div>
                 <div className="buttonCard">
                     <Link to={`/Explore/UserPhotos/${val.user_id}`}>
-                        <button>Photos</button>
+                        <p className="profileCardHeaders">Photos</p>
                     </Link>
                 </div>
                 </div>

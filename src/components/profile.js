@@ -43,38 +43,32 @@ class Profile extends React.Component {
                 <div className="profileCards">
                     <Link to={`/Editprofile/${this.props.user_id}`}>
                         <div className="buttonCard">
-                            <p className="profileCardHeaders">Edit Profile</p>
-                            <img className="profileCardImages" src="./assets/fire_extinguisher.png"></img>
+                            <p className="profileCardHeaders">Edit Profile</p>=
                         </div>
                     </Link>
                     <Link to="/Garage">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Garage</p>
-                            <img className="profileCardImages" ></img>
                         </div>
                     </Link>
                     <Link to="/Races">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Races</p>
-                            <img className="profileCardImages" ></img>
                         </div>
                     </Link>
                     <Link to="/Photos">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Photo Gallery</p>
-                            <img className="profileCardImages" ></img>
                         </div>
                     </Link>
                     <Link to="/Explore/Home">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Explore</p>
-                            <img className="profileCardImages" ></img>
                         </div>
                     </Link>
                     <Link to="/Friends">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Friends</p>
-                            <img className="profileCardImages" ></img>
                         </div>
                     </Link>
                 </div>
