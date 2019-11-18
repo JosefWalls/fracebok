@@ -6,6 +6,7 @@ import GarageReducer from "./daffy_duck/garageReducer";
 import RaceReducer from "./daffy_duck/raceReducer";
 import SessionReducer from "./daffy_duck/session_detailsReducer";
 import PhotoReducer from "./daffy_duck/photoReducer"
+import ExploreReducer from "./daffy_duck/exploreReducer"
 
 const root = combineReducers({
     loginRegisterReducer,
@@ -13,7 +14,8 @@ const root = combineReducers({
     GarageReducer,
     RaceReducer,
     SessionReducer,
-    PhotoReducer
+    PhotoReducer,
+    ExploreReducer
 })
 
 

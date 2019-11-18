@@ -19,7 +19,16 @@ import EditTrack from "./components/edittrack";
 import ViewCarSession from "./components/viewcarSessions"
 import ViewPhoto from "./components/viewphoto";
 import StopWatch from "./components/stopwatch";
-import EditPhoto from "./components/editPhoto"
+import EditPhoto from "./components/editPhoto";
+import Friends from "./components/friends";
+
+
+//explore page
+
+import ExploreHomePage from "./components/explore/exploreHomePage"
+import UserProfile from "./components/explore/userProfile"
+import UserGarage from "./components/explore/userGarage"
+import UserCar from "./components/explore/userCar"
 
 export default (
     <Switch>
@@ -42,5 +51,10 @@ export default (
         <Route path="/Viewcarsessions/:car_id" component={ViewCarSession} />
         <Route path="/Viewphoto/:photo_id" component={ViewPhoto} />
         <Route path="/EditPhoto/:photo_id" component={EditPhoto} />
+        <Route path="/Explore/Home" component={ExploreHomePage} />
+        <Route path="/Explore/User/:user_id" component={UserProfile} />
+        <Route path="/Explore/UserGarage/:user_id" component={UserGarage} />
+        <Route path="/Explore/UserCar/:car_id" component={UserCar} />
+        <Route path="/Friends" component={Friends} />
     </Switch>
 )

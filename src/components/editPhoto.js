@@ -3,46 +3,79 @@ import {connect} from 'react-redux'
 import {Link} from "react-router-dom"
 import {viewImage} from "./../daffy_duck/photoReducer"
 import {storage} from './../firebase-config'
+import Axios from "axios"
 
 class EditPhoto extends React.Component {
     constructor(){
         super()
 
         this.state = {
-            image: {}
+            newLink: "",
+            newDesc: "",
+            newTitle: "",
+            image: []
         }
     }
 
     componentDidMount = () => {
         this.props.viewImage(this.props.match.params)
         for(let i = 0; i <  this.props.image.length; i++){
-            this.setState({image: this.props.image[i]})
+            if(this.props.image[i].link.length > 0){
+                this.setState({newLink: this.props.image[i].link})
+            } else if (this.props.image[i].description.length > 0){
+                this.setState ({newDesc: this.props.image[i].description})
+            } else if (this.props.image[i].title.length > 0){
+                this.setState({newTitle: this.props.image[i].title})
+            } else {
+                return "Henlao"
+            }
         }
     }
 
     handlePicture = (e) => {
-        if(e.target.fies[0]){
+        console.log(this.state)
+        if(e.target.files[0]){
             const image = (e.target.files[0])
             const uploadTask = storage.ref(`/photo_gallery/${image.name}`).put(image)
             uploadTask.on("state_changed", 
             () => {
                 storage.ref('photo_gallery').child(image).getDownloadURL()
                 .then(url => {
-                    this.setState({[..image]: url})
+                    this.setState({newLink: url})
                 })
             }
             )
         }
     }
 
+    handleDesc = (e) => {
+        this.setState({newDesc: e.target.value})
+    }
+
+    handleTitle = (e) => {
+        this.setState({newTitle: e.target.value})
+    }
+
+    handleSubmit = () => {
+    const photo_id = this.props.match.params.photo_id
+    Axios.post(`/photos/EditPhoto/${photo_id}`, {
+        link: this.state.newLink,
+        description: this.state.description,
+        title: this.state.title
+    })
+    .then (() => {
+        this.props.history.push("/Photos")
+    })
+    }
+
     render(){
         return (
             <div>
                 <h1>Edit Photo</h1>
-                <input type="file"></input>
-                <input placeholder="Update Description"></input>
-                <input placeholder="Update Title"></input>
-                <button>Submit Updates</button>
+                <input type="file" onChange={this.handlePicture}></input>
+                <input placeholder="Update Description" onChange={this.handleDesc}></input>
+                <input placeholder="Update Title" onChange={this.handleTitle}></input>
+                <button onSubmit={this.handleSubmit}>Submit Updates</button>
                 <button>Cancel</button>C
             </div>
         )

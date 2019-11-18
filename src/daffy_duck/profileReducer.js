@@ -6,13 +6,15 @@ const initalState = {
     firstname: "",
     username: "",
     profile: "",
-    header: ""
+    header: "",
+    friends: []
 }
 
 
 const RETRIEVE_INFO = "RETRIEVE_INFO"
 const UPDATE_STATE = "UPDATE_STATE"
 const DELETE_PROFILE = "DELETE_PROFILE"
+const GET_FRIENDS = "GET_FRIENDS"
 
 export const retrieveInfo = () => {
     return {
@@ -35,6 +37,13 @@ export const deleteProfile = () => {
     }
 }
 
+export const getFriends = () => {
+    return {
+        type: GET_FRIENDS,
+        payload: axios.get("/api/Friends")
+    }
+}
+
 export default function reducer(state = initalState, action){
     const {type, payload} = action;
     switch(type){
@@ -48,6 +57,10 @@ export default function reducer(state = initalState, action){
             return {...state, loading: true}
         case `${DELETE_PROFILE}_FULFILLED`:
             return {...state, loading: false}
+        case `${GET_FRIENDS}_PENDING`:
+            return {...state, loading: true}
+        case `${GET_FRIENDS}_FULFILLED`:
+            return {...state, loading: false, friends: payload.data}
         default:
             return state
     }

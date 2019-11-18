@@ -65,6 +65,18 @@ class Profile extends React.Component {
                             <img className="profileCardImages" ></img>
                         </div>
                     </Link>
+                    <Link to="/Explore/Home">
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Explore</p>
+                            <img className="profileCardImages" ></img>
+                        </div>
+                    </Link>
+                    <Link to="/Friends">
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Friends</p>
+                            <img className="profileCardImages" ></img>
+                        </div>
+                    </Link>
                 </div>
               </div>
             </div>

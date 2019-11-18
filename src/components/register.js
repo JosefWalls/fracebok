@@ -3,8 +3,8 @@ import {updateState} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {storage} from "./../firebase-config";
-import fileUploader from "react-firebase-file-uploader"
-import firebase from "firebase";
+// import fileUploader from "react-firebase-file-uploader"
+// import firebase from "firebase";
 import {Link} from 'react-router-dom'
 import "./sass/register.css"
 

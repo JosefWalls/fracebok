@@ -28,8 +28,17 @@ const deleteProfile = async (req, res) => {
     res.status(200).json("Profile Deleted")
 }
 
+const getProfileFriends = async (req, res) => {
+    const {id} = req.session.user
+    const db = req.app.get("db")
+    const friends = await db.get_user_friends(id)
+    console.log(friends)
+    res.status(200).json(friends)
+}
+
 module.exports = {
     getUser,
     editProfile,
-    deleteProfile
+    deleteProfile,
+    getProfileFriends
 }

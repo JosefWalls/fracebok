@@ -10,6 +10,7 @@ const pR = require("./controllers/profile")
 const gR = require("./controllers/garage")
 const rR = require("./controllers/race")
 const photoR = require("./controllers/photo")
+const eR = require("./controllers/explore")
 
 massive(process.env.CONNECTION_STRING)
 .then(dbInstance => {
@@ -37,6 +38,7 @@ app.post("/auth/logout", lR.logoutUser)
 app.get("/api/profile", pR.getUser)
 app.put("/api/Editprofile", pR.editProfile)
 app.delete("/api/DeleteProfile", pR.deleteProfile)
+app.get("/api/Friends", pR.getProfileFriends)
 
 
 //garage
@@ -70,5 +72,13 @@ app.post("/photos/addImage", photoR.addImage)
 app.get("/photos/UserImages", photoR.getUserImages)
 app.get("/photos/getImage/:photo_id", photoR.getPhoto)
 app.delete("/photos/DeleteImage/:photo_id", photoR.deletePhoto)
+
+
+//explore
+app.get("/Explore/Search/AllUsers", eR.searchAllUsers)
+app.get("/Explore/All", eR.getAllUsers)
+app.get("/Explore/User/:user_id", eR.getUserProfile)
+app.post("/Explore/AddFriend/:user_id", eR.addFriend)
+app.get("/Explore/User/Garage/:user_id", eR.userGarage)
 
 app.listen(4201, () => console.log("Port 4201"))
