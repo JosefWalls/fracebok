@@ -27,14 +27,30 @@ class UserProfile extends React.Component {
     render(){
     const mappedUserProfile = this.props.userProfile.map((val, i) => {
         return (
-            <div className>
-                <h1>{val.username}</h1>
-                <button onClick={this.addFriend}>Add As Friend</button>
-                <img src={val.profile}></img>
-                <img src={val.header}></img>
-                <Link to={`/Explore/UserGarage/${val.user_id}`}>
-                    <button>Garage</button>
-                </Link>
+            <div className="userInfoCard">
+                <img src={val.profile} className="profile"></img>
+                <img src={val.header} className="profileheader"></img>
+                <h1 id="userUsername">{val.username}</h1>
+                <div className="profileCards">
+                <div className="buttonCard">
+                    <button onClick={this.addFriend}>Add As Friend</button>
+                </div>
+                <div className="buttonCard">
+                    <Link to={`/Explore/UserGarage/${val.user_id}`}>
+                        <button>Garage</button>
+                    </Link>
+                </div>
+                <div className="buttonCard">
+                    <Link to={`/Explore/UserTracks/${val.user_id}`}>
+                        <button>Races</button>
+                    </Link>
+                </div>
+                <div className="buttonCard">
+                    <Link to={`/Explore/UserPhotos/${val.user_id}`}>
+                        <button>Photos</button>
+                    </Link>
+                </div>
+                </div>
             </div>
         )
     })

@@ -34,10 +34,45 @@ const userGarage = async (req, res) => {
     res.status(200).json(userGarage)
 }
 
+const userTracks = async (req, res) => {
+    const user_id = +req.params.user_id;
+    const db = req.app.get("db")
+    const tracks = await db.retrieve_user_tracks(user_id);
+    res.status(200).json(tracks)
+}
+
+const userTrackSessions = async (req, res) => {
+    const user_id = +req.params.user_id
+    const track_id = +req.params.track_id
+    const db = req.app.get("db")
+    const sessions = await db.retrieve_user_track_sessions( track_id, user_id)
+    console.log(sessions)
+    res.status(200).json(sessions)
+}
+
+const sessionDetails = async (req, res) => {
+    const session_id = +req.params.session_id;
+    const db = req.app.get("db")
+    const details = await db.get_session_details(session_id)
+    res.status(200).json(details)
+}
+
+const userPhotos = async (req, res) => {
+    const user_id = +req.params.user_id
+    console.log(user_id)
+    const db = req.app.get("db")
+    const photos = await db.retrieve_user_photos(user_id);
+    res.status(200).json(photos)
+}
+
 module.exports = {
     searchAllUsers,
     getAllUsers,
     getUserProfile,
     addFriend,
-    userGarage
+    userGarage,
+    userTracks,
+    userTrackSessions,
+    sessionDetails,
+    userPhotos
 }

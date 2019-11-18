@@ -29,6 +29,11 @@ import ExploreHomePage from "./components/explore/exploreHomePage"
 import UserProfile from "./components/explore/userProfile"
 import UserGarage from "./components/explore/userGarage"
 import UserCar from "./components/explore/userCar"
+import UserTracks from "./components/explore/userTracks"
+import UserTrackSessions from "./components/explore/userTrackSessions"
+import UserSessionDetails from "./components/explore/userSession"
+import UserPhotos from "./components/explore/userPhotos"
+import userPhotos from "./components/explore/userPhotos";
 
 export default (
     <Switch>
@@ -52,9 +57,13 @@ export default (
         <Route path="/Viewphoto/:photo_id" component={ViewPhoto} />
         <Route path="/EditPhoto/:photo_id" component={EditPhoto} />
         <Route path="/Explore/Home" component={ExploreHomePage} />
+        <Route exact path="/Explore/User/Sessions/:user_id/:track_id" component={UserTrackSessions} />
+        <Route exact path="/Explore/User/Session/:session_id" component={UserSessionDetails} />
         <Route path="/Explore/User/:user_id" component={UserProfile} />
         <Route path="/Explore/UserGarage/:user_id" component={UserGarage} />
         <Route path="/Explore/UserCar/:car_id" component={UserCar} />
         <Route path="/Friends" component={Friends} />
+        <Route path="/Explore/UserTracks/:user_id" component={UserTracks} />
+        <Route path="/Explore/UserPhotos/:user_id" component={userPhotos} />
     </Switch>
 )

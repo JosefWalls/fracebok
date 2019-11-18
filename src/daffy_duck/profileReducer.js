@@ -60,6 +60,7 @@ export default function reducer(state = initalState, action){
         case `${GET_FRIENDS}_PENDING`:
             return {...state, loading: true}
         case `${GET_FRIENDS}_FULFILLED`:
+            console.log(payload.data)
             return {...state, loading: false, friends: payload.data}
         default:
             return state
