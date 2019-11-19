@@ -89,7 +89,10 @@ class ViewSession extends React.Component {
     }
   }
 
+
+
   render() {
+    // console.log(Math.floor(+(this.props.trackDetails[0] && this.props.trackDetails[0].length * (this.props.sessionDetails.length)) * 100) / 100 )
     const mappedLaps = this.props.userSessionDetails.map((val, i) => {
       return (
       <div>
@@ -112,7 +115,8 @@ class ViewSession extends React.Component {
         <div className="lapTimeSpecs">
         <p id="lapTitle">Laps: {this.props.userSessionDetails.length}</p>
           <p id="lengthTitle">Total Estimated Session Length: {Math.floor((this.props.trackDetails[0] && this.props.trackDetails[0].length * (this.props.sessionDetails.length)) * 100) / 100 } miles</p>
-        <p id="bestLap">Best Lap: {this.props.bestLap}</p>
+          <p id="bestLap">Best Lap: {this.props.bestLap}</p>
+          
         </div>
         <div className="lapTimeCards">
           <div className="lapTimes">{mappedLaps}</div>

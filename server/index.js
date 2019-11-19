@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 const express = require ("express");
 const sessions = require("express-session");
@@ -11,6 +12,8 @@ const gR = require("./controllers/garage")
 const rR = require("./controllers/race")
 const photoR = require("./controllers/photo")
 const eR = require("./controllers/explore")
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 massive(process.env.CONNECTION_STRING)
 .then(dbInstance => {
@@ -84,5 +87,6 @@ app.get("/Explore/User/Tracks/:user_id", eR.userTracks)
 app.get("/Explore/User/Sessions/:user_id/:track_id", eR.userTrackSessions)
 app.get("/Explore/User/Session/:session_id", eR.sessionDetails)
 app.get("/Explore/User/Photos/:user_id", eR.userPhotos)
+app.get("/Explore/User/Friends/:user_id", eR.userFriends)
 
 app.listen(4201, () => console.log("Port 4201"))

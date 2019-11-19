@@ -59,11 +59,11 @@ class ViewPhoto extends React.Component {
             <div className={this.state.toggleMenu}>
              <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
                 <Link to="/Photos">
-                    <button>Back to Images</button>
+                    <button id="button1">Back to Images</button>
                 </Link>
-                <button onClick={this.handleDelete}>Delete Image</button>
+                <button onClick={this.handleDelete} id="button2">Delete Image</button>
                 <Link to={`/EditPhoto/${this.props.match.params.photo_id}`}>
-                    <button>Edit Image</button>
+                    <button id="button3">Edit Image</button>
                 </Link>
                 <button>Download Image</button>
             </div>

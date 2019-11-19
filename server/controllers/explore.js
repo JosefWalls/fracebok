@@ -65,6 +65,13 @@ const userPhotos = async (req, res) => {
     res.status(200).json(photos)
 }
 
+const userFriends = async (req, res) => {
+    const user_id = +req.params.user_id;
+    const db = req.app.get("db")
+    const friends = await db.retrieve_user_friends(user_id)
+    res.status(200).json(friends)
+}
+
 module.exports = {
     searchAllUsers,
     getAllUsers,
@@ -74,5 +81,6 @@ module.exports = {
     userTracks,
     userTrackSessions,
     sessionDetails,
-    userPhotos
+    userPhotos,
+    userFriends
 }

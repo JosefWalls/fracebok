@@ -63,7 +63,7 @@ class Profile extends React.Component {
                     </Link>
                     <Link to="/Explore/Home">
                     <div className="buttonCard">
-                            <p className="profileCardHeaders">Explore</p>
+                            <p className="profileCardHeaders">Fracitter</p>
                         </div>
                     </Link>
                     <Link to="/Friends">

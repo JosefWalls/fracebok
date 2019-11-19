@@ -124,10 +124,10 @@ class Addrace extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         {mappedLaps}
                         <h1 id="addLapTitle">Add lap times:</h1>
-                        <div className="liveLapClosed">
+                        {/* <div className="liveLapClosed">
                             <button onClick={this.toggleLiveTimer}>Live Lap Times</button>
                             <StopWatch />
-                        </div>
+                        </div> */}
                         <h1>Lap by Lap:</h1>
                         <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap} id="addLapInput"></input>
                     </form>

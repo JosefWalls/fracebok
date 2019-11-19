@@ -45,7 +45,7 @@ class Photos extends React.Component {
         return (
             <div className="main">
             <div className="header">
-                <p id="logo">Fracebok</p>
+                <p id="logo">Fracetagram</p>
             </div>
             <div className="carCards">
             <h1 id="garageTitle">Photo Gallery</h1>
