@@ -14,6 +14,7 @@ class ViewSession extends React.Component {
 
     this.state = {
       session_id: "",
+      averageSpeed: "",
       toggleMenu: "menuClosed",
       toggleIcon: "toggleMenuOn",
       bestLap: "",
@@ -51,6 +52,7 @@ class ViewSession extends React.Component {
     this.setState({session_id: this.props.match.params.session_id})
     this.props.getTrackDetails(this.props.match.params.session_id)
   };
+
 
   renderGraph = () => {
     this.props
@@ -99,6 +101,7 @@ class ViewSession extends React.Component {
         <ViewsessionsElement val={val} bestLap={this.props.bestLap} key={i} lapInc={i+ 1} length={this.props.trackDetails[0] && this.props.trackDetails[0].length}/>
       </div>
     )});
+
 
     return (
       <div className="main">

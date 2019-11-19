@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 const laps= []
+const lapTimes= []
 
 export default class ViewsessionElement extends Component {
   state = { deltaColors: "deltaTimeSlower", count: 0};
@@ -11,6 +12,7 @@ export default class ViewsessionElement extends Component {
     } else {
       this.handleEquals(this.props.val.time)
     }
+    
   }
 
   handleDelta = time => {
@@ -47,6 +49,9 @@ export default class ViewsessionElement extends Component {
     return <span className="deltaTimeSlower">{differnece}</span>
     }
   }
+
+
+
 
   render() {
     const {val, key, lapInc, length} = this.props;

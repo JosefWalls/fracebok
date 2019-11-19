@@ -58,17 +58,22 @@ class Profile extends React.Component {
                     </Link>
                     <Link to="/Photos">
                     <div className="buttonCard">
-                            <p className="profileCardHeaders">Photo Gallery</p>
+                            <p className="profileCardHeaders">Photos</p>
                         </div>
                     </Link>
                     <Link to="/Explore/Home">
                     <div className="buttonCard">
-                            <p className="profileCardHeaders">Fracitter</p>
+                            <p className="profileCardHeaders">Explore</p>
                         </div>
                     </Link>
                     <Link to="/Friends">
                     <div className="buttonCard">
                             <p className="profileCardHeaders">Friends</p>
+                        </div>
+                    </Link>
+                    <Link to="/Videos">
+                    <div className="buttonCard">
+                            <p className="profileCardHeaders">Videos</p>
                         </div>
                     </Link>
                 </div>

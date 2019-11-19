@@ -12,8 +12,10 @@ const gR = require("./controllers/garage")
 const rR = require("./controllers/race")
 const photoR = require("./controllers/photo")
 const eR = require("./controllers/explore")
+const vR = require("./controllers/video")
 
 app.use( express.static( `${__dirname}/../build` ) );
+// app.use(express.static ("./../build"));
 
 massive(process.env.CONNECTION_STRING)
 .then(dbInstance => {
@@ -88,5 +90,8 @@ app.get("/Explore/User/Sessions/:user_id/:track_id", eR.userTrackSessions)
 app.get("/Explore/User/Session/:session_id", eR.sessionDetails)
 app.get("/Explore/User/Photos/:user_id", eR.userPhotos)
 app.get("/Explore/User/Friends/:user_id", eR.userFriends)
+
+//video
+app.post("/Videos/Add", vR.addVideo)
 
 app.listen(4201, () => console.log("Port 4201"))

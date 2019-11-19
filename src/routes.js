@@ -21,6 +21,8 @@ import ViewPhoto from "./components/viewphoto";
 import StopWatch from "./components/stopwatch";
 import EditPhoto from "./components/editPhoto";
 import Friends from "./components/friends";
+import Videos from "./components/videos"
+import AddVideo from "./components/addvideos";
 
 
 //explore page
@@ -50,6 +52,8 @@ export default (
         <Route path="/Viewcar/:car_id" component={ViewCar} />
         <Route path="/Addtrack" component={AddTrack} />
         <Route path="/Addrace" component={Addrace} />
+        <Route path="/Videos" component={Videos} />
+        <Route path="/AddVideo" component={AddVideo} />
         <Route path="/Viewsession/:session_id" component={Viewsession} />
         <Route path="/Editprofile/:user_id" component={EditProfile} />
         <Route path="/Edittrack/:track_id" component={EditTrack} />
