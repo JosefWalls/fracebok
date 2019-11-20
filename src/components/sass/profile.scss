@@ -132,7 +132,7 @@ div.profileCards {
     img.profile {
         position: absolute;
         left: 90px;
-        top: 200px
+        top: 175px
     }
     header.profilePictures {
         margin-right: 1020px;
@@ -143,16 +143,23 @@ div.profileCards {
     }
     h1#userUsername {
         position: absolute;
-        top: 350px;
+        top: 320px;
         left: 40px;
         text-shadow: 2px 2px rgb(242, 92, 0);
     }
     .profileCards {
         padding-right: 1025px;;
-        padding-top: 175px;
+        margin-bottom: 900px;;
     }
     .logooutButton {
     margin-right: 1015px;;
+    height: 45px;
+    }
+    div.buttonCard {
+        height: 75px; 
+    }
+    a {
+        height: 110px;
     }
     p.logooutButton {
         position: absolute;
