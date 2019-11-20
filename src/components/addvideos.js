@@ -45,7 +45,7 @@ class AddPhotos extends React.Component {
 
     handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post("/Vidoes/Add", {
+        await axios.post("/Videos/Add", {
             link: this.state.link,
             description: this.state.description,
             title: this.state.title

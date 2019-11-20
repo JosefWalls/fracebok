@@ -70,14 +70,23 @@ class EditPhoto extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>Edit Photo</h1>
+            <div className="main">
+                <div>
+                <div className="header">
+                    <p id="logo">Fracebok</p>
+                </div>
+                <div className="editProfileCard">
+                <p className="editTitle">Edit Photo</p>
                 <input type="file" onChange={this.handlePicture}></input>
                 <input placeholder="Update Description" onChange={this.handleDesc}></input>
                 <input placeholder="Update Title" onChange={this.handleTitle}></input>
                 <button onSubmit={this.handleSubmit}>Submit Updates</button>
-                <button>Cancel</button>C
+                <Link to="/Photos">
+                <button>Cancel</button>
+                </Link>
+                </div>
             </div>
+        </div>
         )
     }
 }

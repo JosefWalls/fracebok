@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC,EAAE,CAAC;EACX,KAAK,EAAE,UAAU;EACjB,aAAa,EAAE,IAAI;EACnB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,GAAG;CACjB;;AAED,AAAA,WAAW,CAAC,CAAC,CAAC;EACV,KAAK,EAAE,UAAU;CACpB;;AAED,AAAA,WAAW,CAAC,MAAM,CAAC;EACf,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;CACtB",
+    "sources": [
+        "userVideos.scss"
+    ],
+    "names": [],
+    "file": "userVideos.css"
+}

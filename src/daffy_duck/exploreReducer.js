@@ -11,7 +11,9 @@ const initalState = {
     userTracks: [],
     userTrackSessions: [],
     userSessionDetails: [],
-    userPhotos: []
+    userPhotos: [],
+    userVideos: [],
+    userVideo: []
 }
 
 const SEARCH_ALL_USERS = "SEARCH_ALL_USERS"
@@ -24,6 +26,8 @@ const USER_TRACKS = "USER_TRACKS"
 const TRACK_SESSIONS = "TRACK_SESSIONS"
 const SESSION_DETAILS = "SESSION_DETAILS"
 const USER_PHOTOS = "USER_PHOTOS"
+const USER_VIDEOS = "USER_VIDEOS"
+const USER_VIDEO = "USER_VIDEO"
 
 export const searchAllUsers = (e) => {
     return {
@@ -95,6 +99,20 @@ export const getUserPhotos = (user_id) => {
     }
 }
 
+export const getUserVideos = (user_id) => {
+    return {
+        type: USER_VIDEOS,
+        payload: axios.get(`/Explore/User/Videos/${user_id}`)
+    }
+}
+
+export const getVideo = (video_id) => {
+    return {
+        type: USER_VIDEO,
+        payload: axios.get(`/Explore/User/Video/${video_id}`)
+    }
+}
+
 export default function reducer (state = initalState, action){
     const {type, payload} = action;
     switch(type){
@@ -134,6 +152,15 @@ export default function reducer (state = initalState, action){
             return {...state, loading: true}
         case `${USER_PHOTOS}_FULFILLED`:
             return {...state, loading: false, userPhotos: payload.data}
+        case `${USER_VIDEOS}_PENDING`:
+            return {...state, loading: true}
+        case `${USER_VIDEOS}_FULFILLED`:
+            return {...state, loading: false, userVideos: payload.data}
+        case `${USER_VIDEO}_PENDING`:
+            return {...state, loading: true}
+        case `${USER_VIDEO}_FULFILLED`:
+            console.log(payload.data)
+            return {...state, loading: false, userVideo: payload.data}
         default: 
             return state
     }

@@ -18,11 +18,11 @@ import EditProfile from "./components/editprofile";
 import EditTrack from "./components/edittrack";
 import ViewCarSession from "./components/viewcarSessions"
 import ViewPhoto from "./components/viewphoto";
-import StopWatch from "./components/stopwatch";
 import EditPhoto from "./components/editPhoto";
 import Friends from "./components/friends";
 import Videos from "./components/videos"
 import AddVideo from "./components/addvideos";
+import ViewVideo from "./components/viewvideo"
 
 
 //explore page
@@ -36,6 +36,10 @@ import UserTrackSessions from "./components/explore/userTrackSessions"
 import UserSessionDetails from "./components/explore/userSession"
 import UserPhotos from "./components/explore/userPhotos"
 import userPhotos from "./components/explore/userPhotos";
+import viewvideo from "./components/viewvideo";
+import UserVideos from "./components/explore/userVideos"
+import userVideos from "./components/explore/userVideos";
+import userVideo from "./components/explore/userVideo";
 
 export default (
     <Switch>
@@ -53,6 +57,7 @@ export default (
         <Route path="/Addtrack" component={AddTrack} />
         <Route path="/Addrace" component={Addrace} />
         <Route path="/Videos" component={Videos} />
+        <Route path="/Video/:video_id" component={viewvideo} />
         <Route path="/AddVideo" component={AddVideo} />
         <Route path="/Viewsession/:session_id" component={Viewsession} />
         <Route path="/Editprofile/:user_id" component={EditProfile} />
@@ -69,5 +74,7 @@ export default (
         <Route path="/Friends" component={Friends} />
         <Route path="/Explore/UserTracks/:user_id" component={UserTracks} />
         <Route path="/Explore/UserPhotos/:user_id" component={userPhotos} />
+        <Route exact path="/Explore/UserVideo/:video_id" component={userVideo} />
+        <Route path="/Explore/UserVideos/:user_id" component={userVideos} />
     </Switch>
 )

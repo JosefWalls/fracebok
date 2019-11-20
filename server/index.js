@@ -90,8 +90,13 @@ app.get("/Explore/User/Sessions/:user_id/:track_id", eR.userTrackSessions)
 app.get("/Explore/User/Session/:session_id", eR.sessionDetails)
 app.get("/Explore/User/Photos/:user_id", eR.userPhotos)
 app.get("/Explore/User/Friends/:user_id", eR.userFriends)
+app.get("/Explore/User/Videos/:user_id", eR.userVideos)
+app.get("/Explore/User/Video/:video_id", eR.userVideo)
 
 //video
 app.post("/Videos/Add", vR.addVideo)
+app.get("/Videos", vR.getVideos)
+app.get("/Video/:video_id", vR.getVideo)
+app.delete("/Videos/Delete/:video_id", vR.deleteVideo)
 
 app.listen(4201, () => console.log("Port 4201"))

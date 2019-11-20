@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {getVideos} from "./../daffy_duck/videoReducer"
+import {getUserVideos} from "./../../daffy_duck/exploreReducer"
 import {connect} from 'react-redux'
-import "./sass/photo.css"
+import "./sass/userVideos.css"
 
 class Photos extends React.Component {
     constructor(){
@@ -15,7 +15,8 @@ class Photos extends React.Component {
     }
 
     componentDidMount = async() => {
-        await this.props.getVideos()
+        await this.props.getUserVideos(this.props.match.params.user_id)
+        console.log(this.props.match.params.user_id)
     }
 
     handleClick = () => {
@@ -30,10 +31,11 @@ class Photos extends React.Component {
     
 
     render(){
-        const mappedVideos = this.props.videos && this.props.videos.map((val, i) => {
+        // console.log(this.props.userVideos && this.props.user_id//)
+        const mappedVideos = this.props.userVideos && this.props.userVideos.map((val, i) => {
             return (
                 <div className="mappedCars">
-                    <Link to={`/Video/${val.video_id}`}>
+                    <Link to={`/Explore/UserVideo/${val.video_id}`}>
                     <button>View Video</button>
                     </Link>
                     <h4>{val.title}</h4>
@@ -70,8 +72,8 @@ class Photos extends React.Component {
 
 const mapStateToProps = reduxState => {
     return {
-        videos: reduxState.VideoReducer.videos
+        userVideos: reduxState.ExploreReducer.userVideos
     }
 }
 
-export default connect(mapStateToProps, {getVideos})(Photos)
+export default connect(mapStateToProps, {getUserVideos})(Photos)

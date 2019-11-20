@@ -17,3 +17,12 @@
 .mapped {
     @include photoGallery()
 }
+
+.video {
+    height: 300px;
+    margin-top: 75px;
+    width: 750px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}

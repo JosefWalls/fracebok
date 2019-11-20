@@ -1,11 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
-import {viewImage, deletePhoto} from "./../daffy_duck/photoReducer"
+import {getVideo, deleteVideo} from "./../daffy_duck/videoReducer"
 import "./sass/viewphoto.css"
 
 
-class ViewPhoto extends React.Component {
+class ViewVideo extends React.Component {
     constructor(){
         super()
 
@@ -17,8 +17,8 @@ class ViewPhoto extends React.Component {
     }
 
     componentDidMount () {
-        const photo_id = this.props.match.params.photo_id
-        this.props.viewImage(photo_id)
+        const video_id = this.props.match.params.video_id
+        this.props.getVideo(video_id)
     }
 
     handleClick = () => {
@@ -32,21 +32,20 @@ class ViewPhoto extends React.Component {
       }
     
     handleDelete = async () => {
-        await this.props.deletePhoto(this.props.match.params.photo_id)
-                this.props.history.push("/Photos")
+        await this.props.deleteVideo(this.props.match.params.video_id)
+        this.props.history.push("/Videos")
     }
 
     render(){
-        const mappedImage = this.props.image.map((val, i) => {
+        const mappedImage = this.props.video.map((val, i) => {
             return (
                 <div className="viewImage">
-                    <img className="carImage" src={val.link}></img>
                     <h2>{val.title}</h2>
+                    <iframe className="video" src={val.link}></iframe>
                     <p>{val.description}</p>
                 </div>
             )
         })
-        console.log(this.props.image)
         return (
             <div className="main">
             <div className="header">
@@ -58,13 +57,10 @@ class ViewPhoto extends React.Component {
             </div>
             <div className={this.state.toggleMenu}>
              <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-                <Link to="/Photos">
-                    <button id="button1">Back to Images</button>
+                <Link to="/Videos">
+                    <button id="button1">Back to Videos</button>
                 </Link>
-                <button onClick={this.handleDelete} id="button2">Delete Image</button>
-                <Link to={`/EditPhoto/${this.props.match.params.photo_id}`}>
-                    <button id="button3">Edit Image</button>
-                </Link>
+                <button onClick={this.handleDelete} id="button2">Delete Video</button>
             </div>
             </div>
             </div>
@@ -75,8 +71,8 @@ class ViewPhoto extends React.Component {
 
 const mapStateToProps = reduxState => {
     return {
-        image: reduxState.PhotoReducer.image
+        video: reduxState.VideoReducer.video
     }
 }
 
-export default connect(mapStateToProps, {viewImage, deletePhoto})(ViewPhoto);
+export default connect(mapStateToProps, {getVideo, deleteVideo})(ViewVideo);

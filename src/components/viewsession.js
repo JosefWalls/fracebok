@@ -110,13 +110,6 @@ class ViewSession extends React.Component {
           <p id="logo">Fracebok</p>
       </div>
         <h1 id="garageTitle">View session</h1>
-             <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-          <Link to="/Races">
-          <button id="button3">Back</button>
-          </Link>
-            <button onClick={this.handleDelete} id="button2">Delete Session</button>
-          </div>
         <div className="lapTimeSpecs">
         <p id="lapTitle">Laps: {this.props.sessionDetails.length}</p>
           <p id="lengthTitle">Total Estimated Session Length: {Math.floor((this.props.trackDetails[0] && this.props.trackDetails[0].length * (this.props.sessionDetails.length)) * 100) / 100 } miles</p>

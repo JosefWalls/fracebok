@@ -59,6 +59,11 @@ class UserProfile extends React.Component {
                         <p className="profileCardHeaders">Friends</p>
                     </Link>
                 </div>
+                <div className="buttonCard">
+                    <Link to={`/Explore/UserVideos/${val.user_id}`}>
+                        <p className="profileCardHeaders">Videos</p>
+                    </Link>
+                </div>
                 </div>
             </div>
         )

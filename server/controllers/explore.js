@@ -72,6 +72,21 @@ const userFriends = async (req, res) => {
     res.status(200).json(friends)
 }
 
+const userVideos = async (req, res) => {
+    const user_id = +req.params.user_id;
+    const db = req.app.get("db");
+    const videos = await db.get_user_videos(user_id)
+
+    res.status(200).json(videos)
+}
+
+const userVideo = async (req, res) => {
+    const video_id = +req.params.video_id;
+    const db = req.app.get("db")
+    const video = await db.get_video(video_id);
+    res.status(200).json(video)
+}
+
 module.exports = {
     searchAllUsers,
     getAllUsers,
@@ -82,5 +97,7 @@ module.exports = {
     userTrackSessions,
     sessionDetails,
     userPhotos,
-    userFriends
+    userFriends,
+    userVideos,
+    userVideo
 }
