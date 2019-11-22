@@ -60,6 +60,21 @@ table {
 	bottom: 525px;
 }
 
+@media (max-width: 414px){
+	.addCarCard {
+		margin-left: 25px;
+	}
+	h1#garageTitle {
+		display: none;
+	}
+	img#toggleMenuOn {
+		position: absolute;
+		left: 135px;
+		top: 105px;
+		height: 40px;
+	}
+}
+
 @media (max-width: 320px){
 	.addCarCard {
 		margin-left: 35px;

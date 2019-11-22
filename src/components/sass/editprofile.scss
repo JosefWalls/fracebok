@@ -53,6 +53,12 @@
     margin-top: 5px;
 }
 
+@media (max-width: 414px){
+    div.editProfileCard {
+        margin-left: 25px;
+    }
+}
+
 @media (max-width: 320px){
     div.editProfileCard {
         margin-left: 35px;

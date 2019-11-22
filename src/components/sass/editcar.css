@@ -135,6 +135,15 @@ table {
   }
 }
 
+@media (max-width: 414px) {
+  section.loginbox {
+    margin-left: 85px;
+  }
+  p#logo {
+    margin-left: 50px;
+  }
+}
+
 @media (max-width: 320px) {
   div.loginInputs {
     margin-left: 40px;
@@ -213,6 +222,21 @@ table {
   position: absolute;
   left: 1100px;
   bottom: 525px;
+}
+
+@media (max-width: 414px) {
+  .addCarCard {
+    margin-left: 25px;
+  }
+  h1#garageTitle {
+    display: none;
+  }
+  img#toggleMenuOn {
+    position: absolute;
+    left: 135px;
+    top: 105px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 320px) {

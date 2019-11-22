@@ -135,6 +135,12 @@ table {
   }
 }
 
+@media (max-width: 414px) {
+  div.loginInputs {
+    margin-left: 0px;
+  }
+}
+
 @media (max-width: 320px) {
   div.loginInputs {
     margin-left: 40px;

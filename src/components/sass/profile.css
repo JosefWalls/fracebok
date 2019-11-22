@@ -135,6 +135,15 @@ table {
   }
 }
 
+@media (max-width: 414px) {
+  section.loginbox {
+    margin-left: 85px;
+  }
+  p#logo {
+    margin-left: 50px;
+  }
+}
+
 @media (max-width: 320px) {
   div.loginInputs {
     margin-left: 40px;
@@ -267,7 +276,6 @@ div.profileCards {
 @media (max-width: 1000px) {
   header.profilePictures {
     width: 750px;
-    margin-right: 250px;
   }
   img.profileheader {
     width: 600px;
@@ -288,6 +296,43 @@ div.profileCards {
             flex-direction: column;
     padding-right: 250px;
     height: 175px;
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 414px) {
+  header.profilePictures {
+    margin-right: 970px;
+    border-radius: 0%;
+  }
+  img.profileheader {
+    display: none;
+  }
+  img.profile {
+    position: absolute;
+    left: 55px;
+    top: 175px;
+    height: 200px;
+    width: 200px;
+  }
+  h1#userUsername {
+    margin-top: 230px;
+  }
+  div.buttonCard {
+    margin-right: 800px;
+    height: 75px;
+    width: 175px;
+    position: relative;
+    top: 295px;
+  }
+  p#logo {
+    position: absolute;
+    right: 500px;
+    color: white;
+  }
+  div.header {
+    position: relative;
+    right: 215px;
   }
 }
 

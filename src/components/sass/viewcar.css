@@ -135,6 +135,15 @@ table {
   }
 }
 
+@media (max-width: 414px) {
+  section.loginbox {
+    margin-left: 85px;
+  }
+  p#logo {
+    margin-left: 50px;
+  }
+}
+
 @media (max-width: 320px) {
   div.loginInputs {
     margin-left: 40px;
@@ -171,6 +180,13 @@ table {
   border: none;
   border-radius: 10%;
   margin-left: 15px;
+}
+
+@media (max-width: 414px) {
+  .carCard {
+    margin-left: 25px;
+    width: 250px;
+  }
 }
 
 @media (max-width: 320px) {

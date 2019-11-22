@@ -23,6 +23,13 @@
     margin-left: 15px;
 }
 
+@media (max-width: 414px){
+    .carCard {
+        margin-left: 25px;
+        width: 250px;
+    }
+}
+
 @media (max-width: 320px){
     .carCard {
         margin-left: 35px;

@@ -118,6 +118,15 @@
     top: 160px;
 }
 
+@media(max-width: 414px){
+    .garage {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1047px;
+        width: 750px;
+    }
+}
+
 
 @media (max-width: 320px){
     .garage {

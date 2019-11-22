@@ -135,6 +135,15 @@ table {
   }
 }
 
+@media (max-width: 414px) {
+  section.loginbox {
+    margin-left: 85px;
+  }
+  p#logo {
+    margin-left: 50px;
+  }
+}
+
 @media (max-width: 320px) {
   div.loginInputs {
     margin-left: 40px;
@@ -283,6 +292,20 @@ table {
   border: none;
   position: fixed;
   top: 160px;
+}
+
+@media (max-width: 414px) {
+  .garage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 1047px;
+    width: 750px;
+  }
 }
 
 @media (max-width: 320px) {
