@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {getGarage} from "./../daffy_duck/garageReducer"
 import Axios from 'axios';
 import {storage} from "./../firebase-config";
-import "./sass/addrace.css"
 import StopWatch from "./stopwatch"
 
 

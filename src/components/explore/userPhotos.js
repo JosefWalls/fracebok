@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {getUserPhotos} from "./../../daffy_duck/exploreReducer"
 import {connect} from 'react-redux'
-import "./../sass/photo.css"
 
 class Photos extends React.Component {
     constructor(){

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {storage} from "./../firebase-config"
 import {connect} from 'react-redux'
 import Axios from 'axios'
-import "./sass/editprofile.css"
+import "./scss/editTemplate.css"
 
 class EditProfile extends React.Component{
     constructor(){
@@ -22,7 +22,6 @@ class EditProfile extends React.Component{
 
     handleChange = (e) => {
         this.props.updateState({[e.target.name]: e.target.value})
-        console.log(this.props.username)
     }
 
     handleProfile = (e) => {
@@ -82,17 +81,19 @@ class EditProfile extends React.Component{
                 </div>
                 <div className="editProfileCard">
                     <p className="editTitle">Edit Profile</p>
-                    <input placeholder="Update Name" onChange={this.handleChange} name="username"></input>
+                    <input placeholder="Update Username" onChange={this.handleChange} name="username"></input>
                     <input placeholder="Update First Name" onChange={this.handleChange} name="firstname"></input>
                     <h1>Edit Profile</h1>
                     <input type="file" placeholder="Update Profile" onChange={this.handleProfile}></input>
                     <h1>Edit Header</h1>
                     <input type="file" placeholder="Update Header" onChange={this.handleHeader}></input>
-                    <button onClick={this.handleDelete} id="deleteProfile">DELETE PROFILE</button>
-                    <button onClick={this.handleSubmit}>Submit Updates</button>
-                <Link to="/Profile">
-                <button>Cancel</button>
-                </Link>
+                    <div className="editButtons">
+                        <button onClick={this.handleDelete} id="deleteProfile">DELETE PROFILE</button>
+                        <button onClick={this.handleSubmit}>Submit Updates</button>
+                        <Link to="/Profile">
+                         <button>Cancel</button>
+                        </Link>
+                    </div>
                 </div>
               </div>
             </div>

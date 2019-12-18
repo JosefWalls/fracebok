@@ -2,7 +2,6 @@ import React from "react"
 import {connect} from "react-redux"
 import {getFriends} from "./../daffy_duck/profileReducer";
 import {Link} from "react-router-dom"
-import "./sass/friend.css"
 
 class Friends extends React.Component {
     constructor(){

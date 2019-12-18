@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {getUserCar, getUserCarTracks} from "./../../daffy_duck/exploreReducer"
 import {connect} from 'react-redux'
-import "./../sass/viewcar.css"
 
 class Viewcar extends React.Component {
     constructor(){

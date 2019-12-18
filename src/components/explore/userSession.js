@@ -6,7 +6,6 @@ import {getBestLap} from "./../../daffy_duck/session_detailsReducer"
 import { connect } from "react-redux";
 import ViewsessionsElement from './../ViewsessionElement';
 import { Line } from "react-chartjs-2";
-import "./../sass/viewsession.css"
 
 class ViewSession extends React.Component {
   constructor() {

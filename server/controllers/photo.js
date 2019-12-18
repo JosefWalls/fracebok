@@ -37,10 +37,20 @@ const editPhoto = async (req, res) => {
     res.status(200).json("Photo Edited")
 }
 
+const addComment = async (req, res) => {
+    const {content} = req.body;
+    const photo_id = +req.params.photo_id;
+    const {id} = req.session.user;
+    const db = req.app.get("db");
+    const post = await db.add_photo_comment(photo_id, id, content)
+    res.status(200).json("Comment Added")
+}
+
 module.exports = {
     addImage,
     getUserImages,
     getPhoto,
     deletePhoto,
-    editPhoto
+    editPhoto,
+    addComment
 }

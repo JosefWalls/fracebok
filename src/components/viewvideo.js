@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
 import {getVideo, deleteVideo} from "./../daffy_duck/videoReducer"
-import "./sass/viewphoto.css"
 
 
 class ViewVideo extends React.Component {

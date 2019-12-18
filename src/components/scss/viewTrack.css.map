@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,UAAU,EAAE,wBAAwB;EACpC,KAAK,EAAE,MAAM;EACb,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,KAAK;EAClB,UAAU,EAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,0BAA0B;EACrD,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,WAAW;CACrC",
+    "sources": [
+        "viewTrack.scss"
+    ],
+    "names": [],
+    "file": "viewTrack.css"
+}

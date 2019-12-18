@@ -1,0 +1,32 @@
+.mappedTrackCard {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 25px 25px 0px 25px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.mappedTrackSessions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mapped{
+    margin: 10px 10px 10px 50px;
+    width: 350px;
+    background: rgba(155, 155, 155, 0.8);
+    box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+}
+
+.mapped img {
+    width: 200px;
+    border-radius: 15%;
+}
+
+.mapped p{
+    margin-right: 210px;
+}
+
+.mapped button {
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}

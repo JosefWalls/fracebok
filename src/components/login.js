@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom"
 import {loginUser, updateState, resetFields} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from "react-redux";
-import "./sass/login.css"
+import "./scss/login.css"
 
 class Login extends React.Component {
 
@@ -40,6 +40,8 @@ class Login extends React.Component {
                 <div className="loginInputs">
                     <input placeholder="Enter username" name="username" onChange={this.handleChange} ></input>
                     <input placeholder="Enter password" name="password" onChange={this.handleChange} type="password"></input>
+                </div>
+                <div className="loginButtons">
                     <Link to="/Profile">
                         <button onClick={this.handleClick} className="loginPageButtons">Login</button>
                     </Link>

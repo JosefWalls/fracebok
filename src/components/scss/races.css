@@ -1,0 +1,76 @@
+.mappedTracks {
+  background: rgba(155, 155, 155, 0.8);
+  width: 1000px;
+  margin-top: 25px;
+  margin-left: 240px;
+  -webkit-box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+          box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mappedUserTracks {
+  border: 1px solid grey;
+  margin: 5px 5px 5px 5px;
+  border-radius: 7.5%;
+  height: 150px;
+  -webkit-box-shadow: 3px 3px grey;
+          box-shadow: 3px 3px grey;
+}
+
+.mappedUserTracks h1 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  margin: 10px 0px 10px 0px;
+  font-size: 1.5em;
+}
+
+.mappedUserTracks p {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  margin: 10px 0px 10px 0px;
+}
+
+.mappedUserTracks button {
+  width: 50px;
+}
+
+.mappedUserTracks button:hover {
+  color: white;
+  background: red;
+}
+
+.mappedGarage {
+  -webkit-box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+          box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+  background: rgba(155, 155, 155, 0.8);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  width: 1000px;
+  margin-left: 240px;
+  margin-top: 20px;
+}
+
+.mappedCar {
+  margin: 5px 5px 5px 5px;
+  height: 250px;
+  border-radius: 7.5%;
+  border: 1px solid grey;
+}
+
+.mappedCar h1 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  margin: 5px 0px 5px 0px;
+}
+
+.mappedCar img {
+  margin-left: 50px;
+  -webkit-box-shadow: 5px 5px grey;
+          box-shadow: 5px 5px grey;
+}
+/*# sourceMappingURL=races.css.map */

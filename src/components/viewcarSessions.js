@@ -17,7 +17,6 @@ class ViewCarSession extends React.Component {
 
     componentDidMount = async () => {
         await this.props.getCarSessions(this.props.match.params.car_id)
-        console.log(this.props.carSessions)
     }
 
     handleClick = () => {
@@ -47,14 +46,6 @@ class ViewCarSession extends React.Component {
             <div className="header">
                 <p id="logo">Fracebok</p>
             </div>
-            <div className="flyout">
-             <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-               <Link to="/Races">
-                    <button id="button3">Back</button>
-                </Link>
-            </div>
-          </div>
                 <h1 id="registerTitle">View Car</h1>
                 <div className="mappedTrackCard">
                     

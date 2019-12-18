@@ -5,7 +5,6 @@ import firebase from 'firebase';
 import {updateState} from "./../daffy_duck/garageReducer";
 import Axios from 'axios';
 import {connect} from 'react-redux'
-import "./sass/addcar.css"
 
 class AddCar extends React.Component {
     constructor(){

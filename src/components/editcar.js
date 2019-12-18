@@ -4,7 +4,6 @@ import {getCar, editCar} from "./../daffy_duck/garageReducer";
 import {connect} from 'react-redux'
 import Axios from 'axios';
 import {storage} from "./../firebase-config";
-import "./sass/editcar.css"
 
 class EditCar extends React.Component {
     constructor(){

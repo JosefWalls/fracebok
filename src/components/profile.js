@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 import {logoutUser} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from "react-redux"
 import {retrieveInfo} from "./../daffy_duck/profileReducer"
-import "./sass/profile.css"
+import "./scss/profile.css"
+
 class Profile extends React.Component {
     constructor(){
         super()
@@ -31,7 +32,7 @@ class Profile extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <p onClick={this.handleLogout} className="logooutButton">Log Out</p>
+                {/* <p onClick={this.handleLogout} className="logooutButton">Log Out</p> */}
              <div className="userInfoCard">
                 <header className="profilePictures">
                     <img src={this.props.user[0] && this.props.user[0].header} className="profileheader"></img>

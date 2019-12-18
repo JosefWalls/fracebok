@@ -1,0 +1,45 @@
+.carImage {
+    height: 200px;
+    width: 200px;
+    border-radius: 15%;
+}
+
+.garage {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    padding-left: 45px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 10px black;
+    margin-bottom: 50px;
+}
+
+.mappedCars {
+    margin-top: 25px;
+    background: rgba(155, 155, 155, 0.8);
+    width: 300px;
+    padding-top: 10px;
+    margin-right: 10px;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
+}
+
+.mappedCars h1 {
+    font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
+    font-size: 1em;
+}
+
+.mappedCars button {
+    border: none;
+    height: 25px;
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: red;
+    color: whitesmoke;
+    border-radius: 15%;
+}

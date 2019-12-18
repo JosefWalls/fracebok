@@ -6,7 +6,6 @@ import {storage} from "./../firebase-config";
 // import fileUploader from "react-firebase-file-uploader"
 // import firebase from "firebase";
 import {Link} from 'react-router-dom'
-import "./sass/register.css"
 
 class Register extends React.Component {
 

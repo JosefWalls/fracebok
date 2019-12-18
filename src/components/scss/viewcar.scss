@@ -1,0 +1,58 @@
+#carDesc {
+    font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.carMainCard {
+    display: flex;
+    justify-content: center;
+}
+
+
+.carCard {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 10px black;
+    height: 500px;
+    width: 750px;
+    margin-top: 25px;
+}
+
+.carCard img {
+    margin-top: 50px;
+    width: 350px;
+    border-radius: 0%;
+    position: absolute;
+    left: 348.5px;
+    border-radius: 5%;
+}
+
+.trackList {
+    border: 1px solid white;
+    margin-left: 375px;
+    width: 365px;
+    height: 415px;
+}
+
+.trackList h1 {
+    font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
+}
+
+.main button {
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: none;
+}
+
+.main button:hover {
+    background: red;
+    color: white;
+}
+
+.trackList h1{
+    margin-top: 5px;
+}

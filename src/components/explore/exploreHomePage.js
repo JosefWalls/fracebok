@@ -2,7 +2,6 @@ import React from "react"
 import {connect} from "react-redux"
 import {Link} from "react-router-dom"
 import {getAllUsers} from "./../../daffy_duck/exploreReducer"
-import "./sass/exploreHome.css"
 
 class ExploreHomePage extends React.Component {
     constructor(){

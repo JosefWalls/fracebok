@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getGarage, updateState } from "./../daffy_duck//garageReducer";
 import { connect } from "react-redux";
-import "./sass/garage.css";
+import "./scss/garage.css"
 
 class Garage extends React.Component {
   constructor() {
@@ -53,9 +53,8 @@ class Garage extends React.Component {
           <p id="logo">Fracebok</p>
         </div>
         <div className="carCards">
-          <h1 id="garageTitle">Garage</h1>
           <div className="flyout">
-             <div className={this.state.toggleMenu}>
+             {/* <div className={this.state.toggleMenu}>
              <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
             <Link to="/Profile">
               <button className="garageButtons" id="button1">Back to profile</button>
@@ -63,7 +62,7 @@ class Garage extends React.Component {
             <Link to="/Addcar">
               <button className="garageButtons" id="button2">Add Car</button>
             </Link>
-            </div>
+            </div> */}
           </div>
           <div className="garage">{mappedGarage}</div>
         </div>

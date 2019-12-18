@@ -2,8 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
 import {getVideo} from "./../../daffy_duck/exploreReducer"
-import "./../sass/viewphoto.css"
-
 
 class ViewVideo extends React.Component {
     constructor(){

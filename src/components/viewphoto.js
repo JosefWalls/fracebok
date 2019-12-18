@@ -2,8 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
 import {viewImage, deletePhoto} from "./../daffy_duck/photoReducer"
-import "./sass/viewphoto.css"
-
+import AddComment from "./addComment";
 
 class ViewPhoto extends React.Component {
     constructor(){
@@ -46,7 +45,6 @@ class ViewPhoto extends React.Component {
                 </div>
             )
         })
-        console.log(this.props.image)
         return (
             <div className="main">
             <div className="header">
@@ -55,6 +53,10 @@ class ViewPhoto extends React.Component {
             <div className="userPhotoCard">
             <div className="userPhoto">
                 {mappedImage}
+            </div>
+            <div>
+                <input type="text" placeholder="Add Comment"></input>
+                <button>Add Comment</button>
             </div>
             <div className={this.state.toggleMenu}>
              <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>

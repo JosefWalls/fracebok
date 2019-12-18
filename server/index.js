@@ -77,6 +77,7 @@ app.post("/photos/addImage", photoR.addImage)
 app.get("/photos/UserImages", photoR.getUserImages)
 app.get("/photos/getImage/:photo_id", photoR.getPhoto)
 app.delete("/photos/DeleteImage/:photo_id", photoR.deletePhoto)
+app.post("/photos/comment/add/:photo_id", photoR.addComment)
 
 
 //explore

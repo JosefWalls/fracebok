@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {retrieveUserTracks, updateState} from "./../daffy_duck/raceReducer";
 import {getGarage} from "./../daffy_duck/garageReducer"
 import {connect} from 'react-redux'
-import "./sass/races.css"
+import "./scss/races.css"
 
 class Races extends React.Component {
     constructor(){
@@ -31,7 +31,6 @@ class Races extends React.Component {
       }
 
     render(){
-        console.log(this.props.userTracks)
         const mappedTracks = this.props.userTracks.map((val, i) => {
             return (
                 <div className="mappedUserTracks">
@@ -61,20 +60,7 @@ class Races extends React.Component {
                 <div className="header">
                      <p id="logo">Fracebok</p>
                 </div>
-                <h1 id="racesTitle">Races</h1>
             <div className="carCards">
-             <div className={this.state.toggleMenu}>
-                <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-                <Link to="/Profile">
-                    <button className="garageButtons" id="button1">Back to Profile</button>
-                </Link>
-                <Link to="/Addrace">
-                    <button className="garageButtons" id="button2">Add a race</button>
-                </Link>
-                <Link to="/Addtrack">
-                    <button  className="garageButtons" id="button3">Add Track</button>
-                </Link>
-            </div>
                 <section className="userRaces">
                 <div className="mappedTracks">
                         {mappedTracks}

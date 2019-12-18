@@ -22,8 +22,7 @@ import EditPhoto from "./components/editPhoto";
 import Friends from "./components/friends";
 import Videos from "./components/videos"
 import AddVideo from "./components/addvideos";
-import ViewVideo from "./components/viewvideo"
-
+import ViewVideo from "./components/viewvideo";
 
 //explore page
 

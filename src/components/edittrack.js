@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {editTrack, updateState} from "./../daffy_duck/raceReducer"
 import {Link} from 'react-router-dom';
 import axios from 'axios'
-
+import "./scss/editTemplate.css"
 
 class Edittrack extends React.Component {
     constructor(){
@@ -40,15 +40,19 @@ class Edittrack extends React.Component {
                 <div className="header">
                      <p id="logo">Fracebok</p>
                 </div>
-                <div className="addCarCard">
-                <h1 id="registerTitle">Edit Track</h1>
+                <div className="editProfileCard">
+                    <h1>Edit Track Name</h1>
                 <input placeholder="Enter Track Name" name="track_name" onChange={this.handleChange}></input>
+                    <h1>Edit Track Turns</h1>
                 <input placeholder="Enter Track Turns" name="turns" onChange={this.handleChange}></input>
+                    <h1>Edit Track Length</h1>
                 <input placeholder="Enter Track Length" name="length" onChange={this.handleChange}></input>
+                <div className="editButtons">
                 <button onClick={this.handleSubmit}>Submit Updates</button>
                 <Link to="/Races">
                     <button>Cancel</button>
                 </Link>
+                </div>
                 </div>
             </div>
         )
