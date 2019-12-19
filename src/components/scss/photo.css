@@ -1,0 +1,28 @@
+.viewImage {
+  background: rgba(0, 0, 0, 0.6);
+  width: 900px;
+  margin: 50px 25px 0px 260px;
+}
+
+.photoImage {
+  margin-top: 10px;
+  width: 750px;
+  height: 325px;
+}
+
+.viewImage h2 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  margin: 10px 0px 10px 0px;
+  text-decoration: underline;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+}
+
+.viewImage p {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  margin: 10px 10px 25px 10px;
+}
+/*# sourceMappingURL=photo.css.map */

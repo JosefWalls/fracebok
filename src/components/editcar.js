@@ -65,13 +65,13 @@ class EditCar extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <p id="editCarTitle">Edit car</p>
-                <div className="addCarCard">
+                <p id="editTitle">Edit car</p>
+                <div className="editProfileCard">
                 <input placeholder={this.props.car.make} name="make" onChange={this.handleEdit}></input>
                 <input placeholder={this.props.car.model} name="model" onChange={this.handleEdit}></input>
                 <input placeholder={this.props.car.year} name="year" onChange={this.handleEdit}></input>
                 <input type="file" placeholder="Update image" onChange={this.handleNewImage} name="image"></input>
-                <button onClick={this.handleSubmit}>Submit updates</button>
+                <button onClick={this.handleSubmit} id="deleteProfile">Submit updates</button>
                 <Link to="/Garage">
                     <button>Back to Vehicle</button>
                 </Link>

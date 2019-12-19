@@ -46,9 +46,7 @@ class ViewCarSession extends React.Component {
             <div className="header">
                 <p id="logo">Fracebok</p>
             </div>
-                <h1 id="registerTitle">View Car</h1>
                 <div className="mappedTrackCard">
-                    
                 <div className="mappedTrackSessions">
                 {mappedSessions}
                 </div>

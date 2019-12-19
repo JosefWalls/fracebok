@@ -8,6 +8,7 @@ import {
 import { connect } from "react-redux";
 import ViewsessionElement from './ViewsessionElement';
 import { Line } from "react-chartjs-2";
+import "./scss/viewSession.css"
 
 class ViewSession extends React.Component {
   constructor() {
@@ -108,17 +109,18 @@ class ViewSession extends React.Component {
       <div className="header">
           <p id="logo">Fracebok</p>
       </div>
-        {/* <h1 id="garageTitle">View session</h1> */}
+        <div className="lapCard">
         <div className="lapTimeSpecs">
         <p id="lapTitle">Laps: {this.props.sessionDetails.length}</p>
           <p id="lengthTitle">Total Estimated Session Length: {Math.floor((this.props.trackDetails[0] && this.props.trackDetails[0].length * (this.props.sessionDetails.length)) * 100) / 100 } miles</p>
         <p id="bestLap">Best Lap: {this.props.bestLap}</p>
         </div>
-        <div className="lapTimeCards">
+        <div className="lapTimeCard">
           <div className="lapTimes">{mappedLaps}</div>
         </div>
         <div className="chart">
         <Line
+          className="graph"
           data={this.state.chartData}
           height={25}
           width={50}
@@ -129,6 +131,7 @@ class ViewSession extends React.Component {
             }
           }}
         />
+        </div>
         </div>
       </div>
     );

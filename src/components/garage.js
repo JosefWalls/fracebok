@@ -54,15 +54,8 @@ class Garage extends React.Component {
         </div>
         <div className="carCards">
           <div className="flyout">
-             {/* <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-            <Link to="/Profile">
-              <button className="garageButtons" id="button1">Back to profile</button>
-            </Link>
-            <Link to="/Addcar">
-              <button className="garageButtons" id="button2">Add Car</button>
-            </Link>
-            </div> */}
+             <button>Add a Car</button>
+             <button>Profile </button>
           </div>
           <div className="garage">{mappedGarage}</div>
         </div>

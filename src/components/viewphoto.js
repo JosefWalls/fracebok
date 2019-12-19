@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
 import {viewImage, deletePhoto} from "./../daffy_duck/photoReducer"
 import AddComment from "./addComment";
+import "./scss/photo.css"
 
 class ViewPhoto extends React.Component {
     constructor(){
@@ -39,7 +40,7 @@ class ViewPhoto extends React.Component {
         const mappedImage = this.props.image.map((val, i) => {
             return (
                 <div className="viewImage">
-                    <img className="carImage" src={val.link}></img>
+                    <img className="photoImage" src={val.link}></img>
                     <h2>{val.title}</h2>
                     <p>{val.description}</p>
                 </div>
@@ -57,16 +58,6 @@ class ViewPhoto extends React.Component {
             <div>
                 <input type="text" placeholder="Add Comment"></input>
                 <button>Add Comment</button>
-            </div>
-            <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-                <Link to="/Photos">
-                    <button id="button1">Back to Images</button>
-                </Link>
-                <button onClick={this.handleDelete} id="button2">Delete Image</button>
-                <Link to={`/EditPhoto/${this.props.match.params.photo_id}`}>
-                    <button id="button3">Edit Image</button>
-                </Link>
             </div>
             </div>
             </div>

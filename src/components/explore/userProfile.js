@@ -54,11 +54,6 @@ class UserProfile extends React.Component {
                         <p className="profileCardHeaders">Photos</p>
                     </Link>
                 </div>
-                {/* <div className="buttonCard">
-                    <Link to={`/Explore/UserPhotos/${val.user_id}`}>
-                        <p className="profileCardHeaders">Friends</p>
-                    </Link>
-                </div> */}
                 <div className="buttonCard">
                     <Link to={`/Explore/UserVideos/${val.user_id}`}>
                         <p className="profileCardHeaders">Videos</p>
@@ -71,7 +66,6 @@ class UserProfile extends React.Component {
         return (
             <div className="main">
             <div className="header">
-                <p id="logo">Fracebok</p>
             </div>
             {mappedUserProfile}
             </div>

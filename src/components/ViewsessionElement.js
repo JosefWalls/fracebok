@@ -29,10 +29,9 @@ export default class ViewsessionElement extends Component {
   };
 
   handleEquals = time => {
-    let convert3 = time.split(":");
-    let convert4 = convert3.join("");
+    let convert4 = time.split(":").join("");
     laps.push(convert4)
-    return <span className="deltaTimeEqual">+0.00</span>
+    return <span className="deltaTimeEqual">0.00</span>
   };
 
   handleStart = (time) => {
@@ -61,15 +60,12 @@ export default class ViewsessionElement extends Component {
     return (
       <div key={key} className="lapTimeCards">
         <div>
-          <p className="lapCount">Lap {lapInc}</p>
+          <p className="lapCount">Lap {lapInc}</p> <p className="splitTime">{splitTime}</p>
         </div>
-          <div className="splitTime">
-            <p>{splitTime}</p>
-          </div>
-          <p className="lapCount">Prev. Lap Delta:
+          <p className="prevDelta">Prev. Lap Delta:
             <span>{lapInc - 1 === 0? this.handleStart(val.time): lapInc - 1 !== 0 ? this.handlePrevDelta(lapInc) : null}</span>
           </p>
-          <p>Best Lap Delta: 
+          <p className="bestLapDelta">Best Lap Delta:  
             <span>
               {
                 this.props.bestLap !== val.time
@@ -78,7 +74,7 @@ export default class ViewsessionElement extends Component {
               }
             </span>
             </p>
-            <p className="totalLengthDriven">{totalLengthDriven} miles</p>
+            <p className="totalLengthDriven">Distance Driven: {totalLengthDriven} miles</p>
       </div>
     );
   }

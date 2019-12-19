@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {getUserPhotos} from "./../daffy_duck/photoReducer"
 import {connect} from 'react-redux'
+import "./scss/viewPhoto.css"
 
 class Photos extends React.Component {
     constructor(){
@@ -47,18 +48,6 @@ class Photos extends React.Component {
                 <p id="logo">Fracetagram</p>
             </div>
             <div className="carCards">
-            <h1 id="garageTitle">Photo Gallery</h1>
-            <div className="flyout">
-             <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-                <Link to="/Addphoto">
-                    <button id="button3">Add a Photo </button>
-                </Link>
-                <Link to="/Profile">
-                    <button id="button2">Back to Profile</button>
-                </Link>
-            </div>
-          </div>
                 <div className="garage">
                 {mappedImages}
                 </div>

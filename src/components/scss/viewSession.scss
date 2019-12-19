@@ -1,0 +1,58 @@
+.lapCard {
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 10px black;
+}
+
+.lapTimeSpecs {
+    background: grey;
+    margin-left: 425px;
+    margin-right: 25px;
+    margin-top: 25px;
+    width: 500px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 25px solid rgba(0, 0, 0, 0.6);
+}
+
+.lapTimeCard {
+    margin: 10px 50px 10px 425px;
+    width: 500px;
+}
+
+.lapTimes {
+    display: grid;
+    background: rgba(0, 0, 0, 0.6);
+    grid-template-columns: 1fr 1fr;
+}
+
+.deltaTimeEqual {
+    color: green;
+}
+
+.deltaTimeSlower {
+    color: red;
+}
+
+.lapTimeCards {
+    margin: 25px 25px 25px 25px;
+    height: 100px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.lapCount {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.chart {
+    width: 500px;
+    background: grey;
+    margin-left: 425px;
+    margin-bottom: 10px;
+}

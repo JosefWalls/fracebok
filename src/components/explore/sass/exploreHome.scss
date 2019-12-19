@@ -1,49 +1,33 @@
-$font: 'ZCOOL KuaiLe', 'cursive';
-
-.main {
-    background-image: url("./../../assets/Headertemplate.png");
-}
-
-#exploreTitle {
-    color: whitesmoke;
-    font-family: $font;
-    font-size: 2em;
-    text-shadow: 2px 2px rgb(93, 188, 210);
-    position: absolute;
-    left: 1100px;
-    bottom: 525px;
+.mappedProfiles {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr  1fr 1fr ;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 10px black;
+    margin-bottom: 50px;
 }
 
 .exploreResultCardOne {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: rgba(12, 18, 12, 0.9);
-    width: 250px;
-    margin-left: 5px;
-    border-radius: 10%;
-}
-
-.exploreResultCardOne h1 {
-    font-family: $font;
-    margin-left: 100px;
+    margin: 10px;
+    width: 200px;
+    background: rgb(155, 155,155);
+    box-shadow: 5px 5px 5px rgba(107, 105, 105, 0.521);
 }
 
 .exploreResultCardOne img {
-    height: 100px;
-    width: 100px;
-    border-radius: 25%;
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.exploreResultCardOne h1 {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    margin-top: 5px;
 }
 
 .exploreResultCardOne button {
-    background: silver;
-    border: none;
-    height: 25px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-
-.mappedProfile {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-left: 75px;;
+    margin: 10px 0px 10px 0px;
 }

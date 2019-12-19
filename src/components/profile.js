@@ -35,7 +35,7 @@ class Profile extends React.Component {
                 {/* <p onClick={this.handleLogout} className="logooutButton">Log Out</p> */}
              <div className="userInfoCard">
                 <header className="profilePictures">
-                    <img src={this.props.user[0] && this.props.user[0].header} className="profileheader"></img>
+                    <img src={this.props.user[0] && this.props.user[0].header} className="profileheader" alt="When registers, if no header is input, add a default in place"></img>
                     <div className="username">
                         <img src={this.props.user[0] && this.props.user[0].profile} className="profile"></img> 
                         <h1 id="userUsername">{this.props.user[0] && this.props.user[0].username}</h1>
@@ -78,6 +78,7 @@ class Profile extends React.Component {
                         </div>
                     </Link>
                 </div>
+                <p>Render all comments based on user id</p>
               </div>
             </div>
         )
