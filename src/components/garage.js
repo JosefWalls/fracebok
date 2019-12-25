@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getGarage, updateState } from "./../daffy_duck//garageReducer";
 import { connect } from "react-redux";
-import "./scss/garage.css"
+import "./scss/garage.css";
+import "./scss/flyout.css"
 
 class Garage extends React.Component {
   constructor() {
@@ -54,8 +55,12 @@ class Garage extends React.Component {
         </div>
         <div className="carCards">
           <div className="flyout">
+            <Link to="/Addcar">
              <button>Add a Car</button>
-             <button>Profile </button>
+            </Link>
+            <Link to="/Profile">
+              <button>Profile</button>
+            </Link>
           </div>
           <div className="garage">{mappedGarage}</div>
         </div>

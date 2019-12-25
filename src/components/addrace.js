@@ -99,17 +99,13 @@ class Addrace extends React.Component {
             <div className="header">
                 <p id="logo">Fracebok</p>
             </div>
-                <p id="editCarTitle">Add race</p>
-                <div className="garageFlyout">
-                        <div className={this.state.toggleMenu}>
-                        <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
+                <div className="flyout">
                 <Link to="/Races">
                     <button id="button2">Back to races</button>
                 </Link>
-                 </div>
                 </div>
                 <div className="mainRaceCard">
-                <div className="addRaceCard">
+                <div className="editProfileCard">
                     <div className="dropdownTracks">
                     <h1>Select Track</h1>
                         {dropdownTracks}
@@ -123,10 +119,7 @@ class Addrace extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         {mappedLaps}
                         <h1 id="addLapTitle">Add lap times:</h1>
-                        {/* <div className="liveLapClosed">
-                            <button onClick={this.toggleLiveTimer}>Live Lap Times</button>
-                            <StopWatch />
-                        </div> */}
+                        
                         <h1>Lap by Lap:</h1>
                         <input placeholder="Enter lap time. Ex) 1:25.288" onChange={this.handleChange} value={this.state.lap} id="addLapInput"></input>
                     </form>

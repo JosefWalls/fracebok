@@ -18,7 +18,6 @@ class EditCar extends React.Component {
     }
 
     componentDidMount(){
-        console.log(this.props.car)
         this.setState({make: this.props.car.make})
         this.setState({model: this.props.car.model})
         this.setState({year: this.props.car.year})
@@ -27,13 +26,10 @@ class EditCar extends React.Component {
 
     handleEdit = (e) => {
         this.setState({[e.target.name]: e.target.value})
-        console.log(this.state)
     }
  
     handleSubmit = (e) => {
         e.preventDefault();
-        
-        console.log(this.state)
         const car_id = this.props.car.car_id
         Axios.put(`/garage/cars/${car_id}`, {
             make: this.state.make,
@@ -65,7 +61,6 @@ class EditCar extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <p id="editTitle">Edit car</p>
                 <div className="editProfileCard">
                 <input placeholder={this.props.car.make} name="make" onChange={this.handleEdit}></input>
                 <input placeholder={this.props.car.model} name="model" onChange={this.handleEdit}></input>

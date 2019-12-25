@@ -14,17 +14,9 @@ class Friends extends React.Component {
 
     componentDidMount = async () => {
         await this.props.getFriends();
-        if(this.props.friends.length === 0){
-            this.setState({header: "No Friend"})
-        } else if (this.props.friends.length === 1){
-            this.setState({header: "Friend"})
-        } else {
-            this.setState({header: "Friends"})
-        }
     }
 
     render() {
-        console.log(this.props.friends)
         const mappedFriends = this.props.friends.map((val, i) => {
             return (
                 <div className="mappedFriend">
@@ -41,7 +33,6 @@ class Friends extends React.Component {
             <div className="header">
                  <p id="logo">Fracebok</p>
             </div>
-                <h1 id="garageTitle">{this.state.header}</h1>
                 <div className="mainFriend">
                 <div className="friends">
                 {mappedFriends}

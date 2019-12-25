@@ -61,6 +61,14 @@ class Races extends React.Component {
                      <p id="logo">Fracebok</p>
                 </div>
             <div className="carCards">
+            <div className="flyout">
+                <Link to="/Addrace">
+                    <button>Add a Race</button>
+                </Link>
+                <Link to="/Addtrack">
+                    <button>Add Track</button>
+                </Link>
+            </div>
                 <section className="userRaces">
                 <div className="mappedTracks">
                         {mappedTracks}

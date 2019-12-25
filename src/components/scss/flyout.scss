@@ -1,0 +1,17 @@
+.flyout {
+    width: 250px;
+    position: absolute;
+    top: 30px;
+    left: 950px;
+}
+
+.flyout button {
+    background: red;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.flyout button:hover {
+    background: white;
+    color: red;
+}

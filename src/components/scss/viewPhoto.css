@@ -6,7 +6,7 @@
 .mapped h4 {
   color: white;
   font-family: 'Oswald', sans-serif;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px 20px 0px;
   font-size: 1.5em;
 }
 
@@ -15,5 +15,9 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+}
+
+.viewImage p {
+  padding-bottom: 25px;
 }
 /*# sourceMappingURL=viewPhoto.css.map */

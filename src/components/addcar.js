@@ -53,8 +53,7 @@ class AddCar extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <h1 className="addCarTitle">Add Car</h1>
-                <form className="addCarCard">
+                <form className="editProfileCard">
                     <input placeholder="Enter Make" name="make" onChange={this.handleChange}></input>
                     <input placeholder="Enter Model" name="model" onChange={this.handleChange}></input>
                     <input placeholder="Enter Year" name="year" onChange={this.handleChange}></input>

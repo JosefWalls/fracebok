@@ -29,7 +29,6 @@ class ExploreHomePage extends React.Component {
     }
 
     render(){
-        console.log(this.props.getAll)
         const mappedProfiles = this.props.getAll.map((val, i) => {
             return (
                 <div className="exploreResultCardOne">

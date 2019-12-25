@@ -33,7 +33,6 @@ class EditPhoto extends React.Component {
     }
 
     handlePicture = (e) => {
-        console.log(this.state)
         if(e.target.files[0]){
             const image = (e.target.files[0])
             const uploadTask = storage.ref(`/photo_gallery/${image.name}`).put(image)
