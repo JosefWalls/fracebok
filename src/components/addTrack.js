@@ -32,8 +32,7 @@ class AddTrack extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <p id="racesTitle">AddTrack</p>
-                <div className="addCarCard">
+                <div className="editProfileCard">
                 <input placeholder="Track Name" name="track_name" onChange={this.handleChange}></input>
                 <input placeholder="Track Turns" name="turns" onChange={this.handleChange}></input>
                 <input placeholder="Track length" name="length" onChange={this.handleChange}></input>

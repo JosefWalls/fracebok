@@ -8,6 +8,7 @@ import SessionReducer from "./daffy_duck/session_detailsReducer";
 import PhotoReducer from "./daffy_duck/photoReducer"
 import ExploreReducer from "./daffy_duck/exploreReducer"
 import VideoReducer from "./daffy_duck/videoReducer"
+import CommentReducer from "./daffy_duck/commentReducer"
 
 const root = combineReducers({
     loginRegisterReducer,
@@ -17,7 +18,8 @@ const root = combineReducers({
     SessionReducer,
     PhotoReducer,
     ExploreReducer,
-    VideoReducer
+    VideoReducer,
+    CommentReducer
 })
 
 

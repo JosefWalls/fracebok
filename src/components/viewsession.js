@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 import ViewsessionElement from './ViewsessionElement';
 import { Line } from "react-chartjs-2";
 import "./scss/viewSession.css"
+import {getRaceComments, updateState} from "./../daffy_duck/commentReducer";
+import axios from "axios"
 
 class ViewSession extends React.Component {
   constructor() {
@@ -52,6 +54,7 @@ class ViewSession extends React.Component {
     this.renderGraph();
     this.setState({session_id: this.props.match.params.session_id})
     this.props.getTrackDetails(this.props.match.params.session_id)
+    this.props.getRaceComments(this.props.match.params.session_id);
   };
 
   renderGraph = () => {
@@ -94,6 +97,23 @@ class ViewSession extends React.Component {
         this.setState({toggleIcon: "toggleMenuOn"})
     }
   }
+  
+  commentBody = (e) => {
+    this.props.updateState({[e.target.name]: e.target.value})
+  }
+
+  postComment = (e) => {
+    e.preventDefault()
+    axios.post(`/Comment/Add/Race/${this.props.match.params.session_id}`, {
+        body: this.props.comment
+    })
+    .then(() => {
+        window.location.reload()
+    })
+    .catch(error => {
+        console.log(error)
+    })
+  }
 
   render() {
       
@@ -103,7 +123,15 @@ class ViewSession extends React.Component {
         <ViewsessionElement val={val} bestLap={this.props.bestLap} key={i} lapInc={i+ 1} length={this.props.trackDetails[0] && this.props.trackDetails[0].length}/>
       </div>
     )});
-
+    const mappedComments = this.props.raceComments.map((val, i) => {
+      return (
+        <div className="commentCard">
+            <h1>{val.username}</h1>
+            <p className="commentDate">posted on {val.date}</p>
+            <p id="commentBody">{val.body}</p>
+        </div>
+    )
+    })
     return (
       <div className="main">
       <div className="header">
@@ -133,6 +161,11 @@ class ViewSession extends React.Component {
         />
         </div>
         </div>
+        <div className="comments">
+                {mappedComments}
+                <input type="text" placeholder="Add Comment" name="comment" onChange={this.commentBody}></input>
+                <button onClick={this.postComment}>Add Comment</button>
+            </div>
       </div>
     );
   }
@@ -144,11 +177,13 @@ const mapStateToProps = reduxState => {
     bestLap: reduxState.SessionReducer.bestLap,
     labels: reduxState.SessionReducer.labels,
     session_id: reduxState.RaceReducer.session_id,
-    trackDetails: reduxState.RaceReducer.trackDetails
+    trackDetails: reduxState.RaceReducer.trackDetails,
+    raceComments: reduxState.CommentReducer.raceComments,
+    comment: reduxState.CommentReducer.comment
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getSessionDetails, getBestLap, createLabels, deleteSession, getTrackDetails}
+  { getSessionDetails, getBestLap, createLabels, deleteSession, getTrackDetails, getRaceComments, updateState}
 )(ViewSession);

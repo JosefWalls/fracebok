@@ -36,15 +36,19 @@ class Viewcar extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
+                <div className="carMainCard">
                 <div className="carCard">
                 <img className="carImage" src={this.props.userCar.image} ></img>
-                <h1>{this.props.userCar.year} {this.props.userCar.make} {this.props.userCar.model}</h1>
+                <h1 id="carDesc">{this.props.userCar.year} {this.props.userCar.make} {this.props.userCar.model}</h1>
+                <div className="trackList">
                 <h1>Tracks Visited:</h1>
                 {mappedVisits}
-                <Link to="/Garage">
+                </div>
+                <Link to={`/Explore/UserGarage/${this.props.userProfile[0].user_id && this.props.userProfile[0].user_id }`}>
                     <button>Back to garage</button>
                 </Link>
                 </div>
+            </div>
             </div>
         )
     }
@@ -54,7 +58,8 @@ class Viewcar extends React.Component {
 const mapStateToProps = reduxState => {
     return {
         userCar: reduxState.ExploreReducer.userCar,
-        userCarTracks: reduxState.ExploreReducer.userCarTracks
+        userCarTracks: reduxState.ExploreReducer.userCarTracks,
+        userProfile: reduxState.ExploreReducer.userProfile  
     }
 }
 

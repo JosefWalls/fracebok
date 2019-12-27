@@ -16,6 +16,7 @@ class Garage extends React.Component {
 
   componentDidMount() {
     this.props.getGarage(this.props.match.params.user_id);
+
   }
 
 
@@ -43,32 +44,28 @@ class Garage extends React.Component {
           </div>
         );
       });
-    // console.log(this.state)
     return (
       <div className="main">
         <div className="header">
           <p id="logo">Fracebok</p>
         </div>
         <div className="carCards">
-          <h1 id="garageTitle">Garage</h1>
           <div className="flyout">
-             <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
-            <Link to="/Profile">
+            <Link to={`/Explore/User/${this.props.userProfile[0].user_id && this.props.userProfile[0].user_id }`}>
               <button className="garageButtons" id="button2">Back to profile</button>
             </Link>
             </div>
           </div>
           <div className="garage">{mappedGarage}</div>
         </div>
-      </div>
     );
   }
 }
 
 const mapStateToProps = reduxState => {
   return {
-    userGarage: reduxState.ExploreReducer.userGarage
+    userGarage: reduxState.ExploreReducer.userGarage,
+    userProfile: reduxState.ExploreReducer.userProfile
   };
 };
 

@@ -54,16 +54,14 @@ class ViewVideo extends React.Component {
             <div className="userPhoto">
                 {mappedImage}
             </div>
-            <div className={this.state.toggleMenu}>
-             <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
+             <div className="flyout">
                 <Link to="/Videos">
-                    <button id="button1">Back to Videos</button>
+                    <button>Back to Videos</button>
                 </Link>
                 <button onClick={this.handleDelete} id="button2">Delete Video</button>
             </div>
             </div>
             </div>
-
         )
     }
 }

@@ -9,7 +9,6 @@ class userTrackSessions extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props.match.params.user_id, this.props.match.params.track_id)
         this.props.trackSessions(this.props.match.params.user_id, this.props.match.params.track_id)
     }
 

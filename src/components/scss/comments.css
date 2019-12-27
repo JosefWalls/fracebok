@@ -1,0 +1,50 @@
+.comments {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  margin-left: 200px;
+}
+
+.commentCard {
+  width: 1000px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 10px 0px 10px 0px;
+}
+
+.commentCard img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  position: relative;
+  left: -410px;
+  top: 40px;
+}
+
+.comments h1 {
+  position: relative;
+  top: 25px;
+  left: -450px;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  text-decoration: underline;
+  -webkit-text-decoration-color: red;
+          text-decoration-color: red;
+}
+
+.commentDate {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  position: relative;
+  top: 12.5px;
+  left: -325px;
+  font-size: 0.75em;
+}
+
+#commentBody {
+  margin-top: 25px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 15px;
+  margin-left: 12.5px;
+}
+/*# sourceMappingURL=comments.css.map */

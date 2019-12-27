@@ -28,7 +28,6 @@ class userTracks extends Component {
     }
     
     render() {
-        console.log(this.props.userTracks && this.props.userTracks)
         const userId = this.props.match.params.user_id
         const mappedUserTracks = this.props.userTracks.map((val, i) => {
             return (

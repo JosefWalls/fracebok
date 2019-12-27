@@ -52,7 +52,6 @@ class AddPhotos extends React.Component {
         })
         .then(res => {
             this.props.history.push("/Videos")
-            console.log(res)
         })
     }
 
@@ -62,12 +61,12 @@ class AddPhotos extends React.Component {
                <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <form className="addCarCard">
+                <form className="editProfileCard">
                <input placeholder="Enter Title" name="title" onChange={this.handleTitle}></input>
                <input placeholder="Enter Description" name="description" onChange={this.handleDescription}></input>
                <input type="file" onChange={this.handlePhoto}></input>
                <button onClick={this.handleSubmit}>Submit Video</button>
-               <Link to="/Photos">
+               <Link to="/Videos">
                     <button>Cancel</button>
                 </Link>
                 </form>

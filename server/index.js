@@ -13,6 +13,7 @@ const rR = require("./controllers/race")
 const photoR = require("./controllers/photo")
 const eR = require("./controllers/explore")
 const vR = require("./controllers/video")
+const cR = require("./controllers/comments")
 
 app.use( express.static( `${__dirname}/../build` ) );
 // app.use(express.static ("./../build"));
@@ -77,7 +78,7 @@ app.post("/photos/addImage", photoR.addImage)
 app.get("/photos/UserImages", photoR.getUserImages)
 app.get("/photos/getImage/:photo_id", photoR.getPhoto)
 app.delete("/photos/DeleteImage/:photo_id", photoR.deletePhoto)
-app.post("/photos/comment/add/:photo_id", photoR.addComment)
+
 
 
 //explore
@@ -99,5 +100,12 @@ app.post("/Videos/Add", vR.addVideo)
 app.get("/Videos", vR.getVideos)
 app.get("/Video/:video_id", vR.getVideo)
 app.delete("/Videos/Delete/:video_id", vR.deleteVideo)
+
+
+//comments
+app.post("/Comment/Add/Photo/:photo_id", cR.addPhotoComment)
+app.get("/Comment/View/Photo/:photo_id", cR.viewPhotoComments)
+app.post("/Comment/Add/Race/:session_id", cR.addRaceComment)
+app.get("/Comment/View/Race/:session_id", cR.viewRaceComments)
 
 app.listen(4201, () => console.log("Port 4201"))
