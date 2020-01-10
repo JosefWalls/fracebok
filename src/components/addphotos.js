@@ -52,7 +52,6 @@ class AddPhotos extends React.Component {
         })
         .then(res => {
             this.props.history.push("/Photos")
-            console.log(res)
         })
     }
 

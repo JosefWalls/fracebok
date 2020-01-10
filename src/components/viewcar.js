@@ -19,7 +19,6 @@ class Viewcar extends React.Component {
 
 
     componentDidMount = async () => {
-        console.log(this.props.car)
        await this.props.getCar(this.props.match.params.car_id)
        await this.props.visitedTracks(this.props.match.params.car_id)
     }

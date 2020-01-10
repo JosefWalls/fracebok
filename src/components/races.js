@@ -47,7 +47,7 @@ class Races extends React.Component {
         const mappedGarage = this.props.garage.map((val, i) => {
             return (
                 <div className="mappedCar">
-                    <h1>{val.year} {val.make} {val.model}</h1>
+                    <h1 className="mappedCarTitle">{val.year} {val.make} {val.model}</h1>
                     <img className="carImage" src={val.image}></img>
                     <Link to={`/Viewcarsessions/${val.car_id}`}>
                         <button>View</button>

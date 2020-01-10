@@ -31,7 +31,6 @@ class Photos extends React.Component {
     
 
     render(){
-        console.log(this.props.userImages && this.props.userImages)
         const mappedImages = this.props.userImages && this.props.userImages.map((val, i) => {
             return (
                 <div className="mapped">

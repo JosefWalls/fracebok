@@ -68,6 +68,11 @@
   margin: 5px 0px 5px 0px;
 }
 
+.mappedCarTitle {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
 .mappedCar img {
   margin-left: 50px;
   -webkit-box-shadow: 5px 5px grey;

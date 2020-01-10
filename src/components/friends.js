@@ -19,7 +19,7 @@ class Friends extends React.Component {
     render() {
         const mappedFriends = this.props.friends.map((val, i) => {
             return (
-                <div className="mappedFriend">
+                <div className="exploreResultCardOne">
                     <h1>{val.username}</h1>
                     <img src={val.profile} className="carImage"></img>
                     <Link to={`/Explore/User/${val.user_id}`}>
@@ -34,7 +34,7 @@ class Friends extends React.Component {
                  <p id="logo">Fracebok</p>
             </div>
                 <div className="mainFriend">
-                <div className="friends">
+                <div className="mappedProfiles">
                 {mappedFriends}
                 </div>
                 </div>

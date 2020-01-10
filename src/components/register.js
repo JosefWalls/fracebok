@@ -3,8 +3,7 @@ import {updateState} from "./../daffy_duck/loginRegisterReducer"
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {storage} from "./../firebase-config";
-// import fileUploader from "react-firebase-file-uploader"
-// import firebase from "firebase";
+import "./scss/register.css";
 import {Link} from 'react-router-dom'
 
 class Register extends React.Component {
@@ -77,9 +76,7 @@ class Register extends React.Component {
                 <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <h1 id="registerTitle">Register</h1>
-            <div className="registerBox">
-                <div className="registerInputs">
+            <form className="registerCard">
                     <input placeholder="Enter Username" name="username" onChange={this.handleChange}></input>
                     <input placeholder="Enter Password" name="password" onChange={this.handleChange}></input>
                     <input placeholder="Enter First Name" name="firstname" onChange={this.handleChange}></input>
@@ -87,13 +84,12 @@ class Register extends React.Component {
                     <input type="file" onChange={this.handleProfileUpload} placeholder="Enter Profile"></input>
                     <p className="uploadTitles">Upload Header Image</p>
                     <input type="file" onChange={this.handleHeaderUpload} placeholder="Enter Header"></input>
-                    <button onClick={this.handleClick}>Register</button>
+                    <button onClick={this.handleClick} id="registerButton">Register</button>
                     <Link to="/">
                         <button>Cancel</button>
                     </Link>
                     {this.state.error === true ? <h1>The username you entered is not available</h1> : null}
-                </div>
-            </div>
+            </form>
             </div>
         )
     }

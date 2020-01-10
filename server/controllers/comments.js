@@ -32,7 +32,7 @@ const viewRaceComments = async (req, res) => {
     const db = req.app.get("db");
     const raceId = +req.params.session_id;
     console.log(raceId)
-    const comments = await db.comment_view_races([raceId]);
+    const comments = await db.comment_view_races(raceId);
     res.status(200).json(comments)
 }
 

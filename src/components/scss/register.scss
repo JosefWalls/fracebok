@@ -1,0 +1,26 @@
+.registerCard {
+    background: rgba(180, 161, 161, 0.8);
+    box-shadow: 10px 10px 10px 10px rgba(19, 14, 14, 0.76);
+    width: 500px;
+    margin-left: 425px;
+    margin-top: 50px;
+    height: 400px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.registerCard input {
+    width: 250px;
+    margin: 10px 10px 10px 120px;
+}
+
+.registerCard button {
+    width: 200px;
+}
+
+#registerButton {
+    margin: 10px 10px 10px 155px;
+}
