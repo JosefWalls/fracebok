@@ -93,4 +93,41 @@ table {
   color: white;
   font-family: 'Oswald', sans-serif;
 }
+
+.alertBoxOpen {
+  width: 500px;
+  font-family: 'Oswald', sans-serif;
+  padding: 25px 25px 25px 25px;
+  position: fixed;
+  top: 150px;
+  left: 400px;
+  height: 200px;
+  background: white;
+}
+
+.alertBoxOpen h1 {
+  font-size: 2em;
+}
+
+.alertBoxOpen p {
+  padding: 10px 0px 10px 0px;
+}
+
+.alertBoxOpen span {
+  color: red;
+}
+
+.alertBoxOpen button {
+  color: white;
+  background: red;
+}
+
+.alertBoxOpen button:hover {
+  color: black;
+  background: white;
+}
+
+.alertBoxClosed {
+  display: none;
+}
 /*# sourceMappingURL=login.css.map */

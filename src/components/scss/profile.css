@@ -52,4 +52,34 @@
   color: white;
   font-family: 'Oswald', sans-serif;
 }
+
+.notificationBar {
+  background: white;
+  width: 250px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  padding: 10px 10px 10px 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.notificationBarClosed {
+  margin-top: 10px;
+  display: none;
+}
+
+.notificationBarOpen {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin: 5px 0px 5px 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+.notificationBarOpen span {
+  color: red;
+}
+
+.notificationBarOpen button {
+  color: black;
+}
 /*# sourceMappingURL=profile.css.map */

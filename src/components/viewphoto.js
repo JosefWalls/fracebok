@@ -78,7 +78,9 @@ class ViewPhoto extends React.Component {
         return (
             <div className="main">
             <div className="header">
-                <p id="logo">Fracebok</p>
+                <Link to="/Profile">
+                    <p id="logo">Fracebok</p>
+                </Link>
             </div>
             <div className="userPhotoCard">
             <div className="userPhoto">

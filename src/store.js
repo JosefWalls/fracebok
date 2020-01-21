@@ -9,6 +9,7 @@ import PhotoReducer from "./daffy_duck/photoReducer"
 import ExploreReducer from "./daffy_duck/exploreReducer"
 import VideoReducer from "./daffy_duck/videoReducer"
 import CommentReducer from "./daffy_duck/commentReducer"
+import NotificationReducer from "./daffy_duck/notificationsReducer"
 
 const root = combineReducers({
     loginRegisterReducer,
@@ -19,7 +20,8 @@ const root = combineReducers({
     PhotoReducer,
     ExploreReducer,
     VideoReducer,
-    CommentReducer
+    CommentReducer,
+    NotificationReducer
 })
 
 

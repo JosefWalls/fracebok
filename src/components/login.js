@@ -7,7 +7,8 @@ import "./scss/login.css"
 class Login extends React.Component {
 
         state = {
-            error: false
+            error: false,
+            alertBox: "alertBoxOpen"
         }
 
         handleChange = e => {
@@ -24,17 +25,25 @@ class Login extends React.Component {
             })
             .catch(() =>{
                 this.setState({error: true})
-                // this.props.resetFields()
             })
         }
 
+        closeAlert = () => {
+            if(this.state.alertBox === "alertBoxOpen"){
+                this.setState({alertBox: "alertBoxClosed"})
+            }
+        }
     render(){
-        // console.log(this.props.username)
         return (
     
             <div className="main">
                 <div className="header">
                     <p id="logo">Fracebok</p>
+                </div>
+                <div className={this.state.alertBox}>
+                    <h1>Welcome to Fracebok!</h1>
+                    <p>Our site is currently under construction, our page styling being reworked, as well as new features such as <span>Comments, </span><span>Notifications, </span> and <span> much much more </span> being added!</p>
+                    <button onClick={this.closeAlert}>Close</button>
                 </div>
             <section className="loginbox">
                 <div className="loginInputs">

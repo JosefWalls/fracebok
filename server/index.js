@@ -14,6 +14,7 @@ const photoR = require("./controllers/photo")
 const eR = require("./controllers/explore")
 const vR = require("./controllers/video")
 const cR = require("./controllers/comments")
+const nR = require("./controllers/notifications")
 
 app.use( express.static( `${__dirname}/../build` ) );
 // app.use(express.static ("./../build"));
@@ -107,5 +108,11 @@ app.post("/Comment/Add/Photo/:photo_id", cR.addPhotoComment)
 app.get("/Comment/View/Photo/:photo_id", cR.viewPhotoComments)
 app.post("/Comment/Add/Race/:session_id", cR.addRaceComment)
 app.get("/Comment/View/Race/:session_id", cR.viewRaceComments)
+
+//notifications
+app.get("/Notification/Unseen/Photo", nR.unseenPhotoCommentNotification)
+app.put("/Notification/Seen/Photo/:post_id", nR.seenPhotoCommentNotifications)
+app.get("/Notification/Unseen/Race", nR.unseenRaceCommentNotification)
+app.put("/Notifications/Seen/Race/:post_id", nR.seenRaceCommentNotifications)
 
 app.listen(4201, () => console.log("Port 4201"))

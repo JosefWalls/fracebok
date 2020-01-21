@@ -23,6 +23,8 @@ import Friends from "./components/friends";
 import Videos from "./components/videos"
 import AddVideo from "./components/addvideos";
 import ViewVideo from "./components/viewvideo";
+import PhotoNotifications from "./components/notificationPhotos";
+import RaceNotifications from "./components/notificationRaces";
 
 //explore page
 
@@ -33,10 +35,8 @@ import UserCar from "./components/explore/userCar"
 import UserTracks from "./components/explore/userTracks"
 import UserTrackSessions from "./components/explore/userTrackSessions"
 import UserSessionDetails from "./components/explore/userSession"
-import UserPhotos from "./components/explore/userPhotos"
 import userPhotos from "./components/explore/userPhotos";
 import viewvideo from "./components/viewvideo";
-import UserVideos from "./components/explore/userVideos"
 import userVideos from "./components/explore/userVideos";
 import userVideo from "./components/explore/userVideo";
 
@@ -75,5 +75,7 @@ export default (
         <Route path="/Explore/UserPhotos/:user_id" component={userPhotos} />
         <Route exact path="/Explore/UserVideo/:video_id" component={userVideo} />
         <Route path="/Explore/UserVideos/:user_id" component={userVideos} />
+        <Route path="/Notifications/Photos" component={PhotoNotifications} />
+        <Route path="/Notifications/Races" component={RaceNotifications} />
     </Switch>
 )

@@ -4,8 +4,9 @@ const addPhotoComment = async (req, res) => {
     const commentorId = +req.session.user.id;
     const photoId = +req.params.photo_id;
     const {body} = req.body;
-    const category = "Photo"
-    await db.comment_add_photos(commentorId, body, category, photoId, currentTime)
+    const category = "Photo";
+    const seen = false;
+    await db.comment_add_photos(commentorId, body, category, photoId, currentTime, seen)
     res.status(200).json("Photo added ")
 }
 
@@ -24,7 +25,8 @@ const addRaceComment = async (req, res) => {
     const {body} = req.body;
     const category = "Race";
     const date = new Date();
-    await db.comment_add_race(commentorId, body, category, raceId, date);
+    const seen = false;
+    await db.comment_add_race(commentorId, body, category, raceId, date, seen);
     res.status(200).json("Comment posted")
 }
 
@@ -35,6 +37,7 @@ const viewRaceComments = async (req, res) => {
     const comments = await db.comment_view_races(raceId);
     res.status(200).json(comments)
 }
+
 
 module.exports = {
     addPhotoComment,

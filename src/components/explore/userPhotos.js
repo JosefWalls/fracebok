@@ -30,7 +30,6 @@ class Photos extends React.Component {
     
 
     render(){
-        console.log(this.props.userPhotos && this.props.userPhotos)
         const mappedImages = this.props.userPhotos && this.props.userPhotos.map((val, i) => {
             return (
                 <div className="mapped">
@@ -47,7 +46,6 @@ class Photos extends React.Component {
                 <p id="logo">Fracebok</p>
             </div>
             <div className="carCards">
-            <h1 id="garageTitle">Photo Gallery</h1>
             <div className="flyout">
              <div className={this.state.toggleMenu}>
              <img onClick={this.handleClick} id={this.state.toggleIcon} src="https://icon-library.net/images/menu-icon-white-png/menu-icon-white-png-27.jpg"></img>
