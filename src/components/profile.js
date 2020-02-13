@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {logoutUser} from "./../daffy_duck/loginRegisterReducer"
-import {connect} from "react-redux"
+import {connect} from "react-redux";
+import {getRaceNotificatins, updateRaceStatus} from "./../daffy_duck/notificationsReducer";
 import {retrieveInfo} from "./../daffy_duck/profileReducer"
-import {getPhotoNotifications, updateState, getRaceNotificatins} from "./../daffy_duck/notificationsReducer"
+import {getPhotoNotifications, updateState} from "./../daffy_duck/notificationsReducer"
 import "./scss/profile.css"
 
 class Profile extends React.Component {
@@ -21,7 +22,12 @@ class Profile extends React.Component {
         await this.props.getPhotoNotifications();
         await this.props.getRaceNotificatins();
         this.props.updateState({numberOfPhotoNotifications: this.props.photoNotifications.length});
-        this.props.updateState({numberOfRaceNotifications: this.props.raceNotifications.length})
+        this.props.updateState({numberOfRaceNotifications: this.props.raceNotifications.length});
+        
+        await this.props.getRaceNotificatins()
+        for(let i = 0; i < this.props.raceNotifications.length; i++){
+            this.props.updateRaceStatus(this.props.raceNotifications[i].session_id)
+        }
     }
 
     handleLogout = () => {
@@ -40,6 +46,14 @@ class Profile extends React.Component {
     }
 
     render(){
+        const mappedNotifications = this.props.raceNotifications.map((val, i) => {
+            return (
+                <div className="notificationCard">
+                    <h6>{val.date}</h6>
+                    <p>{val.body}</p>
+                </div>
+            )
+        })
         return (
             <div className="main">
                 <div className="header">
@@ -69,7 +83,7 @@ class Profile extends React.Component {
                 <div className="profileCards">
                     <Link to={`/Editprofile/${this.props.user_id}`}>
                         <div className="buttonCard">
-                            <p className="profileCardHeaders">Edit Profile</p>=
+                            <p className="profileCardHeaders">Edit Profile</p>
                         </div>
                     </Link>
                     <Link to="/Garage">
@@ -104,6 +118,9 @@ class Profile extends React.Component {
                     </Link>
                 </div>
                 <p>Render all comments based on user id</p>
+
+                <h1>Notifications:</h1>
+                {mappedNotifications}
               </div>
             </div>
         )
@@ -116,8 +133,9 @@ const mapStateToProps = reduxState => {
         photoNotifications: reduxState.NotificationReducer.photoNotifications,
         numberOfPhotoNotifications: reduxState.NotificationReducer.numberOfPhotoNotifications,
         raceNotifications: reduxState.NotificationReducer.raceNotifications,
-        numberOfRaceNotifications: reduxState.NotificationReducer.numberOfRaceNotifications
+        numberOfRaceNotifications: reduxState.NotificationReducer.numberOfRaceNotifications,
+        raceNotifications: reduxState.NotificationReducer.raceNotifications
     }
 }
 
-export default connect(mapStateToProps, {logoutUser, retrieveInfo, getPhotoNotifications, updateState, getRaceNotificatins})(Profile);
+export default connect(mapStateToProps, {logoutUser, retrieveInfo, getPhotoNotifications, updateState, getRaceNotificatins,updateRaceStatus})(Profile);

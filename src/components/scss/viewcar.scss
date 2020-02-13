@@ -46,11 +46,13 @@
     margin-left: 10px;
     margin-top: 5px;
     border: none;
+    cursor: pointer;
 }
 
 .main button:hover {
     background: red;
     color: white;
+    cursor: pointer;
 }
 
 .trackList h1{

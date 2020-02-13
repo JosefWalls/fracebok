@@ -47,7 +47,9 @@ class Photos extends React.Component {
                 <p id="logo">Fracetagram</p>
             </div>
             <div className="flyout">
-                <button>Add a Photo</button>
+                <Link to="/Addphoto">
+                    <button>Add a Photo</button>
+                </Link>
             </div>
             <div className="carCards">
                 <div className="garage">

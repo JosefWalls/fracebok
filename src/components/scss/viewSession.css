@@ -2,8 +2,6 @@
   margin-left: 25px;
   margin-right: 25px;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 10px 10px 10px black;
-          box-shadow: 10px 10px 10px black;
 }
 
 .lapTimeSpecs {
@@ -58,5 +56,19 @@
   background: grey;
   margin-left: 425px;
   margin-bottom: 10px;
+}
+
+.comments section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5vh;
+}
+
+#AddComment {
+  width: 10vw;
 }
 /*# sourceMappingURL=viewSession.css.map */

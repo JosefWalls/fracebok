@@ -88,8 +88,10 @@ class ViewPhoto extends React.Component {
             </div>
             <div className="comments">
                 {mappedComments}
-                <input type="text" placeholder="Add Comment" name="comment" onChange={this.commentBody}></input>
-                <button onClick={this.postComment}>Add Comment</button>
+                <section>
+                  <input type="text" placeholder="Add Comment" name="comment" onChange={this.commentBody}></input>
+                  <button onClick={this.postComment} id="AddComment">Add Comment</button>
+                </section>
             </div>
             </div>
             </div>

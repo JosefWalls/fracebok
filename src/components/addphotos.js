@@ -61,7 +61,7 @@ class AddPhotos extends React.Component {
                <div className="header">
                     <p id="logo">Fracebok</p>
                 </div>
-                <form className="addCarCard">
+                <form className="editProfileCard">
                <input placeholder="Enter Title" name="title" onChange={this.handleTitle}></input>
                <input placeholder="Enter Description" name="description" onChange={this.handleDescription}></input>
                <input type="file" onChange={this.handlePhoto}></input>
