@@ -3,8 +3,6 @@
   width: 1000px;
   margin-top: 25px;
   margin-left: 240px;
-  -webkit-box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
-          box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -43,8 +41,6 @@
 }
 
 .mappedGarage {
-  -webkit-box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
-          box-shadow: 10px 10px 10px rgba(107, 105, 105, 0.521);
   background: rgba(155, 155, 155, 0.8);
   display: -ms-grid;
   display: grid;

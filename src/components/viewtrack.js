@@ -43,7 +43,7 @@ class Viewtrack extends React.Component {
             return (
                 <div className="mapped">
                         <p>{val.year} {val.make} {val.model}</p>
-                    <img src={val.header} className="carImage"></img>
+                    <img src={val.header} className="carImage" alt="No Image Uploaded, Sorry!"></img>
                     <Link to={`/Viewsession/${val.session_id}`}>
                         <button>View session</button>
                     </Link>
